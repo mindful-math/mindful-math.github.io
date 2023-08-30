@@ -66,9 +66,9 @@ Remember these symbols and definitions for the rest of the blog: $A$, $\vec{x}$,
 
 The matrix $A$ above takes a vector $\vec{x}$, which represents the quantities of broccoli, chicken and black tea, and outputs the price, calories, and protein for that food. And this leads to the big picture:
 
-> **Big Picture**: A matrix of size $m\times n$ ($m$ rows and $n$ columns), is a linear function that takes $n$ variables as input and outputs $m$ variables.
+> A matrix of size $m\times n$ ($m$ rows and $n$ columns), is a linear function that takes $n$ variables as input and outputs $m$ variables.
 
-They're just convenient ways of expressing higher-dimensional problems involving linear equations. Matrix vector products, $f(\vec{x})=A\vec{x}$, are **just** like the one-dimensional analogue: $f(x)=ax$. The matrix $A$ behaves very similarly to the coefficient $a$. I will demonstrate this below.
+They're convenient ways of expressing higher-dimensional linear systems of equations. Matrix vector products, $f(\vec{x})=A\vec{x}$, are **just** like the one-dimensional analogue: $f(x)=ax$. The matrix $A$ behaves very similarly to the coefficient $a$. I will demonstrate this below.
 
 
 ## matrix addition (and subtraction)
@@ -85,15 +85,13 @@ x+20(1.2)y + 0z \geq b
 \end{matrix}
 $$
 
-We can visualize this by matrix addition (the resulting matrix is just the elementwise sum of the two matrices):
+Matrix addition adds the elements of the the matrices we are interested in elementwise: i.e. the first row, first column of $A$ and $\Delta A$ below form the first row, first column of the new matrix $A_{\text{A}}$.
 
 $$ 
 \underbrace{\begin{pmatrix} 5 & 10 & 1 \\\\ 20 & 100 & 5 \\\\ 1 & 20 & 0 \end{pmatrix}}\_{A} + 
 \underbrace{\begin{pmatrix} 0.05\cdot 5 & 0.15\cdot 10 & -0.05\cdot 1 \\\\ -0.06\cdot 20 & 0 & 0 \\\\ 0 & 0.2\cdot 20 & 0 \end{pmatrix}}\_{\Delta A} = 
 \underbrace{\begin{pmatrix} 5(1.05) & 10(1.15) & 1(0.95) \\\\ 20(0.94) & 100 & 5 \\\\ 1 & 20(1.2) & 0 \end{pmatrix}}\_{A_{\text{new}}}.
-$$
-
-Matrix addition is intuitively just like the one-dimensional analog in algebra: $5x+10x=(5+10)x=15x$. It just makes our function steeper/more vertical. This is just like the above if we inspect the matrices element-wise through the rows (equations) and columns (variables): $A\vec{x}+\Delta A\vec{x}=(A+\Delta A)\vec{x}$. 
+$$ 
 
 ## scalars and matrices
 

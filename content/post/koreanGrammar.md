@@ -45,8 +45,11 @@ In English, this means "lucky/good/fortunate (thing) that verb".
 ### examples
 - 우리는 윤서가 김치를 만들었어 다행이에요 
   - Informal, polite way of saying: "We're fortunate that Yunseo made kimchi."
-- 나연은 학교에서 기하학을 공부해서 다해입니다. 나연의 직업이 그냥 기하학입니다.
-  - Formal, polite way of saying: "It's lucky Nayeon studied geometry in school. Nayeon's job is just geometry."
-- 동한, 엄마가 없어(서) 다행이야. 찐자... 
+- 나연은 학교에서 기하학을 공부해서 다행입니다.
+  - Formal, polite way of saying: "It's lucky Nayeon studied geometry in school."
+- 동한, 엄마가 없어(서) 다행이야. 진짜... 
   - Informal, casual way of saying: "Donghan, it's really lucky Mom isn't here." 
+
 <hr style="border:1.5px solid black"> 
+
+
