@@ -13,11 +13,10 @@ Extends [this](http://www.koreangrammaticalforms.com/) masterpiece on Korean gra
   - [examples](#examples)
 - [verb (+) 서 + 다행이다](#verb--서--다행이다)
   - [examples](#examples-1)
-- [verb (+) ㄴ/는 (+) 다며 (+) ㄴ서(요)](#verb--ㄴ는--다며--ㄴ서요)
+- [verb (+) /ㄴ/는 (+) 다며 (+) ㄴ서(요)](#verb--ㄴ는--다며--ㄴ서요)
   - [examples](#examples-2)
 - [verb (+) 었나/았나 + 했다](#verb--었나았나--했다)
   - [examples](#examples-3)
-- [](#)
 
 ## notation
 
@@ -58,12 +57,12 @@ In English, this means "lucky/good/fortunate (thing) that verb".
 
 <hr style="border:1.5px solid black"> 
 
-## verb (+) ㄴ/는 (+) 다며 (+) ㄴ서(요)
+## verb (+) /ㄴ/는 (+) 다며 (+) ㄴ서(요)
 
-In English, this means "Is it true that verb (+ other stuff)?" - in disbelief. It's a bit aggressive and informal though.
+In English, this means "Is it true that verb (+ other stuff)?" - in disbelief. It's a bit aggressive and informal though. The blank before ㄴ is purposeful - sometimes this can be excluded (first example for instance).
 
 ### examples
-- 현서, 김치가 없는다며? 
+- 현서, 김치가 없다며? 
   - Informal, casual way of saying: "Hyunseo, is Kimchi gone?"
 - 아버지 - 제 학교를 위해서 돈이 있다면서요?
   - Informal, polite* (again, not really polite) way of saying: "Dad - is there *really* money for my school?"
@@ -76,12 +75,10 @@ In English, this means "Is it true that verb (+ other stuff)?" - in disbelief. I
 In English, this means "I wondered/doubted that verb". Context should be added beforehand - this is more of a thought to oneself than a saying to another.
 
 ### examples
-  - 백종원은 이승원과 싸웠을 때, 그는 그의 결혼이 실수였나 생각헀다.
+  - 백종원은 이승원과 싸웠을 때, 그는 그의 결혼이 실수였나 생각했다.
     - Written way of saying "When Baek Jongwon and Lee Seungwon fought, Baek Jongwon doubted their marriage".
   - 보미는 어젯밤 자고 있을 때, (그녀는) 정말로 미국에서 그녀의 가족 없이 살 수도 있었나 생각했다.
     - Written way of saying "When Bomi was sleeping last night, she wondered if she could have really lived in the United States without her family".
   - 침을 맞아서 다 나았나 했는데 일어날 때 허리가 아직 아프다. 
     - Written way of saying "I got acupuncture and thought I was getting better, but my back still hurts when I wake up."
-
-## 
 
