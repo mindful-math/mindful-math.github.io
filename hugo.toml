@@ -5,11 +5,20 @@ enableRobotsTXT = true
 googleAnalytics = "G-9G7EGTLBT9"
 hasCJKLanguage = true
 title = 'mindful math'
-theme = 'hugo-texify2'
 
 [params]
 title="mindful math"
 description = "simple math, simple life."
+dateFormat = "January 2, 2006" 
+emphasisWithDots = true
+since = "2023"
+toc = false
+showWordCount = true
+showReadingTime = true
+rootFontSize = "120%"
+math = true
+enableDuckDuckGoSearchBox = false
+numberedSubtitles = false
 
 [[menu.main]]
 identifier = "post"

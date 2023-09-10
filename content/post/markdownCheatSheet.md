@@ -6,7 +6,7 @@ description = "masteringMarkdown"
 math = true
 +++
 
-A brief overview of Markdown capabilities.
+A overview of Markdown inspired by the [creator's post](https://daringfireball.net/projects/markdown/basics).
 <!--more-->
 
 - [heading {.unnumbered}](#heading-unnumbered)
