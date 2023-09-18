@@ -1,22 +1,23 @@
 +++
 author = "Someone"
-title = "ols and gradient descent"
+title = "ols descent"
 date = "2023-09-09"
 description = "interestingInterrelatedIdeas"
 math = true
 +++
 
-An algebraic relation between gradient descent and OLS.
+A mashup of gradient descent and least squares.
 <!--more-->
 
 - [audience](#audience)
 - [setup](#setup)
 - [problem](#problem)
-- [vector autoregressions tangent](#vector-autoregressions-tangent)
+- [autoregressions tangent](#autoregressions-tangent)
+- [lingering questions](#lingering-questions)
 
 ## audience
 This is written towards someone who has taken a first course in statistics alongside a first course in linear algebra (and time series wouldn't hurt). The main takeaway is:
-> Gradient descent applied to the squared loss for a linear model converges to the OLS solution **for a particular step size**.
+> Gradient descent applied to the squared loss for a linear model converges to the OLS solution **if your step size is small enough**.
 
 ## setup
 An engineer observes noisy observations of a linear model, 
@@ -47,9 +48,9 @@ $$ \frac{d X}{dt} \propto -\nabla_X f(X).$$
 
 If we discretize this, we get 
 
-$$ X_{k} - X_{k-1} = -\alpha \nabla_{X} f(X)\iff \underbrace{X_{k} = X_{k-1} - \alpha \nabla_{X} f(X)}_{\text{Gradient Descent!}}$$
+$$ X_{k} - X_{k-1} = -\eta \nabla_{X} f(X)\iff \underbrace{X_{k} = X_{k-1} - \eta \nabla_{X} f(X)}_{\text{Gradient Descent!}}$$
 
-where $\eta$ controls how big of a step we take - this is known as the learning rate.
+where $\eta$ controls how big of a step we take in the opposite direction of the gradient - this is known as the learning rate.
 
 Our engineer wants to use these dynamics to optimize the weight vector $w$! The engineer needs a function whose gradients help guide the process towards the minimum like the water cup. A natural shape to consider is a parabola whose n-dimensional extension is known as a paraboloid. The squared L2 norm accomplishes this:
 
@@ -63,7 +64,7 @@ If we apply these dynamics to the weight vector problem, we get
 
 $$ w_{k} \leftarrow w_{k-1} - \eta \underbrace{ X^{\intercal}(Xw_{k-1} - y)}\_{\nabla_{w} \mathcal{L}(w_{k-1}) }.$$
 
-TBH, here an engineer stops caring about the math and pops out an estimate for $w^*$. But we're not *just* engineers
+TBH, here an engineer stops caring about the math and pops out an estimate for $w^*$. But we're not *just* engineers.
 
 ## problem
 
@@ -123,23 +124,26 @@ $$
 
 But you may say why not then just set $\eta$ to be something super tiny so that it's nearly impossible to be greater than $2/\lambda_{\max}$ - well, that slows down convergence if we inch along. More discussion on this is another notebook. 
 
-## vector autoregressions tangent
+## autoregressions tangent
 
-A autoregressive equation is an iterative sequence: 
+A autoregressive equation is an iterative sequence that can be recursively solved: 
 
-$$ a_{k}\leftarrow \alpha a_{k-1}=\alpha (\alpha a_{k-2})=\alpha(\alpha (\alpha a_{k-3}))=\cdots .$$
+$$ a_{k}\leftarrow \alpha a_{k-1}=\alpha (\alpha a_{k-2})=\alpha(\alpha (\alpha a_{k-3}))=\cdots =\alpha^k a_0.$$
 
-It can be recursively expressed as $\alpha^{k}$ times the starting point $a_{0}$. This process is finite for all $k\in\mathbb{N}$ provided $|\alpha|\leq 1$. We can also visualize it below for several $\alpha$. The black and red $\alpha$ are less than one and they are quickly converging to zero whilst the green and blue $\alpha$ are diverging quite quickly.
+This is finite for all $k\in\mathbb{N}$ if $|\alpha|\leq 1$.Below, we visualize this for several $\alpha$.
 
 ![autoregressive-graphs](/autoregressive_overlay.gif)
 
-Remember that equation I told you to remember?! No - well, here it is  
+Remember an autoregressive equation from gradient descent?! No - well, it's this:
 
 $$ P(I-\eta D)^{k}P^{\intercal} w\_{0} + \sum\limits\_{i=0}^{k-1} P(I - \eta D)^{i}P^{\intercal} \times \eta X^{\intercal}y.$$
 
-This is a set of $n$ autoregressions packaged up in a vector (a simple vector autoregression (VAR))! Similar to the autoregressions above, the $(1-\eta\lambda_{i})$ for the $i$th equation is what controls whether or not the $i$th sequence converges. Obviously the goal of this notebook is to just plant the seed of interest for the intersection of dynamics, optimization, and geometry. More will come soon~
+This update forms a set of $n$ autoregressions! In this instance, the $(1-\eta\lambda_{i})$ for the $i$th equation controls if the sequence explodes or shrivels! 
 
-<div style="text-align: center;">
-<em>안녕히가세요!!</em>
-</div>
+## lingering questions
 
+1. Convergence guarantees for gradient descent? How do these relate to the geometry of the loss and step size chosen?
+2. What happens if we add a non-constant step size instead? How?
+3. What happens if we introduce other dynamics like acceleration/gravity present when water falls down? What other algorithms are useful for this kind of problem?
+4. What happens for non-square matrices? And could you explain conditioning better?
+5. What about implementation?!? Could you code this? No - that's for you to find out :)

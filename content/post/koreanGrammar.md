@@ -17,6 +17,8 @@ Extends [this](http://www.koreangrammaticalforms.com/) masterpiece on Korean gra
   - [examples](#examples-2)
 - [verb (+) 었나/았나 + 했다](#verb--었나았나--했다)
   - [examples](#examples-3)
+- [verb (+) ㄹ/을 + 것을 + 알았다](#verb--ㄹ을--것을--알았다)
+  - [examples](#examples-4)
 
 ## notation
 
@@ -82,3 +84,14 @@ In English, this means "I wondered/doubted that verb". Context should be added b
   - 침을 맞아서 다 나았나 했는데 일어날 때 허리가 아직 아프다. 
     - Written way of saying "I got acupuncture and thought I was getting better, but my back still hurts when I wake up."
 
+## verb (+) ㄹ/을 + 것을 + 알았다
+
+In English, this means "I knew that verb would likely happen".
+
+### examples
+  - 마크는 윤서랑 첫 키스를 했을 때 이미 결혼할 것을 알았다.
+    - Mark already knew he would get married when he kissed Yunseo for the first time.
+  - 은아는 서준이 정말 안 좋은 궁수라는 것을 알았지만 그녀는 그에게 말하고 싶지 않았다.
+    - Euna knew that Seojun was a really bad archer, but she didn't want to tell him. 
+  - 내가 떨어질 것을 미리 알고 있었어.
+    - I already knew that I would fail.
