@@ -89,8 +89,8 @@ In English, this means "I wondered/doubted that verb". Context should be added b
 In English, this means "I knew that verb would likely happen".
 
 ### examples
-  - 마크는 윤서랑 첫 키스를 했을 때 이미 결혼할 것을 알았다.
-    - Mark already knew he would get married when he kissed Yunseo for the first time.
+  - 헨리는 안나랑 첫 키스를 했을 때 이미 결혼할 것을 알았다.
+    - Henry already knew he would get married when he kissed Anna for the first time.
   - 은아는 서준이 정말 안 좋은 궁수라는 것을 알았지만 그녀는 그에게 말하고 싶지 않았다.
     - Euna knew that Seojun was a really bad archer, but she didn't want to tell him. 
   - 내가 떨어질 것을 미리 알고 있었어.
