@@ -19,6 +19,8 @@ Extends [this](http://www.koreangrammaticalforms.com/) masterpiece on Korean gra
   - [examples](#examples-3)
 - [verb (+) ㄹ/을 + 것을 + 알았다](#verb--ㄹ을--것을--알았다)
   - [examples](#examples-4)
+- [verb (+) /ㄴ/는 (+) 다니까](#verb--ㄴ는--다니까)
+  - [examples](#examples-5)
 
 ## notation
 
@@ -95,3 +97,16 @@ In English, this means "I knew that verb would likely happen".
     - Euna knew that Seojun was a really bad archer, but she didn't want to tell him. 
   - 내가 떨어질 것을 미리 알고 있었어.
     - I already knew that I would fail.
+
+## verb (+) /ㄴ/는 (+) 다니까
+
+In English, this means "I already said verb". If someone doesn't listen and the other is frustrated with having to repeat themselves, they can use this contraction or "verb (+) 고 + 하니까" (non-contractive). Don't use this with elders unless you want a whoopin.
+
+### examples
+  - 사람 1: "빨리 가자". 사람 2: "알겠어 - 잠깐만" (but they take forever). 사람 1: "야 - 빨리 가자니까"
+    - Person 1: Let's go quickly. Person 2: Alright - give me a sec. Person 1: Hey - I already told you let's go quickly.
+  - 아이: "엄마, 김치찌개 먹었어.". 엄마: "아직 배고파?". 아이: "엄마... 난 먹었다니까". 엄마: *아이를 떼리다*
+    - Kid: Mom, I ate Kimchi stew. Mom: Are you still hungry? Kid: Mom.. I told you I already ate. Mom: *Slaps kid*
+  - 아내: 이 것은 우리의 크리스마스 나무야! 남편: 이 것뭐야? 아내: 우리의 크리스마스 나무라니까...
+    - Wife: This is our Christmas tree! Husband: What is this? Wife: I told you already - it's our Christmas tree...
+
