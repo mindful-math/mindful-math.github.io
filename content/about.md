@@ -7,7 +7,7 @@ author = "mindful-math"
 +++
 
 ## about
-I'm just trying to pass through life in an equable flow of happiness. This blog tries to archive some knowledge accrued along this stochastic process. 
+I'm just trying to pass through life in an equable flow of happiness. This blog tries to archive some knowledge accrued along this stochastic process. Minimalism guides the storage of information here. 
 
 > When artists create pictures and thinkers search for laws and formulate thoughts, it is in order to salvage something from the great dance of death, to make something last longer than we do.
 >
