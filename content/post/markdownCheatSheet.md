@@ -30,7 +30,7 @@ A overview of Markdown inspired by the [creator's post](https://daringfireball.n
  [x] Write a mediocre markdown cheatsheet with internet information 
 - Sub-sub-headings are created with triple hashes: ### phrase here
 - Strikethrough text are created with double tildes: \~\~ phrase here \~\~
-- Quotes can be added with using this character, ">", before the sentence:
+- Quotes can be added with the character, ">", before a sentence:
 > “L'harmonie la plus douce est le son de la voix de celle que l'on aime.”
 >
 > -- Jean de La Bruyère, Les Caractères

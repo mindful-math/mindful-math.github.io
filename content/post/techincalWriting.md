@@ -1,16 +1,22 @@
 +++
 author = "Someone"
-title = "technical writing"
+title = "writing"
 date = "2023-08-25"
 description = "technicalTricks"
 math = true
 +++
 
-A overview of tricks discussed by Knuth [in this nice piece](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf).
+A overview of tricks discussed by Knuth [in this nice piece](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf). I will expand on this with Halmos' thoughts as well.
 <!--more-->
 
+- [do not number lists if information isn't ranked](#do-not-number-lists-if-information-isnt-ranked)
+- [avoid consecutively using "this", "also", "it", etc.](#avoid-consecutively-using-this-also-it-etc)
+- [do not use "homework paper" style (i.e. just listing equations)](#do-not-use-homework-paper-style-ie-just-listing-equations)
+- [don’t use the same notation for two different things (and the converse)](#dont-use-the-same-notation-for-two-different-things-and-the-converse)
+- [go away with inline horizontal mathematical fractions (and complex exponents)](#go-away-with-inline-horizontal-mathematical-fractions-and-complex-exponents)
 
-## do not number lists if information isn't ranked
+
+### do not number lists if information isn't ranked
 
 > Ordered lists are used if there is a logical ordering between bullets (time, importance, score, etc.). Using ordered lists with unordered elements (and vice-versa) can easily confuse the reader.
 
@@ -45,7 +51,7 @@ Here are some tricks for mathematical writing:
 </details>
 <br>
 
-## avoid consecutively using "this", "also", "it", etc.
+### avoid consecutively using "this", "also", "it", etc.
 
 > If repeated too often, a reader can lose track of an author's message. Variable assignment in programming follows a similar cardinal rule - frequent reassignment of variables causes debugging nightmares.
 
@@ -54,7 +60,7 @@ Here are some tricks for mathematical writing:
 
 **good**:
 
-The sum of deleted intervals in the Cantor set is geometrically decaying whose value is computed below:
+The sum of deleted intervals in the Cantor set is geometrically decaying,
 
 $$ \sum\limits_{i=0}^\infty \frac{1}{3}\left(\frac{2}{3}\right)^i = \frac{1/3}{1-2/3} = 1.$$
 
@@ -66,14 +72,14 @@ This forms a geometrically decaying series and its sum is given below
 
 $$ \sum\limits_{i=0}^\infty \frac{1}{3}\left(\frac{2}{3}\right)^i = \frac{1/3}{1-2/3} = 1.$$
 
-This shows that this set has measure zero...
+This shows that this set has measure zero.
 
 </details>
 <br>
 
-## do not use "homework paper" style (i.e. just listing equations)
+### do not use "homework paper" style (i.e. just listing equations)
 
-> While seemingly obvious, I see far too many bland papers with equations/proofs listed. Many readers skim over formulas on their first reading of your text. Commentary interwoven with formulas significantly boosts comprehension. If a formula is truly "trivial" to the target audience, it's fine to exclude this commentary
+> Many readers skim over formulas on their first reading of your text. Commentary interwoven with formulas significantly boosts comprehension. If a formula is truly "trivial" to the target audience, then and only then is it fine to exclude.
 
 <details>
 <summary> examples </summary>
@@ -107,22 +113,48 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 </details>
 <br>
 
-## don’t use the same notation for two different things (and the converse)
+### don’t use the same notation for two different things (and the converse)
 
-> Notation is really an alphabet and in research, our goal is to use the most common, clear, and concise alphabet to maximize their audience and comprehension.
- 
+> In research, our goal should be to maximize the span of our work while minimizing redundancies and the size of our notation. Repeated, unclear, or nonstandard notation exponentially increases the chance that a paper will not be read. The [Zen of Python](https://peps.python.org/pep-0020/) applies here as well.
+
 <details>
 <summary> examples </summary>
 
 **good**:
 
-- asdf
+- $\ln(\ln(n))\cdot \left(\sum\limits_{i=1}^n \binom{n}{i}x^i\right)\cdot \left(\sum\limits_{j=1}^n  jx^j\right)$
+- $\sum\limits_{i=1}^{\lfloor m/2\rfloor} \sum\limits_{j=2i}^{m} \prod\limits_{k=0}^{i-1} \binom{m-2k}{2} j^{m-2}$
 
 **bad**:
 
-- $\log\left(\log(n)\times i\times j\times k\right)=\infty$
-- $\log$ has what base ($2$, $e$, etc.)?!? Does $\times$ refer to the cross product and multiplication here? 
+- $\log\left(\log(n)\times i\times j\times k\right)\cdot \left(\sum\limits_{i=1}^n \binom{n}{i}x^i\right)\cdot \left( x^2 + 2x^2 + \cdots nx^n \right)$
+  - $\log$ here has what base ($2$, $e$, etc.)?
+  - Does $\times$ refer to the cross product and multiplication here? 
+  - Does $i$ refer to the standard basis vector $(1,0,0)$ and/or a natural number under the summation?
+  - The above also misses consistency by using sigma notation as well as an expanded out summation.
 
 </details>
 <br>
+
+### go away with inline horizontal mathematical fractions (and complex exponents)
+
+> Horizontal fractions shrinks the font and makes it very difficult to read. Slashes are perfect alternatives in this case.
+
+<details>
+<summary> examples </summary>
+
+**good**: 
+
+- $(1-x)/(1+\cos(x))$ is a perfect counterexample to this statement.
+- This kernel, $\exp(-|x-\mu|^3)$, belongs to the exponential power distributions.
+
+**bad**: 
+
+- $\frac{1-x}{1+\cos(x)}$ is a perfect counterexample to this statement.
+- This kernel, $e^{-|x-\mu|^3}$, belongs to the exponential power distributions.
+
+</details>
+<br>
+
+
 
