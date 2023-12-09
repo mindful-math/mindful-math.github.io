@@ -6,17 +6,26 @@ description = "technicalTricks"
 math = true
 +++
 
-A overview of tricks discussed by Knuth [in this nice piece](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf). I will expand on this with Halmos' thoughts as well.
+A overview of tricks discussed by [Knuth](https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf) and [Halmos](https://faculty.washington.edu/heagerty/Courses/b572/public/HalmosHowToWrite.pdf). 
 <!--more-->
 
-- [do not number lists if information isn't ranked](#do-not-number-lists-if-information-isnt-ranked)
-- [avoid consecutively using "this", "also", "it", etc.](#avoid-consecutively-using-this-also-it-etc)
-- [do not use "homework paper" style (i.e. just listing equations)](#do-not-use-homework-paper-style-ie-just-listing-equations)
-- [don’t use the same notation for two different things (and the converse)](#dont-use-the-same-notation-for-two-different-things-and-the-converse)
-- [go away with inline horizontal mathematical fractions (and complex exponents)](#go-away-with-inline-horizontal-mathematical-fractions-and-complex-exponents)
+- [tactical advice](#tactical-advice)
+  - [do not number lists if information is not ranked](#do-not-number-lists-if-information-is-not-ranked)
+  - [avoid consecutively using "this", "also", "it", etc.](#avoid-consecutively-using-this-also-it-etc)
+  - [do not list flavorless equations (homework style)](#do-not-list-flavorless-equations-homework-style)
+  - [do not use the same notation for two different things (and the converse)](#do-not-use-the-same-notation-for-two-different-things-and-the-converse)
+  - [go away with inline horizontal mathematical fractions (and complex exponents)](#go-away-with-inline-horizontal-mathematical-fractions-and-complex-exponents)
+  - [edit in spirals](#edit-in-spirals)
+- [broad advice](#broad-advice)
+  - [say something substantial](#say-something-substantial)
+  - [do not introduce too many ideas](#do-not-introduce-too-many-ideas)
+  - [write to a very specific audience in mind](#write-to-a-very-specific-audience-in-mind)
 
+## tactical advice
 
-### do not number lists if information isn't ranked
+These subsections enumerate concrete issues you can lint your papers for.
+
+### do not number lists if information is not ranked
 
 > Ordered lists are used if there is a logical ordering between bullets (time, importance, score, etc.). Using ordered lists with unordered elements (and vice-versa) can easily confuse the reader.
 
@@ -53,7 +62,7 @@ Here are some tricks for mathematical writing:
 
 ### avoid consecutively using "this", "also", "it", etc.
 
-> If repeated too often, a reader can lose track of an author's message. Variable assignment in programming follows a similar cardinal rule - frequent reassignment of variables causes debugging nightmares.
+> If repeated too often, a reader can lose track of an author's message. Variable assignment in programming follows a similar cardinal rule - frequent reassignment of variables causes confusion and chaos.
 
 <details>
 <summary> examples </summary>
@@ -77,7 +86,7 @@ This shows that this set has measure zero.
 </details>
 <br>
 
-### do not use "homework paper" style (i.e. just listing equations)
+### do not list flavorless equations (homework style)
 
 > Many readers skim over formulas on their first reading of your text. Commentary interwoven with formulas significantly boosts comprehension. If a formula is truly "trivial" to the target audience, then and only then is it fine to exclude.
 
@@ -113,7 +122,7 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 </details>
 <br>
 
-### don’t use the same notation for two different things (and the converse)
+### do not use the same notation for two different things (and the converse)
 
 > In research, our goal should be to maximize the span of our work while minimizing redundancies and the size of our notation. Repeated, unclear, or nonstandard notation exponentially increases the chance that a paper will not be read. The [Zen of Python](https://peps.python.org/pep-0020/) applies here as well.
 
@@ -156,5 +165,84 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 </details>
 <br>
 
+### edit in spirals
 
+> It is important to edit your paper or book in spirals. Write section 1, break, rewrite section 1 and write section 2, break, etc. I have never heard of this before Halmos' paper, but spiraling edits is conducive to creating flow (readers care primarily about flow in the earlier chapters/sections of course).
 
+<details>
+<summary> examples </summary>
+
+- In each spiral, rewrite and do NOT break out your red pen and start editing! Editing occurs right before you hand it off to colleagues/journals for submission and right after their feedback.
+- Halmos recommends that in each NEW section, you write your heart out and violate all the principles outlined here. Just write and write until you cannot, but make sure you end the day on a good note to kickstart the engine for tomorrow.
+- Halmos explains this strategy [here](https://faculty.washington.edu/heagerty/Courses/b572/public/HalmosHowToWrite.pdf) on page 9/30.
+
+</details>
+<br>
+
+## broad advice
+These subsections illustrate general principles you should carry in mind when writing.
+
+### say something substantial
+
+> The problem with the internet and 21st century research summarized in three words. It is hard to say something about nothing; however, many researchers are now, more than ever, incentivized by tenure and promotions to crank out papers regardless of substance.
+<details>
+<summary> examples </summary>
+
+**good**:
+
+- [An Introduction to Probability Theory and Its Applications](https://archive.org/details/dli.ernet.5666/page/n13/mode/2up) by William Feller is my personal favorite mathematics book. It's unbelievably substantive and well-written and I highly recommend for anyone interested in probability.
+- [Theory of Statistical Estimation](https://digital.library.adelaide.edu.au/dspace/bitstream/2440/15207/1/85.pdf) by Ronald Fisher is a beautifully written exposition on classical statistics (consistency, sufficiency, etc.). To be honest, most modern day statistics books just copy paste what he writes here.
+- [The Extent and Consequences of P-Hacking in Science](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106&) is a surprisingly great read on p-hacking in the sciences. There is a clear message the authors set out to achieve. 
+
+**bad**:
+
+AI is so bloated - the field is becoming an empirical mess. Here are just two examples violating this principle.
+- [Deep Learning for COVID-19](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9136710) is an example paper that just rambles on and on for 20 pages with nothing novel to say.
+- [TA-GATES](https://proceedings.neurips.cc/paper_files/paper/2022/file/d0ac28b79816b51124fcc804b2496a36-Paper-Conference.pdf) describes an encoding scheme for neural architectures. I'm so tired of reading empirical papers like this that just throw schemes on the wall and name them in an attempt to satisfy their university's publishing requirements. This doesn't necessarily violate the principle of having something to say, but concisely saying it.
+
+</details>
+<br>
+
+### do not introduce too many ideas
+
+> Keep it simple and stupid (KISS). A mile wide and an inch deep is not the goal - no one cares you can write "Hello World" in 150 programming languages. This caution is primarily directed towards authors writing books.
+
+<details>
+<summary> examples </summary>
+
+**good**:
+
+- [An Introduction to Probability Theory and Its Applications](https://archive.org/details/dli.ernet.5666/page/n13/mode/2up) by William Feller is also amazing in this regard. He glides and links many disparate (at the time the book was published) ideas into one unifying theory full of lucid examples and exercises.
+- [Ron Rivest's](https://dl.acm.org/doi/pdf/10.1145/359997.360000) discussion on self-organizing search heuristics has a very clear linear flow without spontaneous ideas floating around.
+
+**bad**:
+
+- [Elements of Statistical Learning Theory](https://link.springer.com/book/10.1007/978-0-387-84858-7) or ESL by Hastie, Tibshirani, and Friedman is a mess to be honest. Albeit a controversial choice, ESL introduces too many surface level ideas without any substance. It cannot even serve as an encyclopedia for researchers because it misses a zillion ideas introduced since then.
+
+</details>
+<br>
+
+### write to a very specific audience in mind
+
+> You need to pick a specific audience like professional statisticians, undergraduate math majors, your neighbors, etc. This guides your formality, tone, how much motivation you give the reader, the details you choose to show and hide, etc. When writing a book or article, state the audience very clearly upfront unless the audience is 100% implicitly understood (i.e. publishing in a prestegious math journal).
+
+<details>
+<summary> examples </summary>
+
+**good**:
+
+- [Donald Knuth's](https://www.taylorfrancis.com/books/mono/10.1201/9781315139470/classification-regression-trees-leo-breiman) "The Art of Computer Programming" series is a phenomenal exposition for beginning graduate or junior students studying math and/or computer science. 
+- [An Introduction to Probability Theory and Its Applications](https://archive.org/details/dli.ernet.5666/page/n13/mode/2up) by William Feller - he writes "... [I hope that this book] will continue to find readers who read it merely for enjoyment and enlightment". When a author writes a line like this, you know they are writing from their heart and the book is bound to be a blast. Furthermore, Feller like Knuth, had a sea of useful critics like Doob, Donsker, and Chung to help him shape the book into what it now is. The moral of these two stories is that you follow this process until you reach 3. successfully or death (whichever comes first):
+
+1. Find a target and a good crowd of experts that know this target
+2. Shoot 
+3. In the unlikely chance you hit your target, terminate the algorithm.
+4. Otherwise, listen to expert advice. Get set up again and go back to 1 or 2.
+
+**bad**:
+
+- [Walter Rudin's](https://maa.org/press/maa-reviews/principles-of-mathematical-analysis) "Principles of Mathematical Analysis" is a great book and a rite of passage for most math students; however, its audience needs to be more concretely laid out. A student should have taken a proofs course and probably a set theory or point-set topology course prior to partaking in this adventure. The book is a good example of setting a target but hitting something else.
+- [Aminian and Xu's](https://www.amazon.com/Machine-Learning-System-Design-Interview/dp/1736049127) "Machine Learning System Design Interview" is a horrible read. It's surface level architecture notes NOT useful for engineers interested in senior architect roles. 
+
+</details>
+<br>
