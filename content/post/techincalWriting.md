@@ -1,7 +1,7 @@
 +++
 author = "Someone"
 title = "writing"
-date = "2023-08-25"
+date = "2023-12-09"
 description = "technicalTricks"
 math = true
 +++
@@ -59,6 +59,7 @@ Here are some tricks for mathematical writing:
 3. Do not use logical symbols like $\forall, \exists, \therefore$ unless you're working in logic - replace with the corresponding English words "for all", "there exists", "therefore"
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### avoid consecutively using "this", "also", "it", etc.
 
@@ -85,6 +86,7 @@ This shows that this set has measure zero.
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### do not list flavorless equations (homework style)
 
@@ -121,6 +123,7 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### do not use the same notation for two different things (and the converse)
 
@@ -144,6 +147,7 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### go away with inline horizontal mathematical fractions (and complex exponents)
 
@@ -164,6 +168,7 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### edit in spirals
 
@@ -178,6 +183,7 @@ $$ \frac{24^{(n-2)^3}(n-2)^3!\times 4^{6(n-2)^2}\left(6(n-2)^2\right)!\times 2^{
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ## broad advice
 These subsections illustrate general principles you should carry in mind when writing.
@@ -202,6 +208,7 @@ AI is so bloated - the field is becoming an empirical mess. Here are just two ex
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### do not introduce too many ideas
 
@@ -221,6 +228,7 @@ AI is so bloated - the field is becoming an empirical mess. Here are just two ex
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
 
 ### write to a very specific audience in mind
 
@@ -246,3 +254,4 @@ AI is so bloated - the field is becoming an empirical mess. Here are just two ex
 
 </details>
 <br>
+<hr style="border:1.5px solid black">
