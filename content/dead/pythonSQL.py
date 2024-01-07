@@ -1,4 +1,5 @@
 from collections.abc import Iterable
+from enum import Enum
 from uuid import uuid4
 
 
@@ -13,6 +14,87 @@ def create_dict_with_duplicates(dict1: dict, dict2: dict) -> dict:
             new_dict[key] = value
 
     return new_dict
+
+
+class Table(list[dict]):
+    """A SQL table in Python"""
+
+    def INSERT(self, values: list[dict]) -> None:
+        """Inserts VALUES into the given Table.
+        
+        I'm assuming VALUES satisfy some schema rather
+        than checking them before entering into the table.
+        """
+        self.extend(values)
+
+    def UPDATE(self, set_conditions: dict, where_conditions: dict) -> None:
+        """Mimics the SQL UPDATE function.
+
+        SET_CONDITIONS refer to the columns and values you want changed while
+        the WHERE_CONDITIONS refer to the columns and values that determine 
+        which rows you will apply the SET_CONDITIONS to.
+        """
+        for i, row in enumerate(self):
+            if all(row[key] == value for key, value in where_conditions.items()):
+                for key, value in set_conditions.items():
+                    self[i][key] = value
+
+    def DELETE(self, where_conditions: dict) -> None:
+        """Mimics the SQL DELETE function.
+
+        Deletes rows from table satisfying WHERE_CONDITIONS. Note
+        that WHERE_CONDITIONS can be empty leading to all rows being
+        deleted. Also note that deleting a row here does not lead to 
+        index fragmentation like in SQL, so it's idealistic.
+        """
+        for i, row in enumerate(self):
+            if all(row[key] == value for key, value in where_conditions.items()):
+                self.pop(i)
+
+    def ADD(self, column_name: str, fill_null: bool = True, default=None) -> None:
+        """Mimics the SQL ALTER TABLE ADD (column) (NOT) NULL (DEFAULT).
+        
+        By default, we fill the column values in the table with None, but a 
+        default value can be filled instead.
+        """
+        fill_value = None
+        if not fill_null:
+            fill_value = default
+
+        for i in range(len(self)):
+            self[i][column_name] = fill_value
+
+    def DROP(self, column_name: str) -> None:
+        """Mimics the SQL ALTER TABLE DROP (column).
+        """
+        for i in range(len(self)):
+            del self[i][column_name]
+
+    def RENAME(self, column_name: str, new_name: str) -> None:
+        """Mimics the SQL ALTER TABLE RENAME COLUMN (COLUMN_NAME) to (NEW_NAME)
+        """
+        for i in range(len(self)):
+            self[i][new_name] = self[i].pop(column_name)
+
+
+class Database(dict[str, Table]):
+    """A SQL Database in Python"""
+
+    def __init_subclass__(cls) -> None:
+        return super().__init_subclass__()
+
+    def ALTER_TABLE(self, table_name: str, alter_kind: str, **kwargs) -> None:
+        """Mimics the SQL ALTER TABLE set of methods. In particular, users pass
+        an ALTER_KIND: enum('ADD', 'DROP', 'RENAME') alongside their respective 
+        kwargs: column_name, new_name, etc.
+        """
+        assert alter_kind.upper() in ['ADD', 'DROP', 'RENAME'], "ALTER_KIND is enumerated!"
+        alter_method = getattr(self[table_name], alter_kind.upper())
+        alter_method(**kwargs)
+
+    def CREATE_TABLE(self, table_name: str, )
+
+
 
 
 class SQL:

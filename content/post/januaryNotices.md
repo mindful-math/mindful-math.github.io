@@ -24,7 +24,7 @@ $$ \mathrm{div } \nabla,\qquad \frac{1}{\sqrt{\det g}} \partial_{x_i}\left( \sqr
 - The Levi-Civita connection - an operator that allows us to differentiate vector fields on a manifold (didn't get this far in calculus lol)
 - The Hodge Laplacian (I remember 1-forms faintly, but not this guy):
 
-$$ -(d\; d^* + d^*d)\alpha,\qquad \alpha= v^b $$
+$$ -(d d^* + d^*d)\alpha,\qquad \alpha= v^b $$
 
 - What are musical isomorphisms that move between vector fields and 1-forms(!!)? 
 - Deformation tensors:
