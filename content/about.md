@@ -7,7 +7,6 @@ author = "mindful-math"
 +++
 
 ## about
-This blog tries to archive some knowledge accrued along this stochastic process. I try to be as minimalistic as possible. 
 
 > When artists create pictures and thinkers search for laws and formulate thoughts, it is in order to salvage something from the great dance of death, to make something last longer than we do.
 >
@@ -24,4 +23,8 @@ This blog tries to archive some knowledge accrued along this stochastic process.
 > I am composed of the formal and the material; and neither of them will perish into nonexistence, as neither of them came into existence out of nonexistence. Every part of me then will be reduced by change into some part of the universe, and so on forever.
 >
 > -- Marcus Aurelius 
+
+> A man of true science uses but few hard words, and those only when none other will answer his purpose; whereas the smatterer in science... thinks that by mouthing hard words he understands hard things.
+>
+> -- Herman Melville
 

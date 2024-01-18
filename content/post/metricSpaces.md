@@ -6,11 +6,11 @@ description = "limitingLimitsLore"
 math = true
 +++
 
-A review of Rudin's terrible definition of a metric space. 
+A bad and good definition of a metric space. 
 <!--more-->
 
 - [definitions](#definitions)
-- [critique](#critique)
+- [thoughts](#thoughts)
 - [references](#references)
 
 ## definitions
@@ -40,15 +40,9 @@ A review of Rudin's terrible definition of a metric space.
 > The metric space itself, i.e. the pair $X$ and $\rho$, will usually be denoted by $R=(X,\rho)$.
 
 
-## critique
+## thoughts
 
-First thought - how is [^1] the most popular book for a first course in analysis? The issue (maybe speaking from too much time doing software) is that it is not modular nor expository. There should first be a definition of a metric (a tool for measuring and defining the geometry on a set). Then afterwards, the following one-liner would define a metric space.
-
-> A metric space is a tuple consisting of a set and a metric whose domain is that set.
-
-Rudin's second chapter (and this definition) also suffer from a lack of examples - [^2], [^3], and even Terrance Tao's analysis book provide a lot of examples and non-examples of metrics and metric spaces. 
-
-Along the lines of Halmos and Knuth, I think that mathematical expository writing should use as much english language as possible rather than symbolic manipulation in the presentation of such fundamental concepts.
+Rudin's[^1] definition is not modular and too cryptic. I think Kolmogorov was on a better path - first define a metric and then introduce a metric space as a tuple of a set and its metric. Taking inspiration from Knuth and Halmos, I also think Rudin's definition should be fleshed out with more english - it's an exposition of analysis, not a wikipedia entry...
 
 ## references
 
