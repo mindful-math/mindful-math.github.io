@@ -16,8 +16,8 @@ Takeaways from AMS's February edition of the [Notices](https://www.ams.org/journ
 
 ## new
 
-- The Isbell adjunction: $F^*: \text{Set}^{C^{op}} \leftrightarrows (\text{Set}^D)^{op}: F_*$
-- The nuclei of $f$ are objects fixed up to isomorphism under the composite functors $F^*F_*$ and $F_*F^*$ (analogous to left and right singular vectors of matrices)
+- The Isbell adjunction: $F^{\*}: \text{Set}^{C^{op}} \leftrightarrows (\text{Set}^D)^{op}: F_{\*}$
+- The nuclei of $f$ are objects fixed up to isomorphism under the composite functors $F^{\*}F_{\*}$ and $F_{\*}F^{\*}$ (analogous to left and right singular vectors of matrices)
 - Factorizing a tesnor in the tensor product of vector spaces $V_1\otimes V_2\otimes\cdots\otimes V_n$ into what is called a **tensor train/matrix product state** can be interpreted as a sequence of $n-1$ compatible truncated SVDs
 - Enriched category theory; a version of category theory when the set $C(x,y)$ of morphisms between two objects is no longer a set (it couuld be a partially ordered set, an Abelian group, or a topological space)
 - Homotopical Combinatorics in entirety is new to me. It studies "combinatorial structures encoding aspects of equivariant homotopy theory, equivariant algebra, and abstract homotopy theory".
