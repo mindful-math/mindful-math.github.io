@@ -27,6 +27,11 @@ class LinkedList~object~{
   setitem() void
   reverse() LinkedList
   len() int
+  repr() str
+  str() str
+  iter() Generator
+  sum() int | float
+  bytes() bytes
   delete() void
   flatten() list
 }
@@ -127,7 +132,7 @@ class LinkedList(object):
             raise IndexError
         curr = LinkedList(curr.rest.first, curr.rest.rest)
 
-    def to_flat_list(self) -> list:
+    def flatten(self) -> list:
         if not self:
             return []
         elif isinstance(self.first, LinkedList):
