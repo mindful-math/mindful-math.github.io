@@ -16,9 +16,11 @@ Takeaways from AMS's February edition of the [Notices](https://www.ams.org/journ
 
 ## new
 
-
+- The Isbell adjunction: $F^*: \text{Set}^{C^{op}} \leftrightarrows (\text{Set}^D)^{op}: F_*$
+- The nuclei of $f$ are objects fixed up to isomorphism under the composite functors $F^*F_*$ and $F_*F^*$ (analogous to left and right singular vectors of matrices)
+- Factorizing a tesnor in the tensor product of vector spaces $V_1\otimes V_2\otimes\cdots\otimes V_n$ into what is called a **tensor train/matrix product state** can be interpreted as a sequence of $n-1$ compatible truncated SVDs
 - Enriched category theory; a version of category theory when the set $C(x,y)$ of morphisms between two objects is no longer a set (it couuld be a partially ordered set, an Abelian group, or a topological space)
-- Homotopical Combinatorics in entirety is new to me
+- Homotopical Combinatorics in entirety is new to me. It studies "combinatorial structures encoding aspects of equivariant homotopy theory, equivariant algebra, and abstract homotopy theory".
 - [Zero forcing](https://arxiv.org/pdf/2204.01810.pdf) sounds a lot like the study of cellular automata
 - [Category Theory for AI](https://cats.for.ai/) is just a plea to use more algebraic tools to describe and compose AI models
 - Disjuct matrices (another word for matrices with binary entries)
@@ -28,8 +30,6 @@ Takeaways from AMS's February edition of the [Notices](https://www.ams.org/journ
 - In that article, they also have the fun description of a DNN:
 $$ f:\mathbb{R}^{n} \xrightarrow{f_1} \mathbb{R}^{n_1}\cdots \xrightarrow{f_K} \mathbb{R}^{n_K} \xrightarrow{g} \mathbb{R}^m $$
 where $f_i(x)=\sigma(M_i x + b_i)$ and $\sigma$ is a real-valued "activation" function.
-
-
 
 
 ## review
@@ -44,13 +44,15 @@ where $f_i(x)=\sigma(M_i x + b_i)$ and $\sigma$ is a real-valued "activation" fu
 - Both [^1] and [^2] give an overview of compressed sensing - even Terrance Tao has worked on this problem.
 - Posets
 - Meet-semilattices
+- Profunctors; a set-valued functor $f: C^{\text{op}}\times D\rightarrow \text{Set}.$
+- Currying; I assume the authors are describing composition - "By simple currying, $m$ defines functions $X\rightarrow k^Y$ and $Y\rightarrow k^X$ defined by $x\mapsto m(x,-)$ and $y\mapsto m(-,y)$".
 
 
 ## research
 
 - I would like to know how often the assumption that the measurement matrix $A$ is "an information-preserving projection or a bi-Lipschitz linear metric space embedding of all $k$-sparse vectors into $\mathbb{R}^m$" where it is information preserving so long as it satisfies the restricted isometry property and the nullspace property. This sounds like total BS... you cannot get sparse, linear, and information preserving with test data... Come on now - they should at least explain that the solution rapidly destabilizes if these conditions are not met and you're left with inconclusive evidence of what the signal is.
 - Are there equivalent formulations of zero-forcing? Can we setup some kind of recursive scheme or is this similar to backpropagation? It feels very related to many differently named objects in different fields.
-- 
+  
 
 ## references
 
