@@ -17,29 +17,40 @@ Takeaways from AMS's February edition of the [Notices](https://www.ams.org/journ
 ## new
 
 
-- Homotopical Combinatorics in entirety is new to me...
-- [Zero forcing](https://arxiv.org/pdf/2204.01810.pdf) which sounds a lot like the study of cellular automata; read the article again as it was good
-- [Category Theory for AI](https://cats.for.ai/) is just a plea to use more algebraic tools to describe and compose AI models; the article in AMS that mentions it, "The Structure of Meaning in Language: Parallel Narratives in Linear Algebra and Category Theory", is worth reading again on linear algebra and embeddings
+- Enriched category theory; a version of category theory when the set $C(x,y)$ of morphisms between two objects is no longer a set (it couuld be a partially ordered set, an Abelian group, or a topological space)
+- Homotopical Combinatorics in entirety is new to me
+- [Zero forcing](https://arxiv.org/pdf/2204.01810.pdf) sounds a lot like the study of cellular automata
+- [Category Theory for AI](https://cats.for.ai/) is just a plea to use more algebraic tools to describe and compose AI models
 - Disjuct matrices (another word for matrices with binary entries)
-- Checkout [iterative hard thresholding](https://arxiv.org/pdf/0805.0510.pdf)
-- Lossless expander graphs
+- [Iterative hard thresholding](https://arxiv.org/pdf/0805.0510.pdf), [orthogonal matching pursuit](https://www.di.ens.fr/~mallat/papiers/MallatPursuit93.pdf), and [compressive sampling matching pursuit](https://www.sciencedirect.com/science/article/pii/S1063520308000638) are three popular algorithms aimed at finding sparse decompositions. The last algorithm's paper read the most smoothly for me (someone who does not know much about compression)
+- Quantum control theory
+- I like this idea: "When considering a mathematical object $X$ that has little or incomplete structure, one can replace $X$ by something like 'functions on $X$' which will have considerably more structure than $X$... The first example that comes to mind is $k^X$, the set of functions on a set $X$ valued in a field $k$, which forms a vector space..."
+- In that article, they also have the fun description of a DNN:
+$$ f:\mathbb{R}^{n} \xrightarrow{f_1} \mathbb{R}^{n_1}\cdots \xrightarrow{f_K} \mathbb{R}^{n_K} \xrightarrow{g} \mathbb{R}^m $$
+where $f_i(x)=\sigma(M_i x + b_i)$ and $\sigma$ is a real-valued "activation" function.
+
 
 
 
 ## review
 
-- Restricted Isometry Problem (RIP): 
+- Grpah theory in general; I need to review syntax and generate many examples for each one
+- Integer linear programs (ILP) & Boolean satisfiability problems (SAT) are starting to fade from memory
+- Electrical power networks and graph representations (as an example to follow through)
+- Restricted Isometry Property (RIP): 
   $$(1-\delta_k)\lVert x \rVert_{p}^{p} \leq \lVert Ax \rVert_{p}^{p}\leq (1+\delta_k)\lVert x \rVert_{p}^{p}$$
 - Non-negative least absolute deviation (like LASSO but unconstrained): 
   $$\hat{x} = \arg\min_{z\geq 0} \lVert Az-y \rVert_{1}$$
-- Compressed sensing sounds like linear algebra plus numerical analysis (or dimension reduction or encoder-decoder schemes or information theory or ...). You take a big vector, find some compression (or linear embedding) for the vector, and sometimes you want to reconstruct the original vector. Both [^1] and [^2] give an overview of this.
+- Both [^1] and [^2] give an overview of compressed sensing - even Terrance Tao has worked on this problem.
 - Posets
 - Meet-semilattices
 
 
 ## research
 
-- Not much...
+- I would like to know how often the assumption that the measurement matrix $A$ is "an information-preserving projection or a bi-Lipschitz linear metric space embedding of all $k$-sparse vectors into $\mathbb{R}^m$" where it is information preserving so long as it satisfies the restricted isometry property and the nullspace property. This sounds like total BS... you cannot get sparse, linear, and information preserving with test data... Come on now - they should at least explain that the solution rapidly destabilizes if these conditions are not met and you're left with inconclusive evidence of what the signal is.
+- Are there equivalent formulations of zero-forcing? Can we setup some kind of recursive scheme or is this similar to backpropagation? It feels very related to many differently named objects in different fields.
+- 
 
 ## references
 
