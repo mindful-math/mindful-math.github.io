@@ -39,8 +39,6 @@ class LinkedList~object~{
 
 ## result
 
-And here's the result :). 
-
 ```python
 class LinkedList(object):
 
