@@ -9,10 +9,8 @@ math = true
 Some refreshments on divisibility stemming from [this book](https://bookstore.ams.org/mcl-25).
 <!--more-->
 
-- [new](#new)
-- [review](#review)
-- [research](#research)
-- [references](#references)
+- [rules](#rules)
+- [problems](#problems)
 
 In all of these cases, I am just working in base 10. I rediscovered how fun arithmetic is - these proofs were fun to come up with! Although written for myself, if you stumble on this article, I recommend trying them out for yourself (unless you've already gone through a first course in number theory).
 
@@ -40,9 +38,13 @@ for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Note that $M$ is divisi
 <summary> proof </summary>
 Given a number $x$, we can write it out as
 
-$$ x = \sum\limits_{i=0}^n 10^i a_i =\cdots $$
+$$ x = \sum\limits_{i=0}^n 10^i a_i = \underbrace{\sum\limits_{i=0}^n (10^i-1)a_i}\_{M} + \underbrace{\sum\limits_{i=0}^n a_i}\_{N}.$$
 
-for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. 
+for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Thus $x|3$ iff it divides both $M$ and $N$. It suffices to show that $M|3$ as $N|3$ is our divisibility rule. Notice that 
+
+$$ \sum\limits_{i=0}^n (10^i-1)a_i =  (10-1)\sum\limits_{i=0}^n \sum\limits_{j=0}^{i-1} 10^j a_i$$
+
+which tells us that $M|3$ as there is a factor of $9$.
 
 </details>
 <br>
@@ -80,11 +82,35 @@ for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Notice that as $M|5$, a
 
 <details>
 <summary> proof </summary>
-This just follows from factorization
+This just follows from factorization as
 
 $$\frac{x}{6}=\frac{x}{2\cdot 3}=\frac{x}{2}\cdot \frac{x}{3}.$$
 
-To be continued...
+</details>
+<br>
+<hr style="border:1.5px solid black">
+
+> A number is divisible by 8 iff its last three digits are divisible by 8.
+
+<details>
+<summary> proof </summary>
+Note that $10/8=1.25$, $100/8=12.5$, and $200/8=25$ implying that $1000|8$. The rest of the proof mirrors our divisibility rule for 4.
+
+</details>
+<br>
+<hr style="border:1.5px solid black">
+
+> A number is divisible by 11 iff the sum of digits in the evens place minus the sum of digits in the odd places is divisible by 11 or 0.
+
+<details>
+<summary> proof </summary>
+This is a bit complicated, but the idea is somewhat similar to what we did with 3 and 9 except that we end up with an alternating series that we need to break up: $10^ia_i=(10+1)(10^{i-1}-10^{i-2}+\cdots + 1)$. I'll do this next round.
+
+</details>
+<br>
+<hr style="border:1.5px solid black">
+
+
 
 
 ## problems
