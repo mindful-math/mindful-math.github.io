@@ -114,7 +114,7 @@ This is a bit complicated, but the idea is somewhat similar to what we did with 
 
 This section includes my answers to problems in the book "Mathematics via Problems Part 1: Algebra".
 
-> Show that the number $1\cdots 1$, consisting of 1993 ones, is divisible by $111111$.
+> Show that the number $1\cdots 1$, consisting of 1992 ones, is divisible by $111111$.
 
 <details>
 <summary> solution </summary>
@@ -124,11 +124,11 @@ $$\underbrace{1\cdots 1}\_{n \text{ ones}}=\sum\limits_{i=0}^{n-1} 10^i.$$
 
 From here, notice that 
 
-$$ \frac{1\cdots 1}{111111}=\frac{\sum\limits_{j=0}^{1992} 10^j}{\sum\limits_{i=0}^5 10^i}. $$
+$$ \frac{1\cdots 1}{111111}=\frac{\sum\limits_{j=0}^{1991} 10^j}{\sum\limits_{i=0}^5 10^i}. $$
 
 Then as $1992/6=332$, we can rewrite the numerator to prove that $1\cdots 1 | 111111$
 
-$$ \frac{\sum\limits_{j=0}^{332} 10^{6j}\sum\limits_{i=0}^5 10^i}{\sum\limits_{i=0}^5} = \sum\limits_{j=0}^{332} 10^{6j}.$$
+$$ \frac{\sum\limits_{j=0}^{331} 10^{6j}\sum\limits_{i=0}^5 10^i}{\sum\limits_{i=0}^5} = \sum\limits_{j=0}^{331} 10^{6j}.$$
 
 
 
