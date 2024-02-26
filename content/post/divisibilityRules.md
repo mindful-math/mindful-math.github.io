@@ -128,7 +128,7 @@ $$ \frac{1\cdots 1}{111111}=\frac{\sum\limits_{j=0}^{1991} 10^j}{\sum\limits_{i=
 
 Then as $1992/6=332$, we can rewrite the numerator to prove that $1\cdots 1 | 111111$
 
-$$ \frac{\sum\limits_{j=0}^{331} 10^{6j}\sum\limits_{i=0}^5 10^i}{\sum\limits_{i=0}^5} = \sum\limits_{j=0}^{331} 10^{6j}.$$
+$$ \frac{\sum\limits_{j=0}^{331} 10^{6j}\sum\limits_{i=0}^5 10^i}{\sum\limits_{i=0}^5 10^i} = \sum\limits_{j=0}^{331} 10^{6j}.$$
 
 
 
