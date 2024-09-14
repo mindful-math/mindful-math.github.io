@@ -1,8 +1,8 @@
 +++
-author = Someone
-title = notices
-date = 2024-04-27
-description = notices
+author = "Someone"
+title = "notices"
+date = "2024-04-27"
+description = "notices"
 math = true
 +++
 
@@ -26,6 +26,7 @@ $$x=\pm\sqrt{\frac{a^2-4b}{4}}-\frac{a}{2}=\frac{-a\pm \sqrt{a^2-4b}}{2}.$$
 - What about the cubic $x^3+ax+b$?
 
 ## research
+[^1]
 
 ## references
 - [^1]: [Compressed Sensing](https://www.cmor-faculty.rice.edu/~yzhang/caam699/Image%20papers/CompSensing.pdf)
