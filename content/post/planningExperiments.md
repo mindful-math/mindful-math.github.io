@@ -47,15 +47,28 @@ I.e. segway into double-blind experimments - we don't want people watching other
 
 ## designs for the reduction of error
 
-The goal of the chapter is to explain how we can reduce uncontrolled variation when estimating treatment comparisons. First and foremost when conducting an experiment, envision where your variation could arise from as a set of premises. 
+The goal of the chapter is to explain how we can reduce uncontrolled variation of error when delivering treatment. The main idea for reducing variation is known as blocking/grouping. 
 
-Here's the deal. Suppose 
+In blocking, we group units that are as alike as possible and assign treatments at random within the group, AND make comparisons within groups, then we can control for a lot of unwanted variation.
 
+![Grouping](/groupings.png)
+
+Now Cox provides a series of examples, but I found these resources much more insightful/useful for learning.
+
+1. https://online.stat.psu.edu/stat503/book/export/html/646
+2. https://n.ethz.ch/~kahans/doe2021/ch-blocking.html
+3. https://artowen.su.domains/courses/363/pairblock.pdf
+4. https://artowen.su.domains/courses/363/responsesurface.pdf (when groups are not categorical/discrete)
+5. https://scholar.harvard.edu/files/kasy/files/experimentaldesign.pdf
 
 
 ## use of supplementary observation to reduce error
 
+A concomitant observation is one whose value for any experimental unit is independent of the arrangement of the treatments under comparison. We can use these in combination with ANOVA (to level out concomitant values for all units) or by analyzing the response surface as in (4). I forgot the details while reading though.
+
 ## randomization
+
+Basically, the chapter lectures why subjective methods should not be used to assign treatments to units. But there are nuance with randomization - you could imagine blocked experiments where randomization gives the treatment schedule AAABBB (but we might a priori suspect these groupings could have confounding effects).
 
 ## basic ideas about factorial experiments
 

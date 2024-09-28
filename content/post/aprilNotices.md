@@ -6,7 +6,7 @@ description = "notices"
 math = true
 +++
 
-Takeaways from AMS's February edition of the [Notices](https://www.ams.org/journals/notices/202404/202404FullIssue.pdf?cat=fullissue&trk=fullissue202404).
+Takeaways from AMS's April edition of the [Notices](https://www.ams.org/journals/notices/202404/202404FullIssue.pdf?cat=fullissue&trk=fullissue202404).
 
 <!--more-->
 
