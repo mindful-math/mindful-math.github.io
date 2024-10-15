@@ -31,7 +31,7 @@ Here's a summary of what catches my eyes in the chapters.
 ## preliminaries
 
 - The book tries to capture the essence of how to plan an experiment
-- In Experiments, it's genrally about relative quantities, not absolute ones (i.e. X > Y - workouts, diets, crop yields, etc.)
+- In experiments, it's generally about relative quantities, not absolute ones (i.e. X > Y - workouts, diets, crop yields, etc.)
 - **Experimental units** (or just units) are the plots of land, persons working out/dieting, animals, etc. being acted upon
 - **Treatments** are the things we want to compare (workout A vs B, advertisement X vs Y...)
 
