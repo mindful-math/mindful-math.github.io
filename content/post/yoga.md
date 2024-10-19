@@ -15,6 +15,4 @@ A review of Swami Vishnu-devananda's book "[The Complete Illustrated Book of Yog
 > 
 >   This tired intellect, wandering through the galaxies in space and in which our planet is only a minute speck, comes back laden with disappointment and shame.
 
-I love these two quotes he shares right off the bat - really resonates with me at the moment.
-
 [^1]: [The Complete Illustrated Book of Yoga](https://archive.org/details/completeillustra00vish)".
