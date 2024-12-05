@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="managingMightyMermaids">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/post/mermaidexamples/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="mermaid">
+  <meta property="og:description" content="managingMightyMermaids">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2023-08-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-08-28T22:11:10-04:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/post/mermaidexamples/">
+
+  
+  
+  
+  <meta itemprop="name" content="mermaid">
+  <meta itemprop="description" content="managingMightyMermaids">
+  <meta itemprop="datePublished" content="2023-08-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-08-28T22:11:10-04:00">
+  <meta itemprop="wordCount" content="855">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>mermaid - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="mermaid">
+  <meta name="twitter:description" content="managingMightyMermaids">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <h1>mermaid</h1>
+  
+  
+  <article class="content ">
+    
+    <p>Some basic Mermaid charting examples.</p>
+<ul>
+<li><a href="#mindmaps">mindmaps</a></li>
+<li><a href="#sequence-diagrams">sequence diagrams</a></li>
+<li><a href="#flow-charts">flow charts</a></li>
+<li><a href="#class-diagrams">class diagrams:</a></li>
+<li><a href="#gantt-charts">gantt charts:</a></li>
+</ul>
+<h2 id="mindmaps">mindmaps</h2>
+<p>Mindmaps are useful for organizing concepts that are hierarchical. Functionality at the moment though is quite limited.</p>
+<pre tabindex="0"><code>mindmap
+    root((Convex Optimization))
+        Nonsmooth Convex Optimization
+            Proximal Gradient Methods
+            Subgradient Descent
+            Cutting Plan Scheme
+
+        Smooth Convex Optimization
+            First Order Methods
+                Gradient Descent
+                    Accelerated Gradient Descent
+                    Stochastic Gradient Descent
+                Conjugate Gradient Method
+                Quasi Newton Method
+            Second Order Methods
+                Newton&#39;s Method
+                Interior Point Method
+</code></pre><div class="mermaid">mindmap
+    root((Convex Optimization))
+        Nonsmooth Convex Optimization
+            Proximal Gradient Methods
+            Subgradient Descent
+            Cutting Plan Scheme
+
+        Smooth Convex Optimization
+            First Order Methods
+                Gradient Descent
+                    Accelerated Gradient Descent
+                    Stochastic Gradient Descent
+                Conjugate Gradient Method
+                Quasi Newton Method
+            Second Order Methods
+                Newton's Method
+                Interior Point Method
+</div>
+
+<h2 id="sequence-diagrams">sequence diagrams</h2>
+<p>Sequence diagrams are useful especially for software applications in diagramming the high-level user stories and functionalities needed for a barebone service to function.</p>
+<pre tabindex="0"><code>sequenceDiagram
+    participant web as Web Browser
+    participant blog as Blog Service
+    participant account as Account Service
+    participant mail as Mail Service
+    participant db as Storage
+
+    Note over web,db: The user must be logged in to submit blog posts
+    web-&gt;&gt;+account: Logs in using credentials
+    account-&gt;&gt;db: Query stored accounts
+    db-&gt;&gt;account: Respond with query result
+
+    alt Credentials not found
+        account-&gt;&gt;web: Invalid credentials.
+    else Credentials found, but odd location
+        account-&gt;&gt;web: Send us the confirmation code to login. 
+    else Credentials found
+        account-&gt;&gt;-web: Successfully logged in.
+
+        Note over web,db: When the user is authenticated, they can now submit new posts
+        web-&gt;&gt;+blog: Submit new post
+        blog-&gt;&gt;db: Store post data
+
+        par Notifications
+            blog--)mail: Send mail to blog subscribers
+            blog--)db: Store in-site notifications
+        and Response
+            blog--&gt;&gt;-web: Successfully posted
+        end
+    end
+</code></pre><div class="mermaid">sequenceDiagram
+    participant web as Web Browser
+    participant blog as Blog Service
+    participant account as Account Service
+    participant mail as Mail Service
+    participant db as Storage
+
+    Note over web,db: The user must be logged in to submit blog posts
+    web->>+account: Logs in using credentials
+    account->>db: Query stored accounts
+    db->>account: Respond with query result
+
+    alt Credentials not found
+        account->>web: Invalid credentials.
+    else Credentials found, but odd location
+        account->>web: Send us the confirmation code to login. 
+    else Credentials found
+        account->>-web: Successfully logged in.
+
+        Note over web,db: When the user is authenticated, they can now submit new posts
+        web->>+blog: Submit new post
+        blog->>db: Store post data
+
+        par Notifications
+            blog--)mail: Send mail to blog subscribers
+            blog--)db: Store in-site notifications
+        and Response
+            blog-->>-web: Successfully posted
+        end
+    end
+</div>
+
+<h2 id="flow-charts">flow charts</h2>
+<p>Flow charts are similar to sequence diagrams except they are more appealing with less interactions among systems/calls. They can also be appealing for demonstrating algorithm flow and individual functionality. Orientation can be LR (left right), RL, TD (top down), and DT.</p>
+<pre tabindex="0"><code>flowchart LR;
+    A{State 0}
+    B{State 1}
+    C{State 2}
+    D{State 3}
+
+    style A fill:#075B73
+    style B fill:#028FAE
+    style C fill:#028FAE
+    style D fill:#D86C6D
+
+    A == Heads ==&gt; B;
+    B == Tails ==&gt; A;
+    B == Heads ==&gt; C;
+    C == Tails ==&gt; A;
+    C == Heads ==&gt; D;
+    D == Game Terminates ==&gt; D;
+</code></pre><div class="mermaid">flowchart LR;
+    A{State 0}
+    B{State 1}
+    C{State 2}
+    D{State 3}
+
+    style A fill:#075B73
+    style B fill:#028FAE
+    style C fill:#028FAE
+    style D fill:#D86C6D
+
+    A == Heads ==> B;
+    B == Tails ==> A;
+    B == Heads ==> C;
+    C == Tails ==> A;
+    C == Heads ==> D;
+    D == Game Terminates ==> D;
+</div>
+
+<h2 id="class-diagrams">class diagrams:</h2>
+<p>These are useful for software engineering in identifying classes, attributes, methods, inheritence, composition, etc. These are also useful for database design - each class can be seen as a table of attributes with linkages across the various collections.</p>
+<pre tabindex="0"><code>classDiagram
+
+class shape {
+    double height
+    double width
+    getHeight() double
+    getWidth() double
+    setDimensions() void
+}
+class rectangle~shape~{
+    getArea() double
+    getDimensions() List~double~
+}
+
+shape --|&gt; rectangle : Inheritance
+classC --* classD : Composition
+classE --o classF : Aggregation
+classG --&gt; classH : Association
+classI -- classJ : Link(Solid)
+classK ..&gt; classL : Dependency
+classM ..|&gt; classN : Realization
+classO .. classP : Link(Dashed)
+</code></pre><div class="mermaid">classDiagram
+
+class shape {
+    double height
+    double width
+    getHeight() double
+    getWidth() double
+    setDimensions() void
+}
+class rectangle~shape~{
+    getArea() double
+    getDimensions() List~double~
+}
+
+shape --|> rectangle : Inheritance
+classC --* classD : Composition
+classE --o classF : Aggregation
+classG --> classH : Association
+classI -- classJ : Link(Solid)
+classK ..> classL : Dependency
+classM ..|> classN : Realization
+classO .. classP : Link(Dashed)
+</div>
+
+<h2 id="gantt-charts">gantt charts:</h2>
+<p>Gantt charts are useful for illustrating schedules and time to accomplish tasks. But these are pretty painful to construct - ticketing in a gitlab, bitbucket, or another system is easier.</p>
+<pre tabindex="0"><code>gantt
+    dateFormat              YY-MM-DD
+    axisFormat              %m-%d
+    title                   System A and B Workflow till August Demo
+
+    section System A Tasks
+    Task A1                 :crit, active, a1, 23-07-30, 3d
+    Task A2                 :after a1, 10d
+    Task A3                 :crit, done, 23-07-28, 4d
+
+    section System B Tasks
+    Task B1                 :active, b1, 23-08-11, 4d
+    Task B2                 :crit, after b1, 10d
+
+    August Demo           :milestone, m2, 23-08-26, 4d
+</code></pre><div class="mermaid">gantt
+    dateFormat              YY-MM-DD
+    axisFormat              %m-%d
+    title                   System A and B Workflow till August Demo
+
+    section System A Tasks
+    Task A1                 :crit, active, a1, 23-07-30, 3d
+    Task A2                 :after a1, 10d
+    Task A3                 :crit, done, 23-07-28, 4d
+
+    section System B Tasks
+    Task B1                 :active, b1, 23-08-11, 4d
+    Task B2                 :crit, after b1, 10d
+
+    August Demo           :milestone, m2, 23-08-26, 4d
+</div>
+
+<p>More charts and examples can be found <a href="https://mermaid.js.org/syntax/examples.html">here on Mermaid&rsquo;s site</a>.</p>
+    
+  </article>
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+  <div class="paginator">
+    
+    <a></a>
+    
+    
+    <a class="link" href="http://localhost:1313/post/markdowncheatsheet/">next →</a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+  </div>
+  
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2024</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>

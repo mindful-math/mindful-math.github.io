@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="limitingLimitsLore">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/post/metricspaces/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="metrics">
+  <meta property="og:description" content="limitingLimitsLore">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-01-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-01-18T13:50:02-05:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/post/metricspaces/">
+
+  
+  
+  
+  <meta itemprop="name" content="metrics">
+  <meta itemprop="description" content="limitingLimitsLore">
+  <meta itemprop="datePublished" content="2024-01-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-01-18T13:50:02-05:00">
+  <meta itemprop="wordCount" content="241">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>metrics - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="metrics">
+  <meta name="twitter:description" content="limitingLimitsLore">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <h1>metrics</h1>
+  
+  
+  <article class="content ">
+    
+    <p>A bad and good definition of a metric space.</p>
+<ul>
+<li><a href="#definitions">definitions</a></li>
+<li><a href="#thoughts">thoughts</a></li>
+<li><a href="#references">references</a></li>
+</ul>
+<h2 id="definitions">definitions</h2>
+<hr style="border:1.5px solid black">
+<blockquote>
+<p><strong><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></strong>: A set $X$, whose elements we shall call points, is said to be a metric space if with any two points $p$ and $q$ of $X$, there is associated a real number $d(p,q)$, called the distance from $p$ to $q$, such that</p>
+<p>(a) $d(p,q)&gt;0$ if $p\geq q$; $d(p,p)=0$;</p>
+<p>(b) $d(p,q)=d(q,p)$;</p>
+<p>(c) $d(p,q)\leq d(p,r) + d(r,q)$, for any $r\in X$.</p>
+<p>Any function with these three properties is called a distance function, or a metric.</p>
+</blockquote>
+<hr style="border:1.5px solid black">
+<blockquote>
+<p><strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></strong>: A metric space is the pair of two things: a set $X$, whose elements are called points, and a distance, i.e. a single-valued, nonnegative, real function $\rho(x,y)$, defined for arbitrary $x$ and $y$ in $X$ and satisfying the following conditions:</p>
+<ol>
+<li>
+<p>$\rho(x,y)=0$ if and only if $x=y$,</p>
+</li>
+<li>
+<p>(axiom of symmetry) $\rho(x,y)=\rho(y,x)$,</p>
+</li>
+<li>
+<p>(triangle axiom) $\rho(x,y)+\rho(y,z)\geq \rho(x,z)$.</p>
+</li>
+</ol>
+<p>The metric space itself, i.e. the pair $X$ and $\rho$, will usually be denoted by $R=(X,\rho)$.</p>
+</blockquote>
+<h2 id="thoughts">thoughts</h2>
+<p>Rudin&rsquo;s<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> definition is not modular and too cryptic. I think Kolmogorov was on a better path - first define a metric and then introduce a metric space as a tuple of a set and its metric. Taking inspiration from Knuth and Halmos, I also think Rudin&rsquo;s definition should be fleshed out with more english - it&rsquo;s an exposition of analysis, not a wikipedia entry&hellip;</p>
+<h2 id="references">references</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://archive.org/details/principlesofmath0000walt">Rudin&rsquo;s &ldquo;Principles of Mathematical Analysis&rdquo;</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://archive.org/details/elementsoftheory0000kolm_l7l2">Kolmogorov and Fomin&rsquo;s &ldquo;Elements of the Theory of Functions and Functional Analysis&rdquo;</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    
+  </article>
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+  <div class="paginator">
+    
+    <a class="link" href="http://localhost:1313/post/januarynotices/">← prev</a>
+    
+    
+    <a class="link" href="http://localhost:1313/post/linkedlists/">next →</a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+  </div>
+  
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2024</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="networkSniffer">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/post/networkswitching/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="networkSwitching">
+  <meta property="og:description" content="networkSniffer">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-11-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-02T10:16:29-04:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/post/networkswitching/">
+
+  
+  
+  
+  <meta itemprop="name" content="networkSwitching">
+  <meta itemprop="description" content="networkSniffer">
+  <meta itemprop="datePublished" content="2024-11-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-11-02T10:16:29-04:00">
+  <meta itemprop="wordCount" content="614">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>networkSwitching - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="networkSwitching">
+  <meta name="twitter:description" content="networkSniffer">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <h1>networkSwitching</h1>
+  
+  
+  <article class="content ">
+    
+    <p>A tuple of metaphors on data movement in networks.</p>
+<ul>
+<li><a href="#how--do-we-move-data-through-a-network">How  do we move data through a network?</a></li>
+<li><a href="#delays-in-packet-switched-networks">Delays in Packet-Switched networks</a></li>
+<li><a href="#references">references</a></li>
+</ul>
+<h2 id="how--do-we-move-data-through-a-network">How  do we move data through a network?</h2>
+<p>There are two primary answers that emerged in the late 90s that I&rsquo;d like to discuss below metaphorically speaking.</p>
+<blockquote>
+<p>Circuit switching: the resources needed along a path (buffers, link transmission rate) to provide communication between two nodes are reserved for the duration of the communication session.</p>
+</blockquote>
+<p>The analogy is restaurants that only take reservations. As a consumer, this is nice if you do not mind planning in advance to reserve the restaurant&rsquo;s resources (and you theoretically don&rsquo;t need to wait once you get there). BUT, consider the case of ties in reservations - it goes to the highest bidder/biggest pockets in capitalistic economies. Also, it&rsquo;s a pain in the butt to add this overhead each time to reserve resources. Restaurants generally do a blend of both because if they only took reservations, then there could be significant gaps of service/potential revenue and so the analogy is a simplification.</p>
+<blockquote>
+<p>In packet-switched networks, resources are not reserved and are first come, first serve (i.e. a queue is instantiated for those waiting to establish a communication link).</p>
+</blockquote>
+<p>Borrowing the metaphor above, you can imagine that with more budget-friendly restaurants, they do not actually gain much by selectively choosing the highest bidder and instead rely on the voluume of orders to compound revenue and make money. Customers enjoy the convenience this affords (for not having to plan so far in advance), but this can of course bite if they have to wait in long lines to get their food. It all boils down to the velocity of orders (ice cream is easy, sushi might be slow and difficult as you increase customers arriving simultaneously).</p>
+<h2 id="delays-in-packet-switched-networks">Delays in Packet-Switched networks</h2>
+<blockquote>
+<p>Processing delay: time required to look at a packet&rsquo;s header and determine where to direct the packet</p>
+</blockquote>
+<p>To carry on our analogy, this is like a person plugging in the directions to the restaurant in Google Maps. Back in the old days without Google Maps, this might add some serious overhead to get to restaurants in more urban environments but not today (similarly the actual packet delay is microseconds or less these days).</p>
+<blockquote>
+<p>Queueing delay: if it arrives at a queue, this is the time a packet must wait to be transmitted onto the link</p>
+</blockquote>
+<p>So after the person has plugged in the directions to Google Maps and gets to the restaurant, this is the time the person must wait in line to be seated. Remember that packet-switched restaurants do not take reservations! For popular restaurants, this could add quite the delay (in milliseconds).</p>
+<blockquote>
+<p>Transmission delay: the amount of time required to transmit all of the packet&rsquo;s bits in the link</p>
+</blockquote>
+<p>This is equivalent to the time required by the waiter and chef to decode the customer&rsquo;s order. As you increase the size and complexity of items on the menu ordered, you increase the time you will be waiting as the waiter helps transmit this to the chef to bring into reality.</p>
+<blockquote>
+<p>Propagation delay: the time required to propagate from the begining of the link to the router desired</p>
+</blockquote>
+<p>Distinct from transmission delays, propogation delays could be equivalent to the physical distance from the chef to the customers. At a sushi bar, you&rsquo;re propogation delay is near zero, but if you&rsquo;re at a multi-level restaurant with spacious seating there could be a little overhead to send the message to the chef.</p>
+<p>The analogy is missing some details, but I think does a good job at providing the gist of delays in packet-switched networks.</p>
+<h2 id="references">references</h2>
+<ul>
+<li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php">Computer Networking by Kurose &amp; Ross</a></li>
+</ul>
+    
+  </article>
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+  <div class="paginator">
+    
+    <a class="link" href="http://localhost:1313/post/octobernotices/">← prev</a>
+    
+    
+    <a></a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+  </div>
+  
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2024</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>

@@ -2,7 +2,6 @@
 {{ $domain := $parsedUrl.Host }}
 {{ $domainWithoutWWW := replace $domain "www." "" }}
 {{ template "_internal/google_analytics.html" . }}
-{{ template "_internal/google_analytics_async.html" . }}
 <header id="header">
   <h1>
     <a href="{{ .Site.BaseURL }}">{{ .Site.Params.title | default .Site.Title }}</a>

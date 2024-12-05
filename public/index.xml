@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mindful math</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on mindful math</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>networkSwitching</title>
+      <link>http://localhost:1313/post/networkswitching/</link>
+      <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/networkswitching/</guid>
+      <description>&lt;p&gt;A tuple of metaphors on data movement in networks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>notices</title>
+      <link>http://localhost:1313/post/octobernotices/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/octobernotices/</guid>
+      <description>&lt;p&gt;Takeaways from AMS&amp;rsquo;s October edition of the &lt;a href=&#34;https://www.ams.org/journals/notices/202410/202410FullIssue.pdf?cat=fullissue&amp;amp;trk=fullissue202410&#34;&gt;Notices&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>experiments</title>
+      <link>http://localhost:1313/post/planningexperiments/</link>
+      <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/planningexperiments/</guid>
+      <description>&lt;p&gt;A review of Cox&amp;rsquo;s book &amp;ldquo;&lt;a href=&#34;https://archive.org/details/planningofexperi0000coxd&#34;&gt;Planning of Experiments&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>notices</title>
+      <link>http://localhost:1313/post/aprilnotices/</link>
+      <pubDate>Sat, 27 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/aprilnotices/</guid>
+      <description>&lt;p&gt;Takeaways from AMS&amp;rsquo;s April edition of the &lt;a href=&#34;https://www.ams.org/journals/notices/202404/202404FullIssue.pdf?cat=fullissue&amp;amp;trk=fullissue202404&#34;&gt;Notices&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>divisibility</title>
+      <link>http://localhost:1313/post/divisibilityrules/</link>
+      <pubDate>Sat, 27 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/divisibilityrules/</guid>
+      <description>&lt;p&gt;Some refreshments on divisibility stemming from &lt;a href=&#34;https://bookstore.ams.org/mcl-25&#34;&gt;this book&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>notices</title>
+      <link>http://localhost:1313/post/februarynotices/</link>
+      <pubDate>Fri, 19 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/februarynotices/</guid>
+      <description>&lt;p&gt;Takeaways from AMS&amp;rsquo;s February edition of the &lt;a href=&#34;https://www.ams.org/journals/notices/202402/202402FullIssue.pdf?cat=fullissue&amp;amp;trk=fullissue202402&#34;&gt;Notices&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>links</title>
+      <link>http://localhost:1313/post/linkedlists/</link>
+      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/linkedlists/</guid>
+      <description>&lt;p&gt;A rough sketch for adding linked lists in Python.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>metrics</title>
+      <link>http://localhost:1313/post/metricspaces/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/metricspaces/</guid>
+      <description>&lt;p&gt;A bad and good definition of a metric space.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>notices</title>
+      <link>http://localhost:1313/post/januarynotices/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/januarynotices/</guid>
+      <description>&lt;p&gt;Takeaways from AMS&amp;rsquo;s January edition of the &lt;a href=&#34;https://www.ams.org/journals/notices/202401/202401FullIssue.pdf?cat=fullissue&amp;amp;trk=fullissue202401&#34;&gt;Notices&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>writing</title>
+      <link>http://localhost:1313/post/techincalwriting/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/techincalwriting/</guid>
+      <description>&lt;p&gt;A overview of tricks discussed by &lt;a href=&#34;https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf&#34;&gt;Knuth&lt;/a&gt; and &lt;a href=&#34;https://faculty.washington.edu/heagerty/Courses/b572/public/HalmosHowToWrite.pdf&#34;&gt;Halmos&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>korean</title>
+      <link>http://localhost:1313/post/koreangrammar/</link>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/koreangrammar/</guid>
+      <description>&lt;p&gt;Extends &lt;a href=&#34;http://www.koreangrammaticalforms.com/&#34;&gt;this&lt;/a&gt; masterpiece on Korean grammar rules.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>http://localhost:1313/post/markdowncheatsheet/</link>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/markdowncheatsheet/</guid>
+      <description>&lt;p&gt;A overview of Markdown inspired by the &lt;a href=&#34;https://daringfireball.net/projects/markdown/basics&#34;&gt;creator&amp;rsquo;s post&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>http://localhost:1313/post/mermaidexamples/</link>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/mermaidexamples/</guid>
+      <description>&lt;p&gt;Some basic Mermaid charting examples.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

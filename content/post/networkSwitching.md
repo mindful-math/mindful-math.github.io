@@ -6,6 +6,9 @@ description = "networkSniffer"
 math = true
 +++
 
+A tuple of metaphors on data movement in networks.
+<!--more-->
+
 - [How  do we move data through a network?](#how--do-we-move-data-through-a-network)
 - [Delays in Packet-Switched networks](#delays-in-packet-switched-networks)
 - [references](#references)

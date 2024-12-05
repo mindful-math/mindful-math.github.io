@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="gettingGitGorgeous">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/dead/gitgood/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="git">
+  <meta property="og:description" content="gettingGitGorgeous">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dead">
+    <meta property="article:published_time" content="2023-08-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-08-30T00:25:18-04:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/dead/gitgood/">
+
+  
+  
+  
+  <meta itemprop="name" content="git">
+  <meta itemprop="description" content="gettingGitGorgeous">
+  <meta itemprop="datePublished" content="2023-08-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-08-30T00:25:18-04:00">
+  <meta itemprop="wordCount" content="551">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>git - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="git">
+  <meta name="twitter:description" content="gettingGitGorgeous">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <article class="content ">
+    <p>This article covers basic git operations.</p>
+<h2 id="workflow">workflow</h2>
+<p>POV: You&rsquo;re a new developer brought on for an ongoing project MLPants: the future of pants. Here&rsquo;s a picture of what that broadly looks like.</p>
+<h2 id="first-step---git-clone">First Step - <code>git clone</code></h2>
+<p>MLPants is a repository hosted on either a third-party: Gitlab, Github, etc. (or a combination of the above) or a custom server hosting the bare repository. After obtaining access to the MLPants repository, you want to bring that access to your computer. <code>git clone</code> accomplishes this. Here are some variants:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Option 1: http[s]</span>
+</span></span><span style="display:flex;"><span>git clone http<span style="color:#ce5c00;font-weight:bold">[</span>s<span style="color:#ce5c00;font-weight:bold">]</span>://host.xz<span style="color:#ce5c00;font-weight:bold">[</span>:port<span style="color:#ce5c00;font-weight:bold">]</span>/path/to/mlpants.git/ --recurse-submodules<span style="color:#ce5c00;font-weight:bold">=</span>&lt;pathspec&gt; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Option 2: ssh</span>
+</span></span><span style="display:flex;"><span>git clone ssh://<span style="color:#ce5c00;font-weight:bold">[</span>user@<span style="color:#ce5c00;font-weight:bold">]</span>host.xz<span style="color:#ce5c00;font-weight:bold">[</span>:port<span style="color:#ce5c00;font-weight:bold">]</span>/path/to/mlpants.git/ --recurse-submodules<span style="color:#ce5c00;font-weight:bold">=</span>&lt;pathspec&gt;
+</span></span></code></pre></div><p>HTTPS requests are less likely to get blocked by MLPants corporate firewalls, so generally option 1 is the way to go. There are many more possibilities here, but ignorance is bliss. <code>--recurse-submodules</code> is the only flag</p>
+<ul>
+<li><code>git clone https://&lt;something&gt;/mlpants.git --recurse-submodules=&lt;pathspec&gt;</code> is equivalent to running <code>git clone https://&lt;something&gt;/mlpants.git &amp;&amp; git submodule update --init --recursive &lt;pathspec&gt;</code> (so it <em>could</em> be a useful flag to save a line of code)
+<ul>
+<li>None of the other flags <a href="https://git-scm.com/docs/git-clone">here</a> seem like typical day-to-day ones.</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>After cloning, you play around with the system and accrue some familarity - design patterns used, tools, etc.</li>
+<li>Then, you either assign yourself to a ticket (maybe for an open-source library) or your boss does (in enterprise). Let us say this is ticket <code>451</code>.</li>
+<li>Create a branch name. A simple convention I saw on StackOverflow: <code>&lt;category&gt;/&lt;ticket num&gt;/&lt;name&gt;</code>. In our example, let us say we are working on adding an analytics dashboard for our application (a feature). Then a nice branch name would be <code>feature/451/analytics-dashboard</code>. The <code>&lt;name&gt;</code> field should be sort and spaces separated by hyphens or dashes. The category is generally enumerated from a list like below:</li>
+</ol>
+<center>
+<table>
+  <thead>
+      <tr>
+          <th>category</th>
+          <th>description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>bugfix</td>
+          <td>For fixing a bug</td>
+      </tr>
+      <tr>
+          <td>feature</td>
+          <td>For adding/editing/etc. a feature.</td>
+      </tr>
+      <tr>
+          <td>tempfix</td>
+          <td>For fixing a critical bug with a temporary solution.</td>
+      </tr>
+      <tr>
+          <td>wip</td>
+          <td>For work that won&rsquo;t be done soon</td>
+      </tr>
+      <tr>
+          <td>junk or experiment</td>
+          <td>For experimental work</td>
+      </tr>
+  </tbody>
+</table>
+</center>
+<ol start="6">
+<li><code>git switch --create feature/451/analytics-dashboard</code> is the more modern version of <code>git branch --force feature/451/analytics-dashboard &amp;&amp; git switch feature/451/analytics-dashboard</code>. It basically creates a new branch off the r
+<ol>
+<li>But to make this even nicer, I recommend <code>git config --local push.autoSetupRemote true</code> which allows you to just write <code>git push</code> as opposed to <code>git push --set-upstream &lt;remote&gt; feature/451/analytics-dashboard</code>.</li>
+<li><code>push.autoSetupRemote</code> set to true will automaticaly add <code>--set-upstream</code> - basically, if no upstream conflicts exist (someone else pushing changes beforehand on the same branch), it will push to the upstream branch</li>
+<li>I&rsquo;m not 100% certain of the following, but sometimes, you may need <code>git config --global push.default &lt;simple | current | upstream | matching&gt;</code>. If <code>push.autoSetupRemote</code> is set to true and <code>current</code> is specified, then <code>git push</code> pushes the current branch but does not set up remote tracking. If set to <code>upstream</code> or <code>simple</code>, then <code>git push</code> pushes the current branch and sets up remote tracking. If set to <code>matching</code>, then <code>git push</code> will update all local branches that share the same name and matching branches whilst setting up remote tracking. If you have several branches with the same name accidently, like &ldquo;develop&rdquo;, then this will cause some headaches as you try to retrace your steps to reset develop on remote if the changes aren&rsquo;t the right ones.</li>
+</ol>
+</li>
+<li>Edit files and code as you go:
+<ol>
+<li><code>git add </code></li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>push<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">autoSetupRemote</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span>
+</span></span></code></pre></div>
+  </article>
+
+  
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2024</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>

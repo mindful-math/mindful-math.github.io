@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="experimentalEyes">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/post/planningexperiments/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="experiments">
+  <meta property="og:description" content="experimentalEyes">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-09-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-15T15:38:59-04:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/post/planningexperiments/">
+
+  
+  
+  
+  <meta itemprop="name" content="experiments">
+  <meta itemprop="description" content="experimentalEyes">
+  <meta itemprop="datePublished" content="2024-09-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-15T15:38:59-04:00">
+  <meta itemprop="wordCount" content="1443">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>experiments - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="experiments">
+  <meta name="twitter:description" content="experimentalEyes">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <h1>experiments</h1>
+  
+  
+  <article class="content ">
+    
+    <p>A review of Cox&rsquo;s book &ldquo;<a href="https://archive.org/details/planningofexperi0000coxd">Planning of Experiments</a>&rdquo;.</p>
+<p>Here&rsquo;s a summary of what catches my eyes in the chapters.</p>
+<ul>
+<li><a href="#preliminaries">preliminaries</a></li>
+<li><a href="#some-key-assumptions">some key assumptions</a></li>
+<li><a href="#designs-for-the-reduction-of-error">designs for the reduction of error</a></li>
+<li><a href="#use-of-supplementary-observation-to-reduce-error">use of supplementary observation to reduce error</a></li>
+<li><a href="#randomization">randomization</a></li>
+<li><a href="#basic-ideas-about-factorial-experiments">basic ideas about factorial experiments</a></li>
+<li><a href="#design-of-simple-factorial-experiments">design of simple factorial experiments</a></li>
+<li><a href="#choice-of-number-of-observations">choice of number of observations</a></li>
+<li><a href="#choice-of-units-treatments-and-observations">choice of units, treatments, and observations</a></li>
+<li><a href="#more-about-latin-squares">more about latin squares</a></li>
+<li><a href="#incomplete-factorial-design">incomplete factorial design</a></li>
+<li><a href="#fractional-replication-and-confounding">fractional replication and confounding</a></li>
+<li><a href="#cross-over-designs">cross-over designs</a></li>
+<li><a href="#some-special-problems">some special problems</a></li>
+<li><a href="#takeaways">takeaways</a></li>
+</ul>
+<h2 id="preliminaries">preliminaries</h2>
+<ul>
+<li>The book tries to capture the essence of how to plan an experiment</li>
+<li>In experiments, it&rsquo;s generally about relative quantities, not absolute ones (i.e. X &gt; Y - workouts, diets, crop yields, etc.)</li>
+<li><strong>Experimental units</strong> (or just units) are the plots of land, persons working out/dieting, animals, etc. being acted upon</li>
+<li><strong>Treatments</strong> are the things we want to compare (workout A vs B, advertisement X vs Y&hellip;)</li>
+</ul>
+<p>Requirements for a good experiment:</p>
+<ul>
+<li>No systematic error (comparing apples to oranges, comparing machinery at different times of day but trying to make conclusions invariant over time, cough all of finance charlatan work cough cough&hellip;)</li>
+<li>Precision (garbage in, garbage out) - work with tools that satisfy budget, time, etc. requirements but are precise enough to not give crappy/skewed values (classic example is any work with sensors data - huuge problem like self-driving, climate change, etc.).</li>
+<li>Stress test results (i.e. obtain a good sketch of the distribution: if rainy + snowy, car accident probability = 3%&hellip; uh oh, back to drawing board)</li>
+<li>Simplicity: make experiments reproducible by being simple. Math is the best experiment - you just need a pen, paper, and a set of axioms. Healthcare/drugs/finance are generally the worst - expensive setups, manipulating data, incomplete stress tests, sparse units</li>
+</ul>
+<h2 id="some-key-assumptions">some key assumptions</h2>
+<p>The main assumptions for statistical analysis (according to Cox) are</p>
+<blockquote>
+<ol>
+<li>observation = (quantity depending ONLY on particular unit) + (quantity depending on treatment)
+He says to note that the effect is additive and not multiplicative or subtractive or any other operation. Why? I think
+$$\text{effect}\approx \text{unit}+\text{treatment},$$
+so when comparing differences of treatments, we have
+$$\mathbb{E}[\text{treatment difference}] = \mathbb{E}[\text{treatment 1}] - \mathbb{E}[\text{treatment 2}]$$</li>
+</ol>
+</blockquote>
+<p>This is all by linearity of expectation. Had there instead been a multiplicative effect, we&rsquo;d not be able to infer the treatment difference as units depend on treatments. He does note that if you somehow realized that the effects are multiplicative, you could take the log of observations to make log-linear claims&hellip; but this can get messy when doing inference I think* (but don&rsquo;t know)</p>
+<blockquote>
+<ol start="2">
+<li>treatment effects are constant</li>
+</ol>
+</blockquote>
+<p>I do not think this is a hard requirement as we could borrow metrics in a functional space (using stochastic dominance for instance). Maybe he meant it&rsquo;s a random variable with some distribution $D$ that doesn&rsquo;t change over time, unit, etc.</p>
+<blockquote>
+<ol start="3">
+<li>observation of one unit is not affected by treatment applied to other units</li>
+</ol>
+</blockquote>
+<p>I.e. segway into double-blind experimments - we don&rsquo;t want people watching other people and being swayed to change the observation.</p>
+<h2 id="designs-for-the-reduction-of-error">designs for the reduction of error</h2>
+<p>The goal of the chapter is to explain how we can reduce uncontrolled variation of error when delivering treatment. The main idea for reducing variation is known as blocking/grouping.</p>
+<p>In blocking, we group units that are as alike as possible and assign treatments at random within the group, AND make comparisons within groups, then we can control for a lot of unwanted variation.</p>
+<p><img src="/groupings.png" alt="Grouping"></p>
+<p>Now Cox provides a series of examples, but I found these resources much more insightful/useful for learning.</p>
+<ol>
+<li><a href="https://online.stat.psu.edu/stat503/book/export/html/646">https://online.stat.psu.edu/stat503/book/export/html/646</a></li>
+<li><a href="https://n.ethz.ch/~kahans/doe2021/ch-blocking.html">https://n.ethz.ch/~kahans/doe2021/ch-blocking.html</a></li>
+<li><a href="https://artowen.su.domains/courses/363/pairblock.pdf">https://artowen.su.domains/courses/363/pairblock.pdf</a></li>
+<li><a href="https://artowen.su.domains/courses/363/responsesurface.pdf">https://artowen.su.domains/courses/363/responsesurface.pdf</a> (when groups are not categorical/discrete)</li>
+<li><a href="https://scholar.harvard.edu/files/kasy/files/experimentaldesign.pdf">https://scholar.harvard.edu/files/kasy/files/experimentaldesign.pdf</a></li>
+</ol>
+<h2 id="use-of-supplementary-observation-to-reduce-error">use of supplementary observation to reduce error</h2>
+<p>A concomitant observation is one whose value for any experimental unit is independent of the arrangement of the treatments under comparison. We can use these in combination with ANOVA (to level out concomitant values for all units) or by analyzing the response surface as in (4).</p>
+<h2 id="randomization">randomization</h2>
+<p>Basically, the chapter lectures why subjective methods should not be used to assign treatments to units. But there are nuances with randomization - you could imagine blocked experiments where randomization gives the treatment schedule AAABBB (but we might a priori suspect these groupings could have confounding effects). It&rsquo;s largely a philosphical discussion.</p>
+<h2 id="basic-ideas-about-factorial-experiments">basic ideas about factorial experiments</h2>
+<p>Factorial experiments are ones where there are several independent variables we&rsquo;d like to play with at the same time. Examples range from chemistry (tweaking the amount of carbon vs magnesium vs etc.) to climbing (i.e. dynamic moves involve a combination of feet, hand, and eye positions/movements ongoing simultaneously).</p>
+<p>They introduce dumb terminology (i.e. variable reassignment - an easy way to fool a naive person into thinking you know what you&rsquo;re talking about&hellip;):</p>
+<p><strong>factor</strong>: a treatment
+<strong>level</strong>: the number of possible quantities/qualities of the factor (i.e. 10g vs 20g vs 100g whey protein)
+<strong>complete factorial experiment</strong>: an experiment involving the testing of all combinations of factors (i.e. 1g vs 10g vs 100g phosphate and 30g vs 300g vs 30000g potassium = 9 experiments)
+<strong>interaction (rough defintion for factors A and B)</strong>: the effect due to factor a depends on the particular level of factor B</p>
+<table>
+  <thead>
+      <tr>
+          <th>Factor A / Factor B</th>
+          <th>B1</th>
+          <th>B2</th>
+          <th>B3</th>
+          <th>B4</th>
+          <th>Row Average</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>A1</strong></td>
+          <td>5</td>
+          <td>7</td>
+          <td>6</td>
+          <td>8</td>
+          <td>6.5</td>
+      </tr>
+      <tr>
+          <td><strong>A2</strong></td>
+          <td>4</td>
+          <td>6</td>
+          <td>7</td>
+          <td>5</td>
+          <td>5.5</td>
+      </tr>
+      <tr>
+          <td><strong>A3</strong></td>
+          <td>8</td>
+          <td>5</td>
+          <td>7</td>
+          <td>9</td>
+          <td>7.25</td>
+      </tr>
+      <tr>
+          <td><strong>Column Average</strong></td>
+          <td>5.67</td>
+          <td>6</td>
+          <td>6.67</td>
+          <td>7.33</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>This is a two-factor table with three levels of A and four levels of B. In total, there are 12 combinations in this complete factorial experiment.</p>
+<blockquote>
+<p>If
+$$\text{change in observation} = \text{average effect of change in A} + \text{average effect of change in B}$$
+then A and B are additive and there is no interaction.</p>
+</blockquote>
+<p>This seems interesting, but you&rsquo;ll end up with a lot of false positives with that strict of a definition - there should be some epsilon wiggle room for precision errors or approximately non-interacting effects. But even then, this feels useful in large scale processes with low stakes (like advertising on the internet - color + body type + exposure) - intuition really feels more valuable IMO. Another way of doing this is by regression and a test of significance for the interaction term.</p>
+<p>$$y = \alpha A + \beta B + \gamma\underbrace{AB}_{\text{interaction term}} $$</p>
+<p>Much like in chemistry experiments, interactions can only pop up for certain levels of A and B (i.e. it&rsquo;s not very useful to say A and B interact if for only a couple out of 500+ possible pairs). Computation with interactions is also a pain - that&rsquo;s why I prefer intuition again and pocket aside the statistics unless it makes sense (also most of the time we care about specific quantities and not absolute/generic statements about factors).</p>
+<h2 id="design-of-simple-factorial-experiments">design of simple factorial experiments</h2>
+<p>Really nothing noteworthy here - maybe it should be noted that when there are too many levels, you should hold constant some of the less &ldquo;valuable/important&rdquo; factors (i.e. pruning/cleaning out what you think is unimportant from the start - feels like this goes against his rant on randomization though&hellip;)</p>
+<h2 id="choice-of-number-of-observations">choice of number of observations</h2>
+<p>The main interesting bit here was that you could perform experiments sequentially (expanding size as necessary) to look at standard error and calibrate larger studies perhaps. He spent a lot of time just talking about how standard error is proportional to one divided by the square root of the number of observations (so include as many observations if you want to be more precise in your statements).</p>
+<h2 id="choice-of-units-treatments-and-observations">choice of units, treatments, and observations</h2>
+<p>Short, pointless chapter.</p>
+<h2 id="more-about-latin-squares">more about latin squares</h2>
+<p>Again, he must be grasping for straws to extend the book&rsquo;s length here&hellip;</p>
+<h2 id="incomplete-factorial-design">incomplete factorial design</h2>
+<p>Youden squares (subsets of Latin squares) could be interesting in spaces like advertising (i.e. you do not have enough time to test all variations). The other use case he discussed (i.e. where units are too small to fit all treatments) doesn&rsquo;t seem super important these days. I&rsquo;d almost reckon you should probably split up your experiment and control for confounding effects more carefully (or get specific and set one constant)&hellip;</p>
+<h2 id="fractional-replication-and-confounding">fractional replication and confounding</h2>
+<p>Hogwash - I think these are outdated techniques.</p>
+<h2 id="cross-over-designs">cross-over designs</h2>
+<p>He just suggests using Latin squares where the experimental units (subjects, animals, etc.) used contribute substantially to the uncontrolled variation. I&rsquo;m not sure  why this needed its own chapter and name &ldquo;cross-over designs&rdquo;.</p>
+<h2 id="some-special-problems">some special problems</h2>
+<p>Skipped.</p>
+<h2 id="takeaways">takeaways</h2>
+<p>It&rsquo;s a pretty good book - I like how examples are abundant and he explicates key thoughts in plain vanilla English for the most part (no fancy equations, words, etc.). If I were to rewrite it, I&rsquo;d spend more time in the examples doing inference and talking about the strengths/weaknesses of the experiment (because no two are alike and they&rsquo;re not all perfect).</p>
+    
+  </article>
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+  <div class="paginator">
+    
+    <a class="link" href="http://localhost:1313/post/aprilnotices/">← prev</a>
+    
+    
+    <a class="link" href="http://localhost:1313/post/octobernotices/">next →</a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+  </div>
+  
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2024</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>
