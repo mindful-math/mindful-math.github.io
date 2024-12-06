@@ -13,12 +13,7 @@
       <pubDate>Sat, 02 Nov 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/post/networkswitching/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#how--do-we-move-data-through-a-network&#34;&gt;How  do we move data through a network?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#delays-in-packet-switched-networks&#34;&gt;Delays in Packet-Switched networks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#references&#34;&gt;references&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;how--do-we-move-data-through-a-network&#34;&gt;How  do we move data through a network?&lt;/h2&gt;</description>
+      <description>&lt;p&gt;A tuple of metaphors on data movement in networks.&lt;/p&gt;</description>
     </item>
     
     <item>

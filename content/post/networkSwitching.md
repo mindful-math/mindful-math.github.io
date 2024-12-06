@@ -1,6 +1,6 @@
 +++
 author = "Someone"
-title = "networkSwitching"
+title = "switching"
 date = "2024-11-02"
 description = "networkSniffer"
 math = true

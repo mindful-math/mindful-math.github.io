@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-11-02T10:16:29-04:00</lastmod>
+    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/networkswitching/</loc>
-    <lastmod>2024-11-02T10:16:29-04:00</lastmod>
+    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-11-02T10:16:29-04:00</lastmod>
+    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/octobernotices/</loc>
     <lastmod>2024-10-19T12:48:03-04:00</lastmod>
@@ -43,9 +43,6 @@
   </url><url>
     <loc>http://localhost:1313/post/techincalwriting/</loc>
     <lastmod>2023-12-09T11:42:16-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/dead/gitgood/</loc>
-    <lastmod>2023-08-30T00:25:18-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/koreangrammar/</loc>
     <lastmod>2023-11-25T14:55:00-05:00</lastmod>
