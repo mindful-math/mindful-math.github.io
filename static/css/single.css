@@ -16,7 +16,7 @@
 }
 
 #main .toc {
-    background-color: #EEEEEE;
+    background-color: linear-gradient(180deg, #87CEEB, #1E90FF);
     border: black 1px dashed;
     display: inline-block;
     margin: 1rem;

@@ -8,6 +8,8 @@ author = "mindful-math"
 
 ## about
 
+Some quotes I fancy
+
 > When artists create pictures and thinkers search for laws and formulate thoughts, it is in order to salvage something from the great dance of death, to make something last longer than we do.
 >
 > -- Herman Hesse

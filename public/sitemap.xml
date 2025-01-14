@@ -3,13 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/networkswitching/</loc>
-    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-12-05T11:32:26-05:00</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/socialmediarant/</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/networkswitching/</loc>
+    <lastmod>2024-12-05T22:07:43-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/octobernotices/</loc>
     <lastmod>2024-10-19T12:48:03-04:00</lastmod>
@@ -33,7 +36,7 @@
     <lastmod>2024-01-27T23:23:55-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/linkedlists/</loc>
-    <lastmod>2024-09-14T07:11:26-04:00</lastmod>
+    <lastmod>2024-12-05T22:07:43-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/metricspaces/</loc>
     <lastmod>2024-01-18T13:50:02-05:00</lastmod>
