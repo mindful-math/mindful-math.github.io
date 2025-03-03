@@ -6,7 +6,7 @@ description = "review"
 math = true
 +++
 
-A review of the infamous book by Levitt called ["Freakonomics"](https://freakonomics.com/). 
+A review of the infamous book by Levitt titled ["Freakonomics"](https://freakonomics.com/). 
 <!--more-->
 
 ## general

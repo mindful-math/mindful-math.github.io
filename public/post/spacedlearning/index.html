@@ -37,7 +37,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2025-03-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-03-03T08:25:24-05:00">
+    <meta property="article:modified_time" content="2025-03-03T15:04:36-05:00">
 
 
   
@@ -49,8 +49,8 @@
   <meta itemprop="name" content="repetition">
   <meta itemprop="description" content="spaced repetition">
   <meta itemprop="datePublished" content="2025-03-01T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-03-03T08:25:24-05:00">
-  <meta itemprop="wordCount" content="2088">
+  <meta itemprop="dateModified" content="2025-03-03T15:04:36-05:00">
+  <meta itemprop="wordCount" content="2251">
 
   
   <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
@@ -150,20 +150,22 @@
 <li>Maybe we could organize problems as fuzzy / hierarchical clusters and the number of memberships contributes to its ELO (i.e. combining calculus with probability with time = stochastic calculus which is hard)</li>
 <li>A savy student might want to learn a cluster that over arches the most # of problems. For instance, developing mathematical maturity and programming ability might allow you to tackle most problems posed on the internet. They should realize that this cluster has many tentacles but if they learn the hardest subproblems (sampling the branches), then they can do this quite well</li>
 <li>Here&rsquo;s the dilemma that we need to figure out: students at the beginning need reinforcement (and learning is hindered initially by memorization - recalling facts, tactics, etc.), but after some time, learning transpires more so to a student&rsquo;s discipline and problem-solving abilities - combining various tactics together.</li>
-<li>For me learning comp math, the learning process was 1) tactics training (picking a problem type - induction, dynamic programming, geometry, etc.) and actively recalling the tactic in the problem, then when that tactic crystallizes into longer term memory, pivoting to another tactic until a base set of tactics are learned and you can sample problems that combine them together.</li>
+<li>For learning competition math, the learning process was 1) tactics training (picking a problem type - induction, dynamic programming, geometry, etc.) and actively recalling the tactic in the problem, then when that tactic crystallizes into longer term memory, pivoting to another tactic until a base set of tactics are learned and you can sample problems that combine them together.</li>
 <li>How can I organize the database easily to have these categories, ELO ratings, etc.?</li>
 </ul>
-<p>Some difficult questions.
-a) Time-series / what representation for a student&rsquo;s knowledge (forgetting), concepts recalled, etc.
-b) Hierarchical tagging of math problems (i.e. calculus, integration, etc.) and are ELOs tied to whole problem or just subsection of problem
-c) Considering multiple users and how to supplement cold starts better (i.e. user similarity)
-d) Ideally, I poach the AoPS contest data, autotag everything w/ LLM help
-e) What to do with incorrect problem statements or missing solutions? Maybe RL w/ LLMs for right solutions??
-f) Representing solutions? In math, there is often a visual one, a simple one, and a convoluted crank one.
-g) When to recommend reading, different sources, etc. for math?
-h) What about topic drift - i.e. this problem features concepts C1 and C2 but later on we add C3 and this problem uses it?
-i) What format is best to allow the user to learn - code, text, multiple choice, free response, etc.?
-j) <strong>Think</strong>: In reality, it would be best to create a problem market - i.e. figure out which skills / things people need (as a function of quantity and money). If customers are paying for a niche skill at rating x or higher, then a user might gear their training towards that with the possibility that no one cares about that skill by the time they master it. Ideally, companies and customers would open-source their problems with a dollar tag associated with problems (and some vote). Then problem-solvers have financial incentive to help them out and both parties win.</p>
+<p>Some difficult questions.</p>
+<ul>
+<li>Time-series / what representation for a student&rsquo;s knowledge (forgetting), concepts recalled, etc.</li>
+<li>Hierarchical tagging of math problems (i.e. calculus, integration, etc.) and are ELOs tied to whole problem or just subsection of problem</li>
+<li>Considering multiple users and how to supplement cold starts better (i.e. user similarity)</li>
+<li>Ideally, I poach the AoPS contest data, autotag everything w/ LLM help</li>
+<li>What to do with incorrect problem statements or missing solutions? Maybe RL w/ LLMs for schema validation / autocompletion?</li>
+<li>Representing solutions? In math, there is often a visual one, a simple one, and a convoluted crank one.</li>
+<li>When to recommend reading, different sources, etc. for math?</li>
+<li>What about topic drift - i.e. this problem features concepts C1 and C2 but later on we add C3 and this problem uses it?</li>
+<li>What format is best to allow the user to learn - code, text, multiple choice, free response, etc.?</li>
+<li><strong>Think</strong>: In reality, it would be best to create a problem market - i.e. figure out which skills / things people need (as a function of quantity and money). If customers are paying for a niche skill at rating x or higher, then a user might gear their training towards that with the possibility that no one cares about that skill by the time they master it. Ideally, companies and customers would open-source their problems with a dollar tag associated with problems (and some vote). Then problem-solvers have financial incentive to help them out and both parties win.</li>
+</ul>
 <h2 id="competitor-analysis">competitor analysis</h2>
 <p>LLM Solvers</p>
 <ul>
@@ -179,8 +181,8 @@ j) <strong>Think</strong>: In reality, it would be best to create a problem mark
 <li>Forums beneath videos for q&amp;a (sorting as well); transcripts for videos</li>
 <li>Primarily multiple choice w/ one answer right; lots of hints, explanations of each answer</li>
 <li>Content revolves around existing topics taught (i.e. middle school, high school courses)</li>
-<li>I&rsquo;m not a fan. Seems to easy and rewards driven to actually help you become a problem solver</li>
-<li>Nonprofit; supported by donors/companies</li>
+<li>I&rsquo;m not a fan. Seems too easy and rewards driven to actually help you become a problem solver</li>
+<li>Non-profit; supported by donors/companies</li>
 </ul>
 <p>AoPSOnline</p>
 <ul>
@@ -238,9 +240,15 @@ j) <strong>Think</strong>: In reality, it would be best to create a problem mark
 <ul>
 <li>Focused on memorization, but useful again for spaced repetition (I think memorization is required for being the best problem solver)</li>
 <li>Primarily language-focused decks available - French, Japanese, Korean, etc.</li>
-<li>Free</li>
+<li>Free (except mobile app is $24 wth&hellip;)</li>
 </ul>
-<p>In summary, I think MIT, Codeforces, &amp; LeetCode are the strongest competitors for the unrelenting student interested in solving all problems out there and getting better every day.</p>
+<p>OpenStax</p>
+<ul>
+<li>Again, some cookie-cutter BS with practice problems sprinkled in between</li>
+<li>Constrained to very basic material (high school or below)</li>
+<li>Freemium (didn&rsquo;t even bother looking at price structure because content isn&rsquo;t good)</li>
+</ul>
+<p>In summary, I think MIT, Codeforces, &amp; LeetCode are the strongest competitors for the unrelenting student interested in solving all problems out there and getting better every day. Anki is in its own category, but it would be tremendously big-brained to integrate with one of the aforementioned downstream problem-solving sites.</p>
 <p>The other &ldquo;competitors&rdquo; are really focused on grade-school / very diluted and easy content.</p>
 <h2 id="lit-review">lit review</h2>
 <p><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
@@ -302,25 +310,20 @@ j) <strong>Think</strong>: In reality, it would be best to create a problem mark
 <li>Also you could make dynamic templates for language learning (including code) like $SUBJECT $OBJECT $VERB, but this sucks when you think about semantics and syntax concurrently&hellip;</li>
 <li>Oh wait&hellip; this could also make for a good <insert any sport> way of teaching again under the assumption that the user is doing it correctly</li>
 <li>Author mentions cloze deletion (i.e. fill in blank); I think this is garbage and would rather have a user take the axioms (and words) and generate examples themselves to not limit themselves to what has been expressed with the axioms</li>
-<li></li>
+<li>Overall, loved this site - gwern.net is very awesome - writing reminds me of &ldquo;Godel, Esher, Bach&rdquo;</li>
 </ul>
 <p><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 <ul>
-<li>asdf</li>
+<li>I mean they use statistics to &ldquo;validate&rdquo; results which makes me believe this was academic bologna</li>
+<li>Research above seems to suggest the process is not at all Markovian, so I&rsquo;m not sure what they&rsquo;re doing</li>
+<li>With that said, I think statistics are useful in sampling from trees as they mentioned in the conclusion</li>
 </ul>
 <p><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
 <ul>
-<li>asdf</li>
+<li>Garbage&hellip; it&rsquo;s trying to select a test at the current state to best maximize their credit on the subsequent test</li>
+<li>This only works if the number of arms in the MAB are finite. The algorithm would overfit to what exists and not scale beyond</li>
 </ul>
 <h2 id="references">references</h2>
-<ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ul>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

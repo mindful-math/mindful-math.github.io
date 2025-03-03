@@ -19,20 +19,20 @@ Some thoughts.
 - Maybe we could organize problems as fuzzy / hierarchical clusters and the number of memberships contributes to its ELO (i.e. combining calculus with probability with time = stochastic calculus which is hard)
 - A savy student might want to learn a cluster that over arches the most # of problems. For instance, developing mathematical maturity and programming ability might allow you to tackle most problems posed on the internet. They should realize that this cluster has many tentacles but if they learn the hardest subproblems (sampling the branches), then they can do this quite well
 - Here's the dilemma that we need to figure out: students at the beginning need reinforcement (and learning is hindered initially by memorization - recalling facts, tactics, etc.), but after some time, learning transpires more so to a student's discipline and problem-solving abilities - combining various tactics together.
-- For me learning comp math, the learning process was 1) tactics training (picking a problem type - induction, dynamic programming, geometry, etc.) and actively recalling the tactic in the problem, then when that tactic crystallizes into longer term memory, pivoting to another tactic until a base set of tactics are learned and you can sample problems that combine them together.
+- For learning competition math, the learning process was 1) tactics training (picking a problem type - induction, dynamic programming, geometry, etc.) and actively recalling the tactic in the problem, then when that tactic crystallizes into longer term memory, pivoting to another tactic until a base set of tactics are learned and you can sample problems that combine them together.
 - How can I organize the database easily to have these categories, ELO ratings, etc.?
 
 Some difficult questions.
-a) Time-series / what representation for a student's knowledge (forgetting), concepts recalled, etc.
-b) Hierarchical tagging of math problems (i.e. calculus, integration, etc.) and are ELOs tied to whole problem or just subsection of problem
-c) Considering multiple users and how to supplement cold starts better (i.e. user similarity)
-d) Ideally, I poach the AoPS contest data, autotag everything w/ LLM help
-e) What to do with incorrect problem statements or missing solutions? Maybe RL w/ LLMs for right solutions??
-f) Representing solutions? In math, there is often a visual one, a simple one, and a convoluted crank one. 
-g) When to recommend reading, different sources, etc. for math?
-h) What about topic drift - i.e. this problem features concepts C1 and C2 but later on we add C3 and this problem uses it?
-i) What format is best to allow the user to learn - code, text, multiple choice, free response, etc.?
-j) **Think**: In reality, it would be best to create a problem market - i.e. figure out which skills / things people need (as a function of quantity and money). If customers are paying for a niche skill at rating x or higher, then a user might gear their training towards that with the possibility that no one cares about that skill by the time they master it. Ideally, companies and customers would open-source their problems with a dollar tag associated with problems (and some vote). Then problem-solvers have financial incentive to help them out and both parties win.
+- Time-series / what representation for a student's knowledge (forgetting), concepts recalled, etc.
+- Hierarchical tagging of math problems (i.e. calculus, integration, etc.) and are ELOs tied to whole problem or just subsection of problem
+- Considering multiple users and how to supplement cold starts better (i.e. user similarity)
+- Ideally, I poach the AoPS contest data, autotag everything w/ LLM help
+- What to do with incorrect problem statements or missing solutions? Maybe RL w/ LLMs for schema validation / autocompletion?
+- Representing solutions? In math, there is often a visual one, a simple one, and a convoluted crank one. 
+- When to recommend reading, different sources, etc. for math?
+- What about topic drift - i.e. this problem features concepts C1 and C2 but later on we add C3 and this problem uses it?
+- What format is best to allow the user to learn - code, text, multiple choice, free response, etc.?
+- **Think**: In reality, it would be best to create a problem market - i.e. figure out which skills / things people need (as a function of quantity and money). If customers are paying for a niche skill at rating x or higher, then a user might gear their training towards that with the possibility that no one cares about that skill by the time they master it. Ideally, companies and customers would open-source their problems with a dollar tag associated with problems (and some vote). Then problem-solvers have financial incentive to help them out and both parties win.
 
 
 ## competitor analysis
@@ -49,8 +49,8 @@ KhanAcademy
 - Forums beneath videos for q&a (sorting as well); transcripts for videos
 - Primarily multiple choice w/ one answer right; lots of hints, explanations of each answer
 - Content revolves around existing topics taught (i.e. middle school, high school courses)
-- I'm not a fan. Seems to easy and rewards driven to actually help you become a problem solver
-- Nonprofit; supported by donors/companies
+- I'm not a fan. Seems too easy and rewards driven to actually help you become a problem solver
+- Non-profit; supported by donors/companies
 
 AoPSOnline
 - Community forums post difficult problems; organize by category (contest, school, etc.); forums for discussing problems with tex support
@@ -102,14 +102,14 @@ Wolfram
 Anki
 - Focused on memorization, but useful again for spaced repetition (I think memorization is required for being the best problem solver)
 - Primarily language-focused decks available - French, Japanese, Korean, etc.
-- Free
+- Free (except mobile app is $24 wth...)
 
 OpenStax
 - Again, some cookie-cutter BS with practice problems sprinkled in between
 - Constrained to very basic material (high school or below)
 - Freemium (didn't even bother looking at price structure because content isn't good)
 
-In summary, I think MIT, Codeforces, & LeetCode are the strongest competitors for the unrelenting student interested in solving all problems out there and getting better every day.
+In summary, I think MIT, Codeforces, & LeetCode are the strongest competitors for the unrelenting student interested in solving all problems out there and getting better every day. Anki is in its own category, but it would be tremendously big-brained to integrate with one of the aforementioned downstream problem-solving sites.
 
 The other "competitors" are really focused on grade-school / very diluted and easy content. 
 
@@ -174,9 +174,9 @@ The other "competitors" are really focused on grade-school / very diluted and ea
 
 
 ## references
-- [^1]: [Spacing effects in learning](https://files.eric.ed.gov/fulltext/ED505660.pdf)
-- [^2]: [Spacing and Statistics](https://gwern.net/doc/psychology/spaced-repetition/2015-maas.pdf)
-- [^3]: [Deep RL Learning](https://siddharth.io/files/deep-tutor.pdf)
-- [^4]: [Spaced Repetition](https://gwern.net/spaced-repetition)
-- [^5]: [Bandit Learning](https://people.umass.edu/~andrewlan/papers/16edm-bandits.pdf)
-- [^6]: [Faster Teaching](https://cocosci.princeton.edu/tom/papers/fasterteaching.pdf)
+[^1]: [Spacing effects in learning](https://files.eric.ed.gov/fulltext/ED505660.pdf)
+[^2]: [Spacing and Statistics](https://gwern.net/doc/psychology/spaced-repetition/2015-maas.pdf)
+[^3]: [Deep RL Learning](https://siddharth.io/files/deep-tutor.pdf)
+[^4]: [Spaced Repetition](https://gwern.net/spaced-repetition)
+[^5]: [Bandit Learning](https://people.umass.edu/~andrewlan/papers/16edm-bandits.pdf)
+[^6]: [Faster Teaching](https://cocosci.princeton.edu/tom/papers/fasterteaching.pdf)
