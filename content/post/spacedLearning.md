@@ -17,7 +17,7 @@ Some thoughts.
 - Maintaining these clusters as they evolve over time
 - Recommending problems to users that are difficult works up until the research level and then you might have problems not tied to one cluster in particular
 - Maybe we could organize problems as fuzzy / hierarchical clusters and the number of memberships contributes to its ELO (i.e. combining calculus with probability with time = stochastic calculus which is hard)
-- A savy student might want to learn a cluster that overarches the most # of problems. For instance, developing mathematical maturity and programming ability might allow you to tackle most problems posed on the internet. They should realize that this cluster has many tentacles but if they learn the hardest subproblems (sampling the branches), then they can do this quite well
+- A savy student might want to learn a cluster that over arches the most # of problems. For instance, developing mathematical maturity and programming ability might allow you to tackle most problems posed on the internet. They should realize that this cluster has many tentacles but if they learn the hardest subproblems (sampling the branches), then they can do this quite well
 - Here's the dilemma that we need to figure out: students at the beginning need reinforcement (and learning is hindered initially by memorization - recalling facts, tactics, etc.), but after some time, learning transpires more so to a student's discipline and problem-solving abilities - combining various tactics together.
 - For me learning comp math, the learning process was 1) tactics training (picking a problem type - induction, dynamic programming, geometry, etc.) and actively recalling the tactic in the problem, then when that tactic crystallizes into longer term memory, pivoting to another tactic until a base set of tactics are learned and you can sample problems that combine them together.
 - How can I organize the database easily to have these categories, ELO ratings, etc.?
@@ -26,7 +26,7 @@ Some difficult questions.
 a) Time-series / what representation for a student's knowledge (forgetting), concepts recalled, etc.
 b) Hierarchical tagging of math problems (i.e. calculus, integration, etc.) and are ELOs tied to whole problem or just subsection of problem
 c) Considering multiple users and how to supplement cold starts better (i.e. user similarity)
-d) Ideally, I poach the artofproblemsolving contest data, autotag everything w/ LLM help
+d) Ideally, I poach the AoPS contest data, autotag everything w/ LLM help
 e) What to do with incorrect problem statements or missing solutions? Maybe RL w/ LLMs for right solutions??
 f) Representing solutions? In math, there is often a visual one, a simple one, and a convoluted crank one. 
 g) When to recommend reading, different sources, etc. for math?
@@ -88,7 +88,7 @@ LeetCode
 
 MIT OpenCourseWare
 - Most breadth and depth of content (aside from maybe codeforces for data structures & aops for math contests)
-- Main issue: compiling answers / lack of autograders for basically all courses; some solutions exist but they're text and sparse
+- Main issue: compiling answers / lack of auto graders for basically all courses; some solutions exist but they're text and sparse
 - Without skin in the game (i.e. grade, competition, etc.) and validation, it's very hard (if not possible) to make this your primary source of education
 - Videos and problems are like the highest quality for difficult courses
 - Everything is free
@@ -101,8 +101,13 @@ Wolfram
 
 Anki
 - Focused on memorization, but useful again for spaced repetition (I think memorization is required for being the best problem solver)
-- Primarily language-focused decks available - french, japanense, korean, etc.
+- Primarily language-focused decks available - French, Japanese, Korean, etc.
 - Free
+
+OpenStax
+- Again, some cookie-cutter BS with practice problems sprinkled in between
+- Constrained to very basic material (high school or below)
+- Freemium (didn't even bother looking at price structure because content isn't good)
 
 In summary, I think MIT, Codeforces, & LeetCode are the strongest competitors for the unrelenting student interested in solving all problems out there and getting better every day.
 
@@ -138,13 +143,34 @@ The other "competitors" are really focused on grade-school / very diluted and ea
 
 [^4]
 - Spaced repetition is like the dampening of a wave where the height of a wave represents the chance of recall
-- 
+- Use Anki
+- What data works well with testing: foreign vocabulary, GRE, trivia; this doesn't appear to work well with other subjects like CS, math, etc.
+- In math/CS, cards are okay, but you need to develop a deep base of examples for each card to really ingrain the material 
+- Don't use multiple choice in testing... free response / short answer are much better
+- SuperMemo is a spacing algorithm that I should read up
+- Spaced repetition also is important for mathematics in long-term retention, but issue is math textbooks favor over-learning (bombarding definitions together and dropping later on)
+- Spaced repetition is primarily for skill maintenance NOT acquisition, so spacing out studying how to kickflip will not improve your ability to kickflip unless you already know how to do it throuugh deliberate practice
+- Deliberate practice: requires immediate feedback i.e. a teacher or compiler :)
+- Maybe for climbing, I need a coach... or video to compare against another climber because there's no feedback loop - did I climb/not climb is not accurate enough (could be attributed to a zillion reasons)
+- Ernst A. Rothkopf: “Spacing is the friend of recall, but the enemy of induction”
+- In *my* personal opinion, spacing can be used for induction as well by simply requiring the learner to extend the edges drawn from a concept to other concepts each time
+- Is a code segment going to compile or not; this is a great use of Anki
+- Could wire up code answers to a compiler or interpreter which would make code-specific memorization more enjoyable
+- Program [angle(steep, slab, etc.) arms (left, right, both) legs (left, right, both) technique **kwargs] and develop an ontology for recommending climbs to try out
+- You could have auto-tagging for beta videos to recommend problems to users based on spaced repetition (assuming user has proper technique)
+- Also you could make dynamic templates for language learning (including code) like $SUBJECT $OBJECT $VERB, but this sucks when you think about semantics and syntax concurrently...
+- Oh wait... this could also make for a good <insert any sport> way of teaching again under the assumption that the user is doing it correctly 
+- Author mentions cloze deletion (i.e. fill in blank); I think this is garbage and would rather have a user take the axioms (and words) and generate examples themselves to not limit themselves to what has been expressed with the axioms
+- Overall, loved this site - gwern.net is very awesome - writing reminds me of "Godel, Esher, Bach"
 
 [^5]
-- asdf
+- I mean they use statistics to "validate" results which makes me believe this was academic bologna
+- Research above seems to suggest the process is not at all Markovian, so I'm not sure what they're doing
+- With that said, I think statistics are useful in sampling from trees as they mentioned in the conclusion
 
 [^6]
-- asdf
+- Garbage... it's trying to select a test at the current state to best maximize their credit on the subsequent test
+- This only works if the number of arms in the MAB are finite. The algorithm would overfit to what exists and not scale beyond
 
 
 ## references

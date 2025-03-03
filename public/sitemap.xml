@@ -3,13 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-03T08:49:59-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+    <lastmod>2025-03-03T08:49:59-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/socialmediarant/</loc>
-    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/post/spacedlearning/</loc>
+    <lastmod>2025-03-03T08:25:24-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/freakonomics/</loc>
+    <lastmod>2025-03-03T08:49:59-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/doomscrolling/</loc>
+    <lastmod>2025-01-14T12:13:09-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/gradientdescent/</loc>
+    <lastmod>2024-12-08T16:04:35-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/networkswitching/</loc>
     <lastmod>2024-12-05T22:07:43-05:00</lastmod>
@@ -57,7 +66,7 @@
     <lastmod>2023-08-28T22:11:10-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
-    <lastmod>2024-01-18T13:50:02-05:00</lastmod>
+    <lastmod>2025-01-14T12:13:09-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/dead/deepneuralnetworks/</loc>
     <lastmod>2023-09-17T22:30:00-04:00</lastmod>

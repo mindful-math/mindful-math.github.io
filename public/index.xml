@@ -6,14 +6,41 @@
     <description>Recent content on mindful math</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>repetition</title>
+      <link>http://localhost:1313/post/spacedlearning/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/spacedlearning/</guid>
+      <description>&lt;p&gt;Review of online, open-sourced means of learning.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>freakonomics</title>
+      <link>http://localhost:1313/post/freakonomics/</link>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/freakonomics/</guid>
+      <description>&lt;p&gt;A review of the infamous book by Levitt called &lt;a href=&#34;https://freakonomics.com/&#34;&gt;&amp;ldquo;Freakonomics&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>stars</title>
-      <link>http://localhost:1313/post/socialmediarant/</link>
+      <link>http://localhost:1313/post/doomscrolling/</link>
       <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/socialmediarant/</guid>
+      <guid>http://localhost:1313/post/doomscrolling/</guid>
       <description>&lt;p&gt;A rant on social media following &lt;a href=&#34;https://knowen-production.s3.amazonaws.com/uploads/attachment/file/2072/Attention%2Bshoppers-%2BWired%2B-%2BMichael%2BGoldhaber.pdf&#34;&gt;this&lt;/a&gt;  paper&amp;rsquo;s ideas.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>descent</title>
+      <link>http://localhost:1313/post/gradientdescent/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/gradientdescent/</guid>
+      <description>&lt;p&gt;Yet another metaphor (this time it&amp;rsquo;s gradient descent).&lt;/p&gt;</description>
     </item>
     
     <item>
