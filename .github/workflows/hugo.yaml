@@ -51,11 +51,22 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Debug - Check build output
+        run: |
+          echo "=== Checking public directory ==="
+          ls -la ./public/ || echo "No public directory found"
+          echo "=== Checking for symlinks ==="
+          find ./public -type l -ls || echo "No symlinks found"
+          echo "=== Checking for hard links ==="
+          find ./public -type f -links +1 -ls || echo "No hard links found"
+          echo "=== Checking total size ==="
+          du -sh ./public/ || echo "Cannot calculate size"
+          echo "=== File count ==="
+          find ./public -type f | wc -l || echo "Cannot count files"
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: ./public
 
   # Deployment job
