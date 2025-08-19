@@ -1,12 +1,12 @@
 +++
 author = "Someone"
 title = "shell"
-date = "2025-09-08"
+date = "2025-08-08"
 description = "shellShock"
 math = true
 +++
 
-Some useful shell commands and examples.
+Personal reminder to improve my shell usage...
 <!--more-->
 
 ## distribution of commands (today)
@@ -80,7 +80,7 @@ ls -r # reverses order sort (i.e. ls -rS sorts files by ascending file size)
 
 These are some commands that I would like to internalize in the future.
 
-```
+```bash
 tar
 gzip
 pv
@@ -94,3 +94,11 @@ sed
 ping
 ip
 ```
+
+## references
+
+In the future, I will meander through these references and update my mental map of shell. But lowkey, Claude ain't bad at helping me out here...
+
+- https://linuxjourney.com/ (fun & comprehensive)
+- https://tldp.org/LDP/abs/html/ (p boring)
+- https://www.unix.com/man_pages/bsd (boring)

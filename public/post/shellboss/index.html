@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us" style="font-size: 120%">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <meta name="author" content="">
+
+  
+  
+  <meta name="description" content="shellShock">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script type="module">
+    import renderMathInElement from "https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.mjs";
+    renderMathInElement(document.body);
+</script>
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/post/shellboss/">
+  <meta property="og:site_name" content="mindful math">
+  <meta property="og:title" content="shell">
+  <meta property="og:description" content="shellShock">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-08-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-08-08T14:10:37-04:00">
+
+
+  
+  <link rel="canonical" href="http://localhost:1313/post/shellboss/">
+
+  
+  
+  
+  <meta itemprop="name" content="shell">
+  <meta itemprop="description" content="shellShock">
+  <meta itemprop="datePublished" content="2025-08-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-08T14:10:37-04:00">
+  <meta itemprop="wordCount" content="315">
+
+  
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/common.css'>
+  <link media="screen" rel="stylesheet" href='http://localhost:1313/css/content.css'>
+
+  
+  
+  <title>shell - mindful math</title>
+  
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="shell">
+  <meta name="twitter:description" content="shellShock">
+
+
+  
+<link rel="stylesheet" href='http://localhost:1313/css/single.css'>
+<link rel="stylesheet" href='http://localhost:1313/css/sharingbuttons.css'>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+<header id="header">
+  <h1>
+    <a href="http://localhost:1313/">mindful math</a>
+  </h1>
+
+  <nav>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/">posts</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/post/">archive</a>
+    </span>
+    
+    <span class="nav-bar-item">
+      <a class="link" href="/about/">about</a>
+    </span>
+    
+  </nav>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+  
+</header>
+    
+<main id="main" class="post">
+  
+  <h1>shell</h1>
+  
+  
+  <article class="content ">
+    
+    <p>Personal reminder to improve my shell usage&hellip;</p>
+<h2 id="distribution-of-commands-today">distribution of commands (today)</h2>
+<p>Don&rsquo;t judge me too hard, but (excluding <code>git</code>, <code>python</code>, <code>java</code>, etc.), these are my latest shell commands (ignore that the usages do not add up to 100).</p>
+<table>
+  <thead>
+      <tr>
+          <th>Command</th>
+          <th>Usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ls</td>
+          <td>15</td>
+      </tr>
+      <tr>
+          <td>cd</td>
+          <td>25</td>
+      </tr>
+      <tr>
+          <td>clear</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>mv</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>rm</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>source</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>man</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>pwd</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>cp</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>mkdir</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>scp</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>cat</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>su</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>ssh</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>grep</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>chmod</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>whoami</td>
+          <td>0</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="ls">ls</h2>
+<p><code>ls</code> stands for list I believe and just lists the <strong>file names</strong> in the current directory. It hides dotfiles however unless you include the <code>-a</code> argument. I forget the meaning of <code>l</code>, <code>h</code> and, and <code>a</code> so I often check the manual :(.</p>
+<h3 id="short-term-memory">short term memory</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt;&gt; ls -R
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># first lists files like `ls`</span>
+</span></span><span style="display:flex;"><span>public
+</span></span><span style="display:flex;"><span>static
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./public:
+</span></span><span style="display:flex;"><span>about
+</span></span><span style="display:flex;"><span>css
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>./public/about:
+</span></span><span style="display:flex;"><span>index.html
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -S <span style="color:#8f5902;font-style:italic"># sort by file size (descending)</span>
+</span></span><span style="display:flex;"><span>ls -a <span style="color:#8f5902;font-style:italic"># include dotfiles</span>
+</span></span><span style="display:flex;"><span>ls -c <span style="color:#8f5902;font-style:italic"># sort by latest edit</span>
+</span></span><span style="display:flex;"><span>ls -lh <span style="color:#8f5902;font-style:italic"># adds suffixes to denote file size (Byte, Kilobyte, etc.)</span>
+</span></span><span style="display:flex;"><span>ls -r <span style="color:#8f5902;font-style:italic"># reverses order sort (i.e. ls -rS sorts files by ascending file size)</span>
+</span></span></code></pre></div><h2 id="cd">cd</h2>
+<p><code>cd</code> stands for &ldquo;change directory&rdquo; and moves your <code>pwd</code> to whatever the argument specifies. I do not think I use any flags for <code>cd</code> but use tabs for autocompletion and <code>..</code> of course denotes moving to the parent directory.</p>
+<h3 id="short-term-memory-1">short term memory</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#204a87">cd</span> <span style="color:#8f5902;font-style:italic"># with no arguments, this takes you to the $HOME directory</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; <span style="color:#204a87">cd</span> - <span style="color:#8f5902;font-style:italic"># takes you back to the previous directory</span>
+</span></span></code></pre></div><h2 id="wishlist">wishlist</h2>
+<p>These are some commands that I would like to internalize in the future.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar
+</span></span><span style="display:flex;"><span>gzip
+</span></span><span style="display:flex;"><span>pv
+</span></span><span style="display:flex;"><span>awk
+</span></span><span style="display:flex;"><span>nano
+</span></span><span style="display:flex;"><span>systemctl
+</span></span><span style="display:flex;"><span>netstat/ss
+</span></span><span style="display:flex;"><span>stat
+</span></span><span style="display:flex;"><span>mmv
+</span></span><span style="display:flex;"><span>sed
+</span></span><span style="display:flex;"><span>ping
+</span></span><span style="display:flex;"><span>ip
+</span></span></code></pre></div><h2 id="references">references</h2>
+<p>In the future, I will meander through these references and update my mental map of shell. But lowkey, Claude ain&rsquo;t bad at helping me out here&hellip;</p>
+<ul>
+<li><a href="https://linuxjourney.com/">https://linuxjourney.com/</a> (fun &amp; comprehensive)</li>
+<li><a href="https://tldp.org/LDP/abs/html/">https://tldp.org/LDP/abs/html/</a> (p boring)</li>
+<li><a href="https://www.unix.com/man_pages/bsd">https://www.unix.com/man_pages/bsd</a> (boring)</li>
+</ul>
+    
+  </article>
+  
+
+<div id="sharingbuttons">
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+</div>
+
+  <div class="paginator">
+    
+    <a class="link" href="http://localhost:1313/post/spacedlearning/">← prev</a>
+    
+    
+    <a></a>
+    
+  </div>
+  <div class="comment">
+    
+    
+    
+    
+  </div>
+  
+
+</main>
+
+    <footer id="footer">
+  <div>
+    <span>© 2023</span> - <span>2025</span>
+  </div>
+
+  <div class="footnote">
+    <span></span>
+  </div>
+</footer>
+
+  </div>
+
+  
+  
+
+  
+  
+
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9G7EGTLBT9"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9G7EGTLBT9');
+        }
+      </script>
+
+</body>
+
+</html>
