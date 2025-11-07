@@ -27,6 +27,9 @@ A review of the infamous book by Levitt titled ["Freakonomics"](https://freakono
 ## quotes
 
 > Economics is, at root, the study of incentives: how people get what they want, or need, especially when other people want or need the same thing (page 20)
+
 > An incentive is simply a means of urging people to do more of a good thing and less of a bad thing (page 21)
+
 > Who cheats? Well, just about anyone, if the stakes are right (page 24)
+
 > Cheating is a primordial economic act: getting more for less (page 25)
