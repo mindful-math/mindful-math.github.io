@@ -1,7 +1,7 @@
 +++
 author = "Someone"
-title = "supernormal"
-date = "2025-11-07"
+title = "scarcity"
+date = "2025-12-10"
 description = "review"
 math = true
 +++
