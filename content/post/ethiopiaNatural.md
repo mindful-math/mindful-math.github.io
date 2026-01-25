@@ -6,7 +6,7 @@ description = "asdf"
 math = true
 +++
 
-A rant on finetuning an natural Ethiopian. 
+A rant on finetuning a natural Ethiopian. 
 <!--more-->
 
 ## background
@@ -44,3 +44,9 @@ A rant on finetuning an natural Ethiopian.
 * pour speed was also questionable; not sure how fast I should be going and how it influences the taste
 * Even in Japan w/ the best roasters, I wasn't a fan of any Ethiopian coffees I got - too acidic or easy to overextract. I will just get anaerobic naturals or funky ferments because these require much lower extraction %s and have higher probabilities of a tasty cup. This bag wasn't cheap either - like $24 for 300 or so grams.
 * I like Columbia lots; huila, paraiso, etc.; Ethiopian coffees are a pain in the butt...
+
+## nice to haves
+* refractometer; seriously, I need this one day
+* flow rate scale + app
+* I basically need flow rate, bean, etc. easily logged to an app so that I can get some insights into where I need to go
+* would also be nice to measure particle size; pain in the butt calibrating the 1zpresso...
