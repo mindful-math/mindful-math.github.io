@@ -24,3 +24,7 @@ Stride has a nice physical meaning and is used in computer science but I really 
 > **Zero padding**: We extend the domain of a function and set the range to zero.
 
  "Zero padding of size xyz" - shut up with your pseudoscience / blabbering... We are just extending the original domain and setting values of zero because we don't have signal here but would like to define our convolution over wider ranges of the input without needing to shrink the "kernel". A zero padding size of $P$ for a K-d tensor adds $KP$ to each dimension of zeros - really dumb terminology IMO...  
+
+## references
+
+- [d2l](https://d2l.ai/chapter_convolutional-neural-networks/)
