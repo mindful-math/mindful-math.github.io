@@ -16,7 +16,7 @@ Some reference visuals for normed regularization.
 Normed regularization adds a term like $\lVert w\rVert_p$ that is the lp norm of your weights to your original objective function. There are two hyperparameters you introduce here - the norm itself which controls the family of models/weights you guide the model towards along with the penalization attached to this norm term when minimizing that controls how much we care to guide the weights in the direction specified by the norm & original loss function.
 
 ## $\ell_0$
-This norm encourages extreme sparsity - the norm counts the number of nonzero elements in the weight vector. You cannot differentiate it (gradient is zero everywhere) and so you solve this combinatorially.\n
+This norm encourages extreme sparsity - the norm counts the number of nonzero elements in the weight vector. You cannot differentiate it (gradient is zero everywhere) and so you solve this combinatorially.
 
 ![l0](/p_norm_ell_0.png)
 
