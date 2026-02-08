@@ -21,12 +21,12 @@ This norm encourages extreme sparsity - the norm counts the number of nonzero el
 ![l0](/p_norm_ell_0.png)
 
 ## $\ell_1$
-This norm has sharp edges and a constant gradient for non-zero weights that expedite them in the direction of the origin (sparsity).\n
+This norm has sharp edges and a constant gradient for non-zero weights that expedite them in the direction of the origin (sparsity).
 
 ![l1](/p_norm_ell_1.png)
 
 ## $\ell_2$
-This norm likewise encourages smaller weights but its spherical structure and vanishing gradient near the origin encourage non-zero, small weights.\n
+This norm likewise encourages smaller weights but its spherical structure and vanishing gradient near the origin encourage non-zero, small weights.
 
 ![l2](/p_norm_ell_2.png)
 
