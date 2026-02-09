@@ -15,7 +15,7 @@ Decrypting bad vocab in CNNs.
 
 > **Kernel**: A locally-weighted moving average.
 
-This is ridiculous terminology by the DL community. We convolve two functions and the "kernel" is a function we apply to each image/time-series/data to smooth it, sharpen it, etc. (a transformation) that weights values nearby each other. To be fair, statisticians use "correlation" and "cross-correlation" as instances of a normalized dot product.
+This is ridiculous terminology by the DL community. We convolve two functions and the "kernel" is a function we apply to each image/time-series/data to smooth it, sharpen it, etc. (a transformation) that weights values nearby each other. To be fair, statisticians use "correlation" and "cross-correlation" as instances of a normalized dot product. I can't believe that yet another name for this pops up from time to time - "filter"...
 
 > **Stride**: A downsampling of the convolution integral/sum
 
