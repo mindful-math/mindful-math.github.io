@@ -6,7 +6,7 @@ description = "asdf"
 math = true
 +++
 
-Some shower thoughts and observations regarding the bloom phase . 
+Some shower thoughts and observations regarding the bloom phase. 
 <!--more-->
 
 ## Bloom Phase 
