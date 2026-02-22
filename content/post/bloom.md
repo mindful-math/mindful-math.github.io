@@ -6,7 +6,7 @@ description = "asdf"
 math = true
 +++
 
-Some shower thoughts and observations regarding the bloom phase. 
+Some shower thoughts and observations on the bloom phase. 
 <!--more-->
 
 ## Bloom Phase 
@@ -14,8 +14,9 @@ Some shower thoughts and observations regarding the bloom phase.
 
 Tips
 * Dripper shape matters a lot; conical drippers need 3-4s of slow pours in the center before starting a circle and winding back to the center to permeate the cofee bed evenly; flat-bed drippers on the other hand have a more even spread of grounds and circle pours are fine from the start
-* Speed matters a lot; if you go to fast, the coffee will push a channel through the grounds and you will get an uneven extraction and a sour cup. On the other hand if you go too slow, you are missing on agitation of the bed and wil get a sour cup and also possibly an uneven extraction as different parts of the bed are in contact with water for varying amounts of time.
-* Grind size matters a lot. Too fine - uneven and water will try going down the sides of the dripper; too coarse - water flys through the bed and you will get an underextracted cup (water-like) with a shallow body
+* Speed matters a lot; if you go to fast, the coffee will push a channel through the grounds and you will get an uneven extraction and a sour cup. 
+* If you go too slow, you are missing on agitation and will get a sour / watery cup and also uneven extraction as different parts of the bed are in contact with water for varying amounts of time
+* Grind size matters a lot; too fine - uneven and water will try going down the sides of the dripper; too coarse - water flys through the bed and an underextracted cup (water-like) with a shallow body will appear
 * Time of bloom - shorter -> more sour, less body; longer -> more bitter, bigger body
 
 Todos
