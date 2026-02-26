@@ -6,7 +6,7 @@ description = "asdf"
 math = true
 +++
 
-Some thoughts on progress or lack therof and our world. 
+Some thoughts on progress or lack thereof and our world. 
 <!--more-->
 
 ## Progress
