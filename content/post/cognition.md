@@ -6,7 +6,7 @@ description = "cognition"
 math = true
 +++
 
-Takeaways from AMS's January edition of the [Notices](https://www.ams.org/journals/notices/202401/202401FullIssue.pdf?cat=fullissue&trk=fullissue202401).
+A review on how technology influences our cognitive capacity and energies.
 <!--more-->
 
 - [articles](#articles)
@@ -24,6 +24,6 @@ Takeaways from AMS's January edition of the [Notices](https://www.ams.org/journa
 * Fuck it - I'm not missing out on shit and I don't care - just let me spend a few hours implementing high quality code and give me the rest of the day to read, write papers, etc. all on paper and other mediums - diversity of landscape is extremely important.
 
 Here are some AI use cases I really want to make work:
-1. I have a script to use the archive to just grab text from an html page. I would like to remove randomness from this and have the LLM tighten up the language.
-2. I would like all of my queries to the LLM to become quizzes and have it teach me or recommend resources I can marinate in to learn the content well through problems and exercises. Example: I keep asking syntax for certain MongoDB aggregations or Lean tactics - quiz me on these later - force me to recall what I asked and make the game less seamless and queries more difficult. This would be a very powerful mechanism where the two of us (man and LLM) synergistically cooperate to resolve challenges I face on a day to day basis. This progress though sadly would just lead to more and more work... welp - that's a tad bit defeatist.
+- I have a script to use the archive to just grab text from an html page. I would like to remove randomness from this and have the LLM tighten up the language.
+- I would like all of my queries to the LLM to become quizzes and have it teach me or recommend resources I can marinate in to learn the content well through problems and exercises. Example: I keep asking syntax for certain MongoDB aggregations or Lean tactics - quiz me on these later - force me to recall what I asked and make the game less seamless and queries more difficult. This would be a very powerful mechanism where the two of us (man and LLM) synergistically cooperate to resolve challenges I face on a day to day basis. This progress though sadly would just lead to more and more work... welp - that's a tad bit defeatist.
 
