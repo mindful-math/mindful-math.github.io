@@ -1,0 +1,24 @@
+                                      404
+
+The site you were looking for couldn't be found.
+     __________________________________________________________________
+
+   This domain is successfully pointed at WP Engine, but is not configured
+   for an account on our platform.
+     * If you just signed up, we're still likely creating your account.
+     * Did you [1]add this domain to your install?
+     * Did you point DNS to the correct [2]IP address or [3]CNAME?
+
+   If you've completed the steps above, or need more help, please
+   [4]contact us and we can help get your site up and running in no time.
+     __________________________________________________________________
+
+   Hosted by [5][AQby4xHTwxtnAAAAAElFTkSuQmCC]
+
+References
+
+   1. http://wpengine.com/support/add-domain-in-user-portal/
+   2. http://wpengine.com/support/find-ip/
+   3. http://wpengine.com/support/cname/
+   4. https://my.wpengine.com/support
+   5. https://www.wpengine.com/
