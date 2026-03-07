@@ -17,19 +17,19 @@ math = true
 
 ## shower thoughts / problems
 
-**Attention**
+**attention**
 * we have centralized information and made it available to nearly everyone
 * there is too much information available 
 * influencers, politicians, CEOs, & even engineers (basically every role) hinges on who you know not what (& quality)
 * people broadcast garbage and bait you into interacting with it to make money without providing real value (Donald Trump, Kanye West, Elon Musk, Joe Rogan, Mr. Beast, Jake Paul, Yoshua Bengio, Dario Amodei, Alex Karp, etc.)
 * YouTube, TikTok, (CNN/FOX), Instagram, Twitch, Reddit - modern day religions; yap, advertise, lots of color & stimulous to suck away your time (a trade that is no longer worthwhile or frankly never was)
 
-**Slavery**
+**slavery**
 * Companies have somehow convinced us that slavery went away but with rising home prices, cost of living, etc. is that true?
 * [Consumerism is the perfection of slavery](https://www.youtube.com/watch?v=4pG-8XLLaE0)
 * Consumerism is not the only cause of modern day slavery. It's also that we stopped sharing with each other. We all need our own things and spaces - no shared living situations yet people buy massive properties that largely go unused to "flex" on neighbors and hide from others [cough Zuck cough](https://www.nytimes.com/2025/08/10/us/mark-zuckerberg-palo-alto.html)
  
-## solutions(?)
+## solutions
 * We can start by using devices less and interacting with our local, organic environments
 * The issue here is that it's inconvenient compared with technology at your fingertips; why schedule time with busy friends if you can just browse your phone - our incentives suck
 * I think it starts with housing. If we can get a politician to fix zoning and allow for more dynamic construction, we could pave the way for affordable housing and equality.
