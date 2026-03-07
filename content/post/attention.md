@@ -1,7 +1,7 @@
 +++
 author = "Someone"
-title = "improving"
-date = "2026-02-22"
+title = "attention"
+date = "2026-03-07"
 description = "asdf"
 math = true
 +++
