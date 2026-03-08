@@ -1,7 +1,7 @@
 +++
 author = "Someone"
 title = "papers"
-date = "2026-03-08"
+date = "2026-03-07"
 description = "asdf"
 math = true
 +++
