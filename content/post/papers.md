@@ -17,3 +17,4 @@ I want to be more systematic and organized with regards to what I read and how I
 |------|------|----------|
 | [Satisfiability Modulo Theories: A Beginner’s Tutorial](https://www.researchgate.net/publication/384015322_Satisfiability_Modulo_Theories_A_Beginner's_Tutorial) | 5/10 | I liked the authors so I gave it a read and found it to be a snooze fest... I like that it is focused on applications but the examples are contrived and boring in cvc. I also wished they provided concrete definitions intead of handwavy paragraphs of text about subtopics in the area. |
 | [Fast Decision Procedures Based on Congruence Closure](https://dl.acm.org/doi/pdf/10.1145/322186.322198) | 6/10 | I love how concise / short these older papers are, but this one annoyed me with the CAR, CDR, CONS, ATOM examples - like why.... my brain shut off and got bored. |
+| [AxProver](https://arxiv.org/pdf/2510.12787v1) | ?/10 | asdf |
