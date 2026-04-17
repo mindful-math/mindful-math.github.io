@@ -6,7 +6,7 @@ description = "asdf"
 math = true
 +++
 
-Commentary on [this paper](https://ieeexplore.ieee.org/document/9055440). 
+Commentary on [this routing paper](https://ieeexplore.ieee.org/document/9055440). 
 <!--more-->
 
 ## thoughts
