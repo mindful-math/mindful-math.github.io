@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On optimization · thoughts · notebook</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="site-wrap">
+
+  <header>
+    <nav>
+      <a href="../index.html" class="site-title">notebook</a>
+      <a href="../notebooks/index.html">experiments</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="../quotes/index.html">quotes</a>
+      <a href="../books/index.html">books</a>
+      <a href="../photos/index.html">photos</a>
+</nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>On optimization and why the gradient is your only friend in the dark</h1>
+      <p class="meta">2026-03-08</p>
+    </div>
+
+    <article class="prose">
+      <p>
+        When you don't know the shape of the loss surface — and you never really do —
+        the gradient $\nabla f(x)$ is the single piece of local information you can trust.
+        Everything else is extrapolation.
+      </p>
+
+      <p>
+        The black-box model forces this. An oracle tells you $f(x)$ and $\nabla f(x)$
+        at a point. That's it. No global picture. No curvature unless you pay for it
+        with a second-order oracle and Hessian computation. The pessimist reads this as
+        a limitation; the analyst reads it as a <em>classification</em>: the problem now
+        belongs to a class, and the class has known worst-case bounds.
+      </p>
+
+      <h2>Convergence in the convex case</h2>
+
+      <p>
+        For $L$-smooth convex $f$ with gradient descent step $\eta = 1/L$, the standard
+        analysis gives:
+      </p>
+
+      $$f(x_k) - f^* \;\leq\; \frac{L \|x_0 - x^*\|^2}{2k}$$
+
+      <p>
+        So $O(1/\varepsilon)$ iterations for $\varepsilon$-accuracy — each iteration
+        costs one gradient evaluation. The bound is tight on quadratics. Nesterov's
+        accelerated method achieves $O(1/\sqrt{\varepsilon})$, which is optimal for
+        this class.
+      </p>
+
+      <p>
+        What I find striking is how the step size $\eta = 1/L$ falls directly out of
+        minimizing the quadratic upper bound — not from some ad-hoc schedule but from
+        the structure of the problem class itself.
+      </p>
+
+      <h2>When the gradient fails</h2>
+
+      <p>
+        The moment $f$ is non-differentiable — say $f(x) = \max_i f_i(x)$ — the
+        subgradient replaces the gradient, and convergence slows to $O(1/\sqrt{k})$
+        even with perfect step schedule. You can't escape this; it's a lower bound too.
+      </p>
+
+      <p>
+        Mirror descent extends the geometry: rather than the Euclidean prox step,
+        you pick a Bregman divergence matched to your constraint set.
+        On the simplex, KL divergence is natural, and the exponential gradient update
+        follows. The algorithm is the same shape; only the measuring stick changes.
+      </p>
+
+      <!--
+        Continue writing here.
+        MathJax is loaded so $...$ and $$...$$ render LaTeX.
+        Code blocks:
+
+        <pre><code>import numpy as np
+result = np.linalg.solve(A, b)
+        </code></pre>
+      -->
+
+    </article>
+
+    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule);">
+      <a href="index.html" style="font-size: 0.85rem; color: var(--ink-light); text-decoration: none;">← all thoughts</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>built with plain html &amp; css · no framework</span>
+    <a href="#">↑ top</a>
+  </footer>
+
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>divisibility · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>divisibility</h1>
+              <p class="meta">2024-01-27</p>
+            </div>
+
+            <article class="prose">
+              <p>Some refreshments on divisibility stemming from <a href="https://bookstore.ams.org/mcl-25">this book</a>.</p>
+
+
+      <ul>
+      <li><a href="#rules">rules</a></li>
+      <li><a href="#problems">problems</a></li>
+      </ul>
+
+      <p>In all of these cases, I am just working in base 10. I rediscovered how fun arithmetic is - these proofs were fun to come up with! Although written for myself, if you stumble on this article, I recommend trying them out for yourself (unless you've already gone through a first course in number theory).</p>
+
+      <h2>rules</h2>
+
+      <p><hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 2 iff its last digit is divisible by 2.</p></blockquote>
+
+      <p><details> <summary> proof </summary> Given a number $x$, we can write it out as</p>
+
+      <p>$$ x = a_na_{n-1}\cdots a_0 = a_0 + \sum\limits_{i=1}^n 10^i a_i = a_0 + \underbrace{2\cdot 5\sum\limits_{i=1}^n 10^{i-1} a_i}_{M}$$</p>
+
+      <p>for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Note that $M$ is divisible by $2$, so $x | 2$ iff $x | a_0$ (the ones digit).</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 3 iff the sum of its digits is divisible by $3$.</p></blockquote>
+
+      <p><details> <summary> proof </summary> Given a number $x$, we can write it out as</p>
+
+      <p>$$ x = \sum\limits_{i=0}^n 10^i a_i = \underbrace{\sum\limits_{i=0}^n (10^i-1)a_i}\_{M} + \underbrace{\sum\limits_{i=0}^n a_i}\_{N}.$$</p>
+
+      <p>for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Thus $x|3$ iff it divides both $M$ and $N$. It suffices to show that $M|3$ as $N|3$ is our divisibility rule. Notice that </p>
+
+      <p>$$ \sum\limits_{i=0}^n (10^i-1)a_i =  (10-1)\sum\limits_{i=0}^n \sum\limits_{j=0}^{i-1} 10^j a_i$$</p>
+
+      <p>which tells us that $M|3$ as there is a factor of $9$.</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 4 iff its last two digits are divisible by $4$.</p></blockquote>
+
+      <p><details> <summary> proof </summary> Given a number $x$, we can write it out as</p>
+
+      <p>$$ x = \sum\limits_{i=0}^n 10^i a_i = \underbrace{a_0 + 10a_{1}}\_{M} + \underbrace{\sum\limits_{i=2}^n 10^i a_i}_{N} $$</p>
+
+      <p>for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Notice that as $4\cdot 25 = 100$, $N | 4$ and so $x|4$ iff $M|4$ (i.e. the two digits are divisible by 4). </p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 5 iff its last digit is either $0$ or $5$.</p></blockquote>
+
+      <p><details> <summary> proof </summary> Given a number $x$, we can write it out as</p>
+
+      <p>$$ x = \sum\limits_{i=0}^n 10^i a_i = a_0 + \underbrace{5\cdot 2\sum\limits_{i=1}^n 10^{i-1} a_i}_{M} $$</p>
+
+      <p>for some $n\geq 0$ where each $a_i\in\\{0,1,\dots,9\\}$. Notice that as $M|5$, and so $x|5$ iff $a_0|5$ which is the case so long as $a_i\in\\{0,5\\}$.</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 6 iff it is divisible by 2 and 3.</p></blockquote>
+
+      <p><details> <summary> proof </summary> This just follows from factorization as</p>
+
+      <p>$$\frac{x}{6}=\frac{x}{2\cdot 3}=\frac{x}{2}\cdot \frac{x}{3}.$$</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 8 iff its last three digits are divisible by 8.</p></blockquote>
+
+      <p><details> <summary> proof </summary> Note that $10/8=1.25$, $100/8=12.5$, and $200/8=25$ implying that $1000|8$. The rest of the proof mirrors our divisibility rule for 4.</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <blockquote><p>A number is divisible by 11 iff the sum of digits in the evens place minus the sum of digits in the odd places is divisible by 11 or 0.</p></blockquote>
+
+      <p><details> <summary> proof </summary> This is a bit complicated, but the idea is somewhat similar to what we did with 3 and 9 except that we end up with an alternating series that we need to break up: $10^ia_i=(10+1)(10^{i-1}-10^{i-2}+\cdots + 1)$. I'll do this next round.</p>
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+      <h2>problems</h2>
+
+      <p>This section includes my answers to problems in the book "Mathematics via Problems Part 1: Algebra".</p>
+
+      <blockquote><p>Show that the number $1\cdots 1$, consisting of 1992 ones, is divisible by $111111$.</p></blockquote>
+
+      <p><details> <summary> solution </summary> The critical step is to see that</p>
+
+      <p>$$\underbrace{1\cdots 1}\_{n \text{ ones}}=\sum\limits_{i=0}^{n-1} 10^i.$$</p>
+
+      <p>From here, notice that </p>
+
+      <p>$$ \frac{1\cdots 1}{111111}=\frac{\sum\limits_{j=0}^{1991} 10^j}{\sum\limits_{i=0}^5 10^i}. $$</p>
+
+      <p>Then as $1992/6=332$, we can rewrite the numerator to prove that $1\cdots 1 | 111111$</p>
+
+      <p>$$ \frac{\sum\limits_{j=0}^{331} 10^{6j}\sum\limits_{i=0}^5 10^i}{\sum\limits_{i=0}^5 10^i} = \sum\limits_{j=0}^{331} 10^{6j}.$$</p>
+
+
+
+      <p></details> <br> <hr style="border:1.5px solid black"></p>
+
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

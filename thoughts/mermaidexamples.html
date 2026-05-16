@@ -1,0 +1,255 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>mermaid · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>mermaid</h1>
+              <p class="meta">2023-08-25</p>
+            </div>
+
+            <article class="prose">
+              <p>Some basic Mermaid charting examples.</p>
+
+
+      <ul>
+      <li><a href="#mindmaps">mindmaps</a></li>
+      <li><a href="#sequence-diagrams">sequence diagrams</a></li>
+      <li><a href="#flow-charts">flow charts</a></li>
+      <li><a href="#class-diagrams">class diagrams:</a></li>
+      <li><a href="#gantt-charts">gantt charts:</a></li>
+      </ul>
+
+      <h2>mindmaps </h2>
+
+      <p>Mindmaps are useful for organizing concepts that are hierarchical. Functionality at the moment though is quite limited. </p>
+      <pre><code>mindmap
+          root((Convex Optimization))
+              Nonsmooth Convex Optimization
+                  Proximal Gradient Methods
+                  Subgradient Descent
+                  Cutting Plan Scheme
+
+              Smooth Convex Optimization
+                  First Order Methods
+                      Gradient Descent
+                          Accelerated Gradient Descent
+                          Stochastic Gradient Descent
+                      Conjugate Gradient Method
+                      Quasi Newton Method
+                  Second Order Methods
+                      Newton's Method
+                      Interior Point Method
+      </code></pre>
+
+      <pre><code class="language-mermaid">mindmap
+          root((Convex Optimization))
+              Nonsmooth Convex Optimization
+                  Proximal Gradient Methods
+                  Subgradient Descent
+                  Cutting Plan Scheme
+
+              Smooth Convex Optimization
+                  First Order Methods
+                      Gradient Descent
+                          Accelerated Gradient Descent
+                          Stochastic Gradient Descent
+                      Conjugate Gradient Method
+                      Quasi Newton Method
+                  Second Order Methods
+                      Newton's Method
+                      Interior Point Method
+      </code></pre>
+
+      <h2>sequence diagrams </h2>
+
+      <p>Sequence diagrams are useful especially for software applications in diagramming the high-level user stories and functionalities needed for a barebone service to function.</p>
+      <pre><code>sequenceDiagram
+          participant web as Web Browser
+          participant blog as Blog Service
+          participant account as Account Service
+          participant mail as Mail Service
+          participant db as Storage
+
+          Note over web,db: The user must be logged in to submit blog posts
+          web-&gt;&gt;+account: Logs in using credentials
+          account-&gt;&gt;db: Query stored accounts
+          db-&gt;&gt;account: Respond with query result
+
+          alt Credentials not found
+              account-&gt;&gt;web: Invalid credentials.
+          else Credentials found, but odd location
+              account-&gt;&gt;web: Send us the confirmation code to login. 
+          else Credentials found
+              account-&gt;&gt;-web: Successfully logged in.
+
+              Note over web,db: When the user is authenticated, they can now submit new posts
+              web-&gt;&gt;+blog: Submit new post
+              blog-&gt;&gt;db: Store post data
+
+              par Notifications
+                  blog--)mail: Send mail to blog subscribers
+                  blog--)db: Store in-site notifications
+              and Response
+                  blog--&gt;&gt;-web: Successfully posted
+              end
+          end
+      </code></pre>
+
+      <pre><code class="language-mermaid">sequenceDiagram
+          participant web as Web Browser
+          participant blog as Blog Service
+          participant account as Account Service
+          participant mail as Mail Service
+          participant db as Storage
+
+          Note over web,db: The user must be logged in to submit blog posts
+          web-&gt;&gt;+account: Logs in using credentials
+          account-&gt;&gt;db: Query stored accounts
+          db-&gt;&gt;account: Respond with query result
+
+          alt Credentials not found
+              account-&gt;&gt;web: Invalid credentials.
+          else Credentials found, but odd location
+              account-&gt;&gt;web: Send us the confirmation code to login. 
+          else Credentials found
+              account-&gt;&gt;-web: Successfully logged in.
+
+              Note over web,db: When the user is authenticated, they can now submit new posts
+              web-&gt;&gt;+blog: Submit new post
+              blog-&gt;&gt;db: Store post data
+
+              par Notifications
+                  blog--)mail: Send mail to blog subscribers
+                  blog--)db: Store in-site notifications
+              and Response
+                  blog--&gt;&gt;-web: Successfully posted
+              end
+          end
+      </code></pre>
+
+      <h2>flow charts </h2>
+
+      <p>Flow charts are similar to sequence diagrams except they are more appealing with less interactions among systems/calls. They can also be appealing for demonstrating algorithm flow and individual functionality. Orientation can be LR (left right), RL, TD (top down), and DT. </p>
+
+      <pre><code>flowchart LR;
+          A{State 0}
+          B{State 1}
+          C{State 2}
+          D{State 3}
+
+          style A fill:#075B73
+          style B fill:#028FAE
+          style C fill:#028FAE
+          style D fill:#D86C6D
+
+          A == Heads ==&gt; B;
+          B == Tails ==&gt; A;
+          B == Heads ==&gt; C;
+          C == Tails ==&gt; A;
+          C == Heads ==&gt; D;
+          D == Game Terminates ==&gt; D;
+      </code></pre>
+
+      <pre><code class="language-mermaid">flowchart LR;
+          A{State 0}
+          B{State 1}
+          C{State 2}
+          D{State 3}
+
+          style A fill:#075B73
+          style B fill:#028FAE
+          style C fill:#028FAE
+          style D fill:#D86C6D
+
+          A == Heads ==&gt; B;
+          B == Tails ==&gt; A;
+          B == Heads ==&gt; C;
+          C == Tails ==&gt; A;
+          C == Heads ==&gt; D;
+          D == Game Terminates ==&gt; D;
+      </code></pre>
+
+      <h2>class diagrams: </h2>
+
+      <p>These are useful for software engineering in identifying classes, attributes, methods, inheritence, composition, etc. These are also useful for database design - each class can be seen as a table of attributes with linkages across the various collections. ```  classDiagram</p>
+
+      <p>class shape {     double height     double width     getHeight() double     getWidth() double     setDimensions() void } class rectangle~shape~{     getArea() double     getDimensions() List~double~ }</p>
+
+      <p>shape --|> rectangle : Inheritance classC --* classD : Composition classE --o classF : Aggregation classG --> classH : Association classI -- classJ : Link(Solid) classK ..> classL : Dependency classM ..|> classN : Realization classO .. classP : Link(Dashed)</p>
+      <pre><code>
+      </code></pre>mermaid 
+      <p>classDiagram</p>
+
+      <p>class shape {     double height     double width     getHeight() double     getWidth() double     setDimensions() void } class rectangle~shape~{     getArea() double     getDimensions() List~double~ }</p>
+
+      <p>shape --|> rectangle : Inheritance classC --* classD : Composition classE --o classF : Aggregation classG --> classH : Association classI -- classJ : Link(Solid) classK ..> classL : Dependency classM ..|> classN : Realization classO .. classP : Link(Dashed)</p>
+      <pre><code>
+      ## gantt charts: 
+
+      Gantt charts are useful for illustrating schedules and time to accomplish tasks. But these are pretty painful to construct - ticketing in a gitlab, bitbucket, or another system is easier. 
+
+      </code></pre>
+      <p>gantt     dateFormat              YY-MM-DD     axisFormat              %m-%d     title                   System A and B Workflow till August Demo</p>
+
+      <p>    section System A Tasks     Task A1                 :crit, active, a1, 23-07-30, 3d     Task A2                 :after a1, 10d     Task A3                 :crit, done, 23-07-28, 4d</p>
+
+      <p>    section System B Tasks     Task B1                 :active, b1, 23-08-11, 4d     Task B2                 :crit, after b1, 10d</p>
+
+      <p>    August Demo           :milestone, m2, 23-08-26, 4d</p>
+
+      <pre><code>
+      </code></pre>mermaid
+      <p>gantt     dateFormat              YY-MM-DD     axisFormat              %m-%d     title                   System A and B Workflow till August Demo</p>
+
+      <p>    section System A Tasks     Task A1                 :crit, active, a1, 23-07-30, 3d     Task A2                 :after a1, 10d     Task A3                 :crit, done, 23-07-28, 4d</p>
+
+      <p>    section System B Tasks     Task B1                 :active, b1, 23-08-11, 4d     Task B2                 :crit, after b1, 10d</p>
+
+      <p>    August Demo           :milestone, m2, 23-08-26, 4d</p>
+
+      <p>```</p>
+
+      <p>More charts and examples can be found <a href="https://mermaid.js.org/syntax/examples.html">here on Mermaid's site</a>.</p>
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

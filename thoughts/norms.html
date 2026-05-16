@@ -1,0 +1,88 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>norms · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>norms</h1>
+              <p class="meta">2026-02-08</p>
+            </div>
+
+            <article class="prose">
+              <p>Some reference visuals for normed regularization. </p>
+
+
+      <ul>
+      <li><a href="#definitions">definitions</a></li>
+      </ul>
+
+      <h2>definitions</h2>
+
+      <p>Normed regularization adds a term like $\lVert w\rVert_p$ that is the lp norm of your weights to your original objective function. There are two hyperparameters you introduce here - the norm itself which controls the family of models/weights you guide the model towards along with the penalization attached to this norm term when minimizing that controls how much we care to guide the weights in the direction specified by the norm & original loss function.</p>
+
+      <h2>$\ell_0$</h2>
+      <p>This norm encourages extreme sparsity - the norm counts the number of nonzero elements in the weight vector. You cannot differentiate it (gradient is zero everywhere) and so you solve this combinatorially.</p>
+
+      <p><img src="/p<em>norm</em>ell_0.png" alt="l0"></p>
+
+      <h2>$\ell_1$</h2>
+      <p>This norm has sharp edges and a constant gradient for non-zero weights that expedite them in the direction of the origin (sparsity).</p>
+
+      <p><img src="/p<em>norm</em>ell_1.png" alt="l1"></p>
+
+      <h2>$\ell_2$</h2>
+      <p>This norm likewise encourages smaller weights but its spherical structure and vanishing gradient near the origin encourage non-zero, small weights.</p>
+
+      <p><img src="/p<em>norm</em>ell_2.png" alt="l2"></p>
+
+      <h2>$l_\infty$</h2>
+      <p>I forgot to add a picture of this, but it takes the maximum of each component and ensures weights are uniformly bounded but not necessarily minimized.</p>
+
+      <h2>references</h2>
+
+      <ul>
+      <li>Claude generated the plots here; I love handing off trivial things like this - matplotlib is just more syntax I don't need to solve problems</li>
+      </ul>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

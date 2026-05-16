@@ -1,0 +1,79 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>proofs · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>proofs</h1>
+              <p class="meta">2026-05-06</p>
+            </div>
+
+            <article class="prose">
+              <p>Thoughts on proving theorems. </p>
+
+
+      <h2>thoughts</h2>
+
+      <ul>
+      <li>On one hand, we have the problem of caching; finding equivalent expressions (or subexpressions) to move from the hypothesis to the conclusion. We have theorems in English, Lean, LaTeX, etc. and would like to find the one that helps us solve the problem at hand. </li>
+      <li>On the other hand, we have the problem of solving; given no prior solution exists, fire existing expressions or derive new ones (from axioms, theorems, etc. - many levels here) to fire at the problem and solve it. Try solving the contrapositive, the converse, sub-goals, or zooming in and out of levels to find the appropriate tools to work with. Also, consider using automated theorem provers or hammers to solve the question. Another idea would be to use natural language to decompose problem from which we then convert to Lean.</li>
+      <li>A side goal is to look at the body of mathematics / the cache and think about what stays and what goes. Theorems can be proven in many, many different ways and should all be included? Perhaps. But we risk adding superfluous results if we add randomly. We need to think about the body of mathematics in natural language and what exists in programs and interpolate the gaps.</li>
+      <li>The most important goal I think is to explain these results to humans. Take a theorem or conjecture, unpack if they're confused, do the Feynman method and take into account their background to draw explanations from. We should start with graphs w/ the least depth or breadth (or just total nodes) and then slowly expand the universe / peek into the theorem as a SWE would do with a debugger in some complex piece of software or a good teacher would do with their students. Then we should work on augmenting the student's abilities further and advancing the field w/ repetition OR do they just ignore the vast and mainly useless body of mathematics and focus on their peers and families? Hmmmmm.... I'd reckon the latter is more likely to occur - Wall-E was too realistic. </li>
+      </ul>
+
+      <h2>comments</h2>
+
+      <ul>
+      <li>solving problems is hard w/o a good cache/index, like very hard and it's not obvious if we gain throwing compute instead of our brains</li>
+      <li>the best solution is probably to throw everything at the problem but we should sort by compute intensity and think about using load-balancing tools to know when to tap into the various pieces when solving the problem at hand (big companies already do this, but we need open-source methods available)</li>
+      <li>I'm wondering if there is a simple way of estimating the difficulty of a problem; for a hammer, it depends on the size of the universe, for a human, I'm not sure (perhaps the # of fields / textbooks / theorems required)</li>
+      </ul>
+
+      <h2>references for future work</h2>
+
+      <ul>
+      <li><a href="https://watermark02.silverchair.com/exad022.pdf?token=AQECAHi208BE49Ooan9kkhW<em>Ercy7Dm3ZL</em>9Cf3qfKAc485ysgAAA1IwggNOBgkqhkiG9w0BBwagggM<em>MIIDOwIBADCCAzQGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMtwbsuIR9ZGiWM2zXAgEQgIIDBbWf1oiQIIPFBHesY6eD8kP1EVWacEFWpnu7PFqZn</em>4CpK5S3nXNi2U9tZrCw-Kp54MQlJ9668OEgM7RhOPJYK1zLsWOR09bfxkxmABWxq9vWhogyiVYP5JH-1vbcSAd6QLPwCvxNy9dOkS54cVLkPiljF7nxA5hoGXgm-C4g8ByhUVD01YE6VuSINma7IKOVwe1qB6vII1hGPXhrpCiW3za28wGfkM3-iU7bHbyBtaL69-VZfReLJxvE3Mtc<em>raqsJtbFD-5wi9KLkRDT9KCHqg8A1Cqjj5RaBM6Xkds7AtALedAdYSNvEn-tBT5qCCnKlcH7eY</em>7vsqSZSUua6n7qKrzRQqaaUqordqSqNKILveQTz3nI<em>XFkb6k7FfIFKwpCraC</em>i1qQY6GMCI7sTISpWDOOmKFjmbjQjAZmAPOHaRFI7fVYv1ldGRVoa8oLZrrbNCIGwoqYiNHk0-ES5IJh4zLOTm6u6DvRF27jtFwi1SQ1oGJVvblyUawTCVIpOKI6HQBVvlE2<em>8jwYjcNKongLlUS8X7Ej6Vl37rZFUliAUS57scgRWsIm8yHKKr7xmzl7L2tDM</em>WFG9hRt60TVSffPVQRj0AHOErJifcxHaXyfEJG-qqJTuekiS-CzZ<em>BvxX-5mwnTAvWCLWcFWbC34IdQxVj2</em>1Y0Fgwtx005PnVLnWjVLpp02zT0LD8zqZ3rIVEvYG6GfyMHrmIjqOL5qCC9xoRftBZiFI<em>USdOWadteOdwJHNMp32Wm0Oq-a8-w7827I0uZD</em>5KuM90xyq-D6jW7z5lYw0IcMAX12QbXDXpZ26<em>BD9yihfkxwdCnR2jp0Bu90MwJHqu24Ilun0h</em>ymzWbGxJAbLN0iVsbe<em>cuAIdycxIAwyls6m0OBustbdLvSwEOTfer98n8yKsDLUr-w3DUYWm</em>ceX<em>rKUHnryT8XHBpMblOs5I9i0apmRX1IoNiJbW</em>gJRlxEFynoF6hNAdqVq3<em>YmzqF6-C-K</em>87UHy_XXjndoDoTSQSS8qWME0SdkXhZF">explicit math</a></li>
+      <li><a href="https://plato.stanford.edu/entries/mathematics-constructive/#ConsInteLogi">constructive math</a></li>
+      </ul>
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

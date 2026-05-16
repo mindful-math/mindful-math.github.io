@@ -1,0 +1,360 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>SETUP · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>SETUP</h1>
+              <p class="meta">2026-05-16</p>
+            </div>
+
+            <article class="prose">
+              <h1>Site setup guide</h1>
+
+      <p>A minimal static site: plain HTML, one CSS file, zero build steps, zero npm. Runs anywhere that serves files — GitHub Pages, Netlify, a VPS, even <code>python -m http.server</code>.</p>
+
+      <hr>
+
+      <h2>1. Folder structure</h2>
+
+      <pre><code>site/
+      ├── index.html              ← homepage
+      ├── assets/
+      │   ├── css/main.css        ← all styles (edit this to change look)
+      │   └── js/main.js          ← nav active-state + iframe helper
+      ├── notebooks/
+      │   ├── index.html          ← experiment listing
+      │   ├── optimization.html   ← wrapper page for a notebook
+      │   └── optimization_raw.html  ← nbconvert output (you generate this)
+      ├── thoughts/
+      │   ├── index.html          ← thought listing
+      │   └── example.html        ← template for a post (copy this)
+      ├── quotes/
+      │   └── index.html          ← quotes masonry grid
+      └── books/
+          └── index.html          ← book table with category filter
+      </code></pre>
+
+      <hr>
+
+      <h2>2. Local preview</h2>
+
+      <p>No build step needed. From the <code>site/</code> directory:</p>
+
+      <pre><code class="language-bash">python -m http.server 8000
+      # open http://localhost:8000
+      </code></pre>
+
+      <p>Or with Node (if you have it):</p>
+
+      <pre><code class="language-bash">npx serve .
+      </code></pre>
+
+      <p>Do <strong>not</strong> open HTML files directly in the browser via <code>file://</code> — relative paths for the iframe and assets will break. Always use a local server.</p>
+
+      <hr>
+
+      <h2>3. Adding a notebook</h2>
+
+      <h3>Step 1 — convert</h3>
+
+      <pre><code class="language-bash">pip install nbconvert
+
+      # Basic HTML (lightweight, just the outputs)
+      jupyter nbconvert --to html your_notebook.ipynb
+
+      # Lab-style (nicer code highlighting, heavier file)
+      jupyter nbconvert --to html --template lab your_notebook.ipynb
+      </code></pre>
+
+      <p>This creates <code>your_notebook.html</code> alongside the <code>.ipynb</code> file.</p>
+
+      <h3>Step 2 — copy files</h3>
+
+      <pre><code class="language-bash">cp your_notebook.html site/notebooks/your_notebook_raw.html
+      </code></pre>
+
+      <h3>Step 3 — create a wrapper page</h3>
+
+      <p>Copy <code>notebooks/optimization.html</code> → <code>notebooks/your_notebook.html</code>. Edit the three things at the top:</p>
+
+      <pre><code class="language-html">&lt;title&gt;Your Title · experiments · notebook&lt;/title&gt;
+      ...
+      &lt;h1&gt;Your Title&lt;/h1&gt;
+      &lt;p class="meta"&gt;2026-01-15 · topic · topic&lt;/p&gt;
+      ...
+      &lt;iframe src="your_notebook_raw.html" ...&gt;
+      </code></pre>
+
+      <p>And update the "open full page" link:</p>
+
+      <pre><code class="language-html">&lt;a class="btn" href="your_notebook_raw.html" target="_blank"&gt;open full page ↗&lt;/a&gt;
+      </code></pre>
+
+      <h3>Step 4 — add to the listing</h3>
+
+      <p>In <code>notebooks/index.html</code>, add a list item inside <code>&lt;ul class="entry-list"&gt;</code>:</p>
+
+      <pre><code class="language-html">&lt;li&gt;
+        &lt;a href="your_notebook.html" class="entry-link"&gt;
+          &lt;span class="entry-title"&gt;Your notebook title&lt;/span&gt;
+          &lt;span class="entry-tag"&gt;notebook&lt;/span&gt;
+          &lt;span class="entry-date"&gt;2026-01-15&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      </code></pre>
+
+      <p>Do the same in <code>index.html</code> under "Recent experiments".</p>
+
+      <h3>Alternative: inline instead of iframe</h3>
+
+      <p>If you prefer the notebook to render inline (no scroll-within-scroll):</p>
+
+      <ol>
+      <li>Run <code>jupyter nbconvert --to html --template lab your_notebook.ipynb</code></li>
+      <li>Open the output HTML, select everything between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>, copy it.</li>
+      <li>In the wrapper page, delete the <code>&lt;iframe&gt;</code> block and paste the copied HTML</li>
+      </ol>
+      <p>   inside <code>&lt;div class="notebook-inline"&gt;</code>.</p>
+      <ol>
+      <li>Add this CSS to the wrapper's <code>&lt;style&gt;</code> block to strip the notebook's own background:</li>
+      </ol>
+         <pre><code class="language-css">   .notebook-inline { background: transparent !important; }
+         .notebook-inline .jp-Notebook { background: transparent !important; padding: 0; }
+         </code></pre>
+
+      <h3>Optional: live execution via Binder</h3>
+
+      <p>If your repo is on GitHub, you can offer a live-run button for free:</p>
+
+      <pre><code class="language-html">&lt;a class="btn"
+         href="https://mybinder.org/v2/gh/YOURUSER/YOURREPO/HEAD?filepath=your_notebook.ipynb"
+         target="_blank"&gt;run on binder ↗&lt;/a&gt;
+      </code></pre>
+
+      <p>Replace <code>YOURUSER</code> and <code>YOURREPO</code>. Binder builds a Docker image from your repo's <code>requirements.txt</code> or <code>environment.yml</code>. First launch is slow (~2 min); subsequent ones use a cached image.</p>
+
+      <hr>
+
+      <h2>4. Converting existing Hugo markdown posts → thoughts</h2>
+
+      <p>Your Hugo posts have front matter like:</p>
+
+      <pre><code class="language-toml">+++
+      author = "Someone"
+      title = "books"
+      date = "2026-03-08"
+      description = "asdf"
+      math = true
+      +++
+      </code></pre>
+
+      <p>For each post:</p>
+
+      <ol>
+      <li>Copy <code>thoughts/example.html</code> → <code>thoughts/your-post-slug.html</code></li>
+      <li>Update <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code>, and the date in <code>.meta</code></li>
+      <li>Paste the body content (everything after `<code>) into the </code><article class="prose">` block.</li>
+      </ol>
+      <p>   - Markdown tables → use the <code>&lt;table&gt;</code> markup from <code>books/index.html</code> as a reference    - Markdown links <code>&lt;a href="url"&gt;text&lt;/a&gt;</code> → <code>&lt;a href="url"&gt;text&lt;/a&gt;</code>    - <code>## headings</code> → <code>&lt;h2&gt;</code>, <code>### headings</code> → <code>&lt;h3&gt;</code>    - <code>&lt;strong&gt;bold&lt;/strong&gt;</code> → <code>&lt;strong&gt;</code>, <code>&lt;em&gt;italic&lt;/em&gt;</code> → <code>&lt;em&gt;</code>    - `<code> </code>code<code> </code><code> → </code><code>code</code><code>    - Code blocks → </code><pre><code>...</code></pre><code>    - LaTeX: leave </code>$...$<code> and </code>$$...$$<code> as-is; MathJax is loaded on every page that      has math (add the MathJax </code><script><code> tags from </code>thoughts/example.html` if needed)</p>
+      <ol>
+      <li>Add to <code>thoughts/index.html</code>:</li>
+      </ol>
+         <pre><code class="language-html">   &lt;div class="thought-card"&gt;
+           &lt;p class="thought-date"&gt;2026-03-08&lt;/p&gt;
+           &lt;a href="your-post-slug.html" class="thought-title"&gt;Post title&lt;/a&gt;
+           &lt;p class="thought-excerpt"&gt;One or two sentence preview.&lt;/p&gt;
+         &lt;/div&gt;
+         </code></pre>
+
+      <h3>Batch helper (optional)</h3>
+
+      <p>If you have many markdown files, this Python snippet converts the body to rough HTML so you only need to paste and clean up:</p>
+
+      <pre><code class="language-python">import re, pathlib
+
+      def md_to_rough_html(md_text):
+          # strip Hugo front matter
+          md_text = re.sub(r'^\+\+\+.*?\+\+\+\s*', '', md_text, flags=re.DOTALL)
+          md_text = md_text.replace('', '')
+          # headings
+          md_text = re.sub(r'^### (.+)$', r'&lt;h3&gt;\1&lt;/h3&gt;', md_text, flags=re.MULTILINE)
+          md_text = re.sub(r'^## (.+)$',  r'&lt;h2&gt;\1&lt;/h2&gt;', md_text, flags=re.MULTILINE)
+          md_text = re.sub(r'^# (.+)$',   r'&lt;h1&gt;\1&lt;/h1&gt;', md_text, flags=re.MULTILINE)
+          # inline
+          md_text = re.sub(r'\*\*(.+?)\*\*', r'&lt;strong&gt;\1&lt;/strong&gt;', md_text)
+          md_text = re.sub(r'\*(.+?)\*',     r'&lt;em&gt;\1&lt;/em&gt;', md_text)
+          md_text = re.sub(r'`(.+?)`',       r'&lt;code&gt;\1&lt;/code&gt;', md_text)
+          md_text = re.sub(r'\[(.+?)\]\((.+?)\)', r'&lt;a href="\2"&gt;\1&lt;/a&gt;', md_text)
+          # paragraphs (blank-line separated)
+          paras = re.split(r'\n{2,}', md_text.strip())
+          out = []
+          for p in paras:
+              p = p.strip()
+              if p and not p.startswith('&lt;h'):
+                  p = f'&lt;p&gt;{p}&lt;/p&gt;'
+              out.append(p)
+          return '\n\n'.join(out)
+
+      for f in pathlib.Path('content').rglob('*.md'):
+          html = md_to_rough_html(f.read_text())
+          out_path = pathlib.Path('site/thoughts') / (f.stem + '.html')
+          print(f'--- {out_path} ---')
+          print(html[:400])   # preview first 400 chars, then copy-paste into template
+      </code></pre>
+
+      <hr>
+
+      <h2>5. Adding a quote</h2>
+
+      <p>In <code>quotes/index.html</code>, paste inside <code>.quote-grid</code>:</p>
+
+      <pre><code class="language-html">&lt;div class="quote-card"&gt;
+        &lt;p class="quote-text"&gt;The quote text goes here.&lt;/p&gt;
+        &lt;p class="quote-attr"&gt;Author, &lt;em&gt;Source&lt;/em&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      </code></pre>
+
+      <p>Quotes reflow into two columns automatically on wide screens, one on mobile.</p>
+
+      <hr>
+
+      <h2>6. Adding a book</h2>
+
+      <p>In <code>books/index.html</code>, add a row to the <code>&lt;tbody&gt;</code>:</p>
+
+      <pre><code class="language-html">&lt;tr data-cat="nonfiction"&gt;   &lt;!-- or: fiction, manga --&gt;
+        &lt;td&gt;&lt;a href="URL" target="_blank"&gt;Title&lt;/a&gt;&lt;/td&gt;
+        &lt;td class="score"&gt;8/10&lt;/td&gt;
+        &lt;td class="thoughts-cell"&gt;Your notes here.&lt;/td&gt;
+      &lt;/tr&gt;
+      </code></pre>
+
+      <p>The filter buttons at the top use <code>data-cat</code> to show/hide rows — make sure it matches one of: <code>nonfiction</code>, <code>fiction</code>, <code>manga</code>.</p>
+
+      <hr>
+
+      <h2>7. Deploying</h2>
+
+      <h3>GitHub Pages (free, easiest)</h3>
+
+      <pre><code class="language-bash"># from your repo root
+      git init
+      git add .
+      git commit -m "initial site"
+      gh repo create my-notebook --public --push  # needs GitHub CLI
+      # then in repo Settings → Pages → Source → Deploy from branch → main → / (root)
+      </code></pre>
+
+      <p>Your site will be live at <code>https://YOURUSER.github.io/my-notebook</code> in ~60 seconds.</p>
+
+      <h3>Netlify (free, adds drag-and-drop option)</h3>
+
+      <ol>
+      <li>Go to netlify.com → "Add new site" → "Deploy manually"</li>
+      <li>Drag the <code>site/</code> folder onto the upload zone.</li>
+      <li>Done. You get a <code>*.netlify.app</code> URL immediately.</li>
+      </ol>
+
+      <p>For auto-deploy from GitHub: connect the repo, set publish directory to <code>site/</code>. No build command needed.</p>
+
+      <h3>Self-hosted VPS</h3>
+
+      <pre><code class="language-bash">rsync -avz site/ user@yourserver:/var/www/notebook/
+      # configure nginx or caddy to serve /var/www/notebook
+      </code></pre>
+
+      <p>Minimal nginx block:</p>
+      <pre><code class="language-nginx">server {
+          listen 80;
+          server_name yourdomain.com;
+          root /var/www/notebook;
+          index index.html;
+          location / { try_files $uri $uri/ =404; }
+      }
+      </code></pre>
+
+      <hr>
+
+      <h2>8. Customisation reference</h2>
+
+      <p>| What | Where | |------|--------| | Fonts | <code>assets/css/main.css</code> — change <code>@import</code> URL and <code>--font-body</code> / <code>--font-mono</code> | | Colors | <code>main.css</code> <code>:root</code> block — edit <code>--ink</code>, <code>--paper</code>, <code>--accent</code> etc. | | Line width | <code>main.css</code> <code>--measure</code> (prose width) and <code>--wide</code> | | Site name | Every <code>&lt;a class="site-title"&gt;</code> and <code>&lt;title&gt;</code> tag | | Nav links | The <code>&lt;nav&gt;</code> block in every page's <code>&lt;header&gt;</code> | | Footer text | The <code>&lt;footer&gt;</code> block in every page | | Add a section | Copy any <code>index.html</code> pattern, create a new folder, add a nav link to all pages |</p>
+
+      <hr>
+
+      <h2>9. Math rendering</h2>
+
+      <p>MathJax 3 is loaded via CDN on pages that need it (notebook wrappers and thought posts). Use standard LaTeX delimiters:</p>
+
+      <ul>
+      <li>Inline: <code>$f(x) = x^2$</code></li>
+      <li>Display: <code>$$\nabla f(x) = 2x$$</code></li>
+      </ul>
+
+      <p>To add math to any page, paste before <code>&lt;/head&gt;</code>:</p>
+
+      <pre><code class="language-html">&lt;script&gt;
+        window.MathJax = {
+          tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] }
+        };
+      &lt;/script&gt;
+      &lt;script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async&gt;&lt;/script&gt;
+      </code></pre>
+
+      <hr>
+
+      <h2>10. Things deliberately left out</h2>
+
+      <ul>
+      <li>No search (add Pagefind later: <code>npx pagefind --site site</code> gives a zero-dependency</li>
+      </ul>
+      <p>  local search index you can drop in)</p>
+      <ul>
+      <li>No RSS (easy to add: one static <code>feed.xml</code> file following the RSS 2.0 spec)</li>
+      <li>No comments (Utterances via GitHub Issues is the cleanest zero-backend option)</li>
+      <li>No dark mode toggle (the CSS variables are ready for it — add a <code>[data-theme="dark"]</code></li>
+      </ul>
+      <p>  block and a <code>&lt;button&gt;</code> that toggles <code>document.documentElement.dataset.theme</code>)</p>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

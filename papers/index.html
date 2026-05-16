@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>papers · notebook</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .papers-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .paper-entry {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .paper-entry:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .paper-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.35rem;
+    }
+
+    .paper-title {
+      font-family: var(--font-body);
+      font-size: 0.97rem;
+      color: var(--ink);
+      text-decoration: none;
+      text-underline-offset: 2px;
+    }
+
+    .paper-title:hover {
+      color: var(--ink-light);
+    }
+
+    .paper-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .paper-date {
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .paper-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 2px 5px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .paper-abstract {
+      font-size: 0.87rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin: 0 0 0.5rem 0;
+      max-width: 68ch;
+    }
+
+    .paper-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .paper-link {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1px;
+      transition: color 0.12s, border-color 0.12s;
+    }
+
+    .paper-link:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .paper-link::before {
+      content: '↓ ';
+      font-size: 0.75rem;
+    }
+
+    .paper-link.arxiv::before {
+      content: '→ ';
+    }
+
+    .notice {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.85rem;
+      color: var(--ink-light);
+    }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <header>
+    <nav>
+      <a href="../index.html" class="site-title">notebook</a>
+      <a href="../notebooks/index.html">experiments</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="../quotes/index.html">quotes</a>
+      <a href="../books/index.html">books</a>
+      <a href="../papers/index.html">papers</a>
+      <a href="../photos/index.html">photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Papers</h1>
+      <p class="meta">Writing on math, probability, and optimization</p>
+    </div>
+
+    <ul class="papers-list">
+
+      <!-- ADD NEW PAPERS ABOVE THIS LINE — copy the block below as a template
+      <li class="paper-entry">
+        <div class="paper-top">
+          <a href="your-paper.pdf" class="paper-title" target="_blank">Paper Title</a>
+          <div class="paper-meta">
+            <span class="paper-date">YYYY-MM-DD</span>
+            <span class="paper-tag">topic</span>
+          </div>
+        </div>
+        <p class="paper-abstract">
+          One or two sentences describing what the paper is about.
+        </p>
+        <div class="paper-links">
+          <a href="your-paper.pdf" class="paper-link" target="_blank">pdf</a>
+        </div>
+      </li>
+      -->
+
+      <li class="paper-entry">
+        <div class="paper-top">
+          <a href="stochastic_optimization.pdf" class="paper-title" target="_blank">Stochastic Optimization</a>
+          <div class="paper-meta">
+            <span class="paper-date">2022-05-16</span>
+            <span class="paper-tag">optimization</span>
+          </div>
+        </div>
+        <p class="paper-abstract">
+          Notes on stochastic optimization methods — SGD, variance reduction, and convergence analysis under noise.
+        </p>
+        <div class="paper-links">
+          <a href="stochastic_optimization.pdf" class="paper-link" target="_blank">pdf</a>
+        </div>
+      </li>
+
+      <li class="paper-entry">
+        <div class="paper-top">
+          <a href="algebras_and_measures.pdf" class="paper-title" target="_blank">Algebras and Measures</a>
+          <div class="paper-meta">
+            <span class="paper-date">2021-04-15</span>
+            <span class="paper-tag">probability</span>
+          </div>
+        </div>
+        <p class="paper-abstract">
+          A treatment of sigma-algebras, measurable spaces, and measure-theoretic foundations for probability.
+        </p>
+        <div class="paper-links">
+          <a href="algebras_and_measures.pdf" class="paper-link" target="_blank">pdf</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="notice">
+      PDFs are compiled from LaTeX source.
+    </p>
+
+  </main>
+
+  <footer>
+    <span>built with plain html &amp; css · no framework</span>
+    <a href="#">↑ top</a>
+  </footer>
+
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

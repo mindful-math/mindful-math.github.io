@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>photos · notebook</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<div class="site-wrap">
+
+  <header>
+    <nav>
+      <a href="../index.html" class="site-title">notebook</a>
+      <a href="../notebooks/index.html">experiments</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="../quotes/index.html">quotes</a>
+      <a href="../books/index.html">books</a>
+      <a href="../papers/index.html">papers</a>
+      <a href="../photos/index.html">photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Photos</h1>
+      <p class="meta">Film and digital</p>
+    </div>
+
+    <div class="photo-controls">
+      <div class="photo-filter-group" id="filters">
+        <button class="photo-filter on" data-filter="all">All</button>
+        <button class="photo-filter" data-filter="film">Film</button>
+        <button class="photo-filter" data-filter="digital">Digital</button>
+        <button class="photo-filter" data-filter="travel">Travel</button>
+        <!--
+          ADD A FILTER CATEGORY:
+          1. Add a button here: <button class="photo-filter" data-filter="street">Street</button>
+          2. Tag your photos with data-cat="street"
+          That's it — the JS picks it up automatically.
+        -->
+      </div>
+    </div>
+
+    <div class="photo-grid" id="photo-grid">
+
+      <!--
+        ═══════════════════════════════════════════════════
+        HOW TO ADD PHOTOS
+        ═══════════════════════════════════════════════════
+
+        1. Drop your image files into site/photos/img/
+           (create the img/ folder — any format works: jpg, webp, png)
+
+        2. Copy one of the blocks below and fill in:
+           • data-cat    → must match a filter button's data-filter value
+           • data-title  → shown in lightbox
+           • data-info   → shown in lightbox (camera, film, location, etc.)
+           • src         → path relative to this file, e.g. img/myfile.jpg
+           • alt         → describe the image for accessibility
+
+        3. The <strong> inside .photo-caption = title shown under the grid image
+           The plain text line = subtitle (location, date, etc.)
+
+        ═══════════════════════════════════════════════════
+        EXAMPLE ENTRIES (replace src with real paths):
+        ═══════════════════════════════════════════════════
+      -->
+
+      <div class="photo-item" data-cat="film"
+           data-title="Southern Landscapes - Georgia"
+           data-info="Sally Mann">
+        <img src="img/georgia_sally_mann.png"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Sally Mann">
+        <div class="photo-caption">
+          <strong>Sally Mann</strong>
+        </div>
+      </div>
+
+      <div class="photo-item" data-cat="film"
+           data-title="Forest Edge - Hokkaido"
+           data-info="Michael Kenna">
+        <img src="img/kenna-hokkaido.jpg"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Michael Kenna">
+        <div class="photo-caption">
+          <strong>Michael Kenna</strong>
+        </div>
+      </div>
+
+      <div class="photo-item" data-cat="film"
+           data-title="Castle - Prague"
+           data-info="Michael Kenna">
+        <img src="img/kenna-castle.jpg"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Michael Kenna">
+        <div class="photo-caption">
+          <strong>Michael Kenna</strong>
+        </div>
+      </div>
+
+      <div class="photo-item" data-cat="film"
+           data-title="Copacabana - Rio"
+           data-info="Michael Kenna">
+        <img src="img/kenna-rio.jpg"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Michael Kenna">
+        <div class="photo-caption">
+          <strong>Michael Kenna</strong>
+        </div>
+      </div>
+
+      <div class="photo-item" data-cat="film"
+           data-title="Yuanyang - Yunnan"
+           data-info="Michael Kenna">
+        <img src="img/kenna-china.jpg"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Michael Kenna">
+        <div class="photo-caption">
+          <strong>Michael Kenna</strong>
+        </div>
+      </div>
+
+       <!--<div class="photo-item" data-cat="travel"
+           data-title="Rice terraces, Bali"
+           data-info="Ricoh GR IIIx · 2023">
+        <img src="img/placeholder-5.jpg"
+             onerror="this.closest('.photo-item').style.display='none'"
+             alt="Stepped rice terraces in Bali at golden hour">
+        <div class="photo-caption">
+          <strong>Rice terraces, Bali</strong>
+          Ricoh GR IIIx · 2023
+        </div>
+      </div>
+      -->
+
+      <!--
+        ADD YOUR REAL PHOTOS HERE — copy the block above.
+        Placeholder items hide themselves automatically if the src file is missing,
+        so you can remove them whenever you're ready.
+      -->
+
+    </div><!-- /.photo-grid -->
+
+  </main>
+
+  <footer>
+    <span>built with plain html &amp; css · no framework</span>
+    <a href="#">↑ top</a>
+  </footer>
+
+</div><!-- /.site-wrap -->
+
+<!-- Lightbox (outside site-wrap so it covers full viewport) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lb-close">close ✕</button>
+  <button class="lightbox-nav prev" id="lb-prev" aria-label="Previous photo">‹</button>
+  <img class="lightbox-img" id="lb-img" src="" alt="">
+  <p class="lightbox-meta" id="lb-meta"></p>
+  <button class="lightbox-nav next" id="lb-next" aria-label="Next photo">›</button>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+(function () {
+  // ── Filter ──────────────────────────────────────────
+  const filterBtns = document.querySelectorAll('.photo-filter');
+  const items = Array.from(document.querySelectorAll('.photo-item'));
+
+  // Only show items that have a real (loaded) image
+  const visibleItems = () => items.filter(el => el.style.display !== 'none');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.filter;
+      items.forEach(item => {
+        item.classList.toggle('hidden', f !== 'all' && item.dataset.cat !== f);
+      });
+    });
+  });
+
+  // ── Lightbox ─────────────────────────────────────────
+  const lb      = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lb-img');
+  const lbMeta  = document.getElementById('lb-meta');
+  const lbClose = document.getElementById('lb-close');
+  const lbPrev  = document.getElementById('lb-prev');
+  const lbNext  = document.getElementById('lb-next');
+  let current   = 0;
+
+  function activeItems() {
+    return items.filter(el =>
+      el.style.display !== 'none' && !el.classList.contains('hidden')
+    );
+  }
+
+  function openAt(idx) {
+    const pool = activeItems();
+    if (!pool.length) return;
+    current = (idx + pool.length) % pool.length;
+    const item = pool[current];
+    const img  = item.querySelector('img');
+    lbImg.src  = img.src;
+    lbImg.alt  = img.alt;
+    lbMeta.textContent = [item.dataset.title, item.dataset.info].filter(Boolean).join(' · ');
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  items.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      const pool = activeItems();
+      openAt(pool.indexOf(item));
+    });
+  });
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click', () => openAt(current - 1));
+  lbNext.addEventListener('click', () => openAt(current + 1));
+
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')      close();
+    if (e.key === 'ArrowLeft')   openAt(current - 1);
+    if (e.key === 'ArrowRight')  openAt(current + 1);
+  });
+})();
+</script>
+</body>
+</html>

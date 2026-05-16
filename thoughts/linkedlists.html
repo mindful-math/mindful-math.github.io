@@ -1,0 +1,115 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>links · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>links</h1>
+              <p class="meta">2024-01-14</p>
+            </div>
+
+            <article class="prose">
+              <p>A rough sketch for adding linked lists in Python.</p>
+
+
+      <ul>
+      <li><a href="#class-diagram">class diagram</a></li>
+      <li><a href="#result">result</a></li>
+      </ul>
+
+
+      <h2>class diagram</h2>
+
+      <p>Let's assume our linked list inherits from the object class. Inheriting from lists is probably a viable alternative, but I think it gets messy when considering what to do with overriding methods like <code>extend()</code> which we don't really need to support with linked lists. In the class diagram, I also list the methods we will override. In hindsight, there are a lot more methods that should be added to this list.</p>
+
+      <p>```mermaid  classDiagram</p>
+
+      <p>class LinkedList~object~{   Any first   LinkedList rest   Overwritten methods below   getitem() Any   setitem() void   reverse() LinkedList   len() int   repr() str   str() str   iter() Generator   sum() int | float   bytes() bytes   delete() void   flatten() list }</p>
+      <pre><code>
+      ## result
+
+      </code></pre>python
+      <p>class LinkedList(object):</p>
+
+      <p>    def <strong>init</strong>(self, first, rest=None):         assert rest is None or isinstance(rest, LinkedList)         self.first = first         self.rest = rest</p>
+
+      <p>    def <strong>len</strong>(self):         if self.rest is None:             return 1         return 1 + len(self.rest)</p>
+
+      <p>    def <strong>repr</strong>(self):         return f'LinkedList({self.first}, {repr(self.rest)})'</p>
+
+      <p>    def <strong>iter</strong>(self):         curr = self         while curr:             yield curr.first             curr = curr.rest</p>
+
+      <p>    def <strong>sum</strong>(self):         total = 0         for val in iter(self):             # only defined for ints/floats             total += val         return total</p>
+
+      <p>    def <strong>bytes</strong>(self):         return bytes(sum(self))</p>
+
+      <p>    def <strong>str</strong>(self):         linked<em>str = '<'         curr = self         while curr:             linked</em>str += f' {curr.first} '             curr = curr.rest         return linked_str + '>'</p>
+
+      <p>    def <strong>getitem</strong>(self, index: int):         assert isinstance(index, int), 'Why r u tryna slice a linked list?'         if index < 0:             index = len(self) + index         for i, val in enumerate(iter(self)):             if i == index:                 return val         raise IndexError</p>
+
+      <p>    def <strong>setitem</strong>(self, index: int, value):         if index < 0:             index = len(self) + index         curr = self         i = 0         while curr:             if i == index:                 curr.first = value                 return             curr = curr.rest             i += 1         if i == index:             curr = LinkedList(value, curr)         else:             raise IndexError</p>
+
+      <p>    def <strong>reversed</strong>(self):         for link in iter(self.reverse()):             yield link</p>
+
+      <p>    def reverse(self):         old<em>firsts = None         curr = self.rest         while curr:             old</em>firsts = LinkedList(self.first, old<em>firsts)             self = LinkedList(curr.first, old</em>firsts)             curr = curr.rest         return self</p>
+
+      <p>    def delete(self, index: int):         i = 0         curr = self         while i < index - 1:             try:                 curr = curr.rest                 i += 1             except AttributionError:                 raise IndexError         if not curr:             raise IndexError         curr = LinkedList(curr.rest.first, curr.rest.rest)</p>
+
+      <p>    def flatten(self) -> list:         if not self:             return []         elif isinstance(self.first, LinkedList):             return self.first.to<em>list() + self.rest.to</em>list()         return [self.first] + self.rest.to_list()</p>
+
+      <p>```</p>
+
+      <p>A few comments and questions for future me:</p>
+
+      <ul>
+      <li>Do I really need all the private <code>&lt;strong&gt;foo&lt;/strong&gt;()</code> methods and do I intend to create classes inheriting from this? (Probably not)</li>
+      <li>Several methods are restricted to integer/float linked lists only: <code>&lt;strong&gt;sum&lt;/strong&gt;()</code> and <code>&lt;strong&gt;bytes&lt;/strong&gt;()</code></li>
+      </ul>
+      <p>  - But in fairness, <code>bytes()</code> needs an encoding if passing in strings</p>
+      <ul>
+      <li>When would we actually see nested linked lists in practice and should I try extending some of the methods here to support that? (Probably not that often)</li>
+      <li>Attribute names <code>first</code> and <code>rest</code> could be swapped with <code>head</code> and <code>tail</code> which is more common I believe. (Who uses <code>first</code>...)</li>
+      <li>Does anyone actually slice linked lists? And do we want an in-place <code>sort()</code> method? (Probably)</li>
+      </ul>
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

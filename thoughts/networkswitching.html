@@ -1,0 +1,100 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>switching · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>switching</h1>
+              <p class="meta">2024-11-02</p>
+            </div>
+
+            <article class="prose">
+              <p>A tuple of metaphors on data movement in networks.</p>
+
+
+      <ul>
+      <li><a href="#how--do-we-move-data-through-a-network">How  do we move data through a network?</a></li>
+      <li><a href="#delays-in-packet-switched-networks">Delays in Packet-Switched networks</a></li>
+      <li><a href="#references">references</a></li>
+      </ul>
+
+
+      <h2>How  do we move data through a network?</h2>
+
+      <p>There are two primary answers that emerged in the late 90s that I'd like to discuss below metaphorically speaking.</p>
+
+      <blockquote><p>Circuit switching: the resources needed along a path (buffers, link transmission rate) to provide communication between two nodes are reserved for the duration of the communication session.</p></blockquote>
+
+      <p>The analogy is restaurants that only take reservations. As a consumer, this is nice if you do not mind planning in advance to reserve the restaurant's resources (and you theoretically don't need to wait once you get there). BUT, consider the case of ties in reservations - it goes to the highest bidder/biggest pockets in capitalistic economies. Also, it's a pain in the butt to add this overhead each time to reserve resources. Restaurants generally do a blend of both because if they only took reservations, then there could be significant gaps of service/potential revenue and so the analogy is a simplification.</p>
+
+      <blockquote><p>In packet-switched networks, resources are not reserved and are first come, first serve (i.e. a queue is instantiated for those waiting to establish a communication link).</p></blockquote>
+
+      <p>Borrowing the metaphor above, you can imagine that with more budget-friendly restaurants, they do not actually gain much by selectively choosing the highest bidder and instead rely on the voluume of orders to compound revenue and make money. Customers enjoy the convenience this affords (for not having to plan so far in advance), but this can of course bite if they have to wait in long lines to get their food. It all boils down to the velocity of orders (ice cream is easy, sushi might be slow and difficult as you increase customers arriving simultaneously).</p>
+
+      <h2>Delays in Packet-Switched networks</h2>
+
+      <blockquote><p>Processing delay: time required to look at a packet's header and determine where to direct the packet</p></blockquote>
+
+      <p>To carry on our analogy, this is like a person plugging in the directions to the restaurant in Google Maps. Back in the old days without Google Maps, this might add some serious overhead to get to restaurants in more urban environments but not today (similarly the actual packet delay is microseconds or less these days).</p>
+
+      <blockquote><p>Queueing delay: if it arrives at a queue, this is the time a packet must wait to be transmitted onto the link</p></blockquote>
+
+      <p>So after the person has plugged in the directions to Google Maps and gets to the restaurant, this is the time the person must wait in line to be seated. Remember that packet-switched restaurants do not take reservations! For popular restaurants, this could add quite the delay (in milliseconds).</p>
+
+      <blockquote><p>Transmission delay: the amount of time required to transmit all of the packet's bits in the link</p></blockquote>
+
+      <p>This is equivalent to the time required by the waiter and chef to decode the customer's order. As you increase the size and complexity of items on the menu ordered, you increase the time you will be waiting as the waiter helps transmit this to the chef to bring into reality.</p>
+
+      <blockquote><p>Propagation delay: the time required to propagate from the begining of the link to the router desired</p></blockquote>
+
+      <p>Distinct from transmission delays, propogation delays could be equivalent to the physical distance from the chef to the customers. At a sushi bar, you're propogation delay is near zero, but if you're at a multi-level restaurant with spacious seating there could be a little overhead to send the message to the chef.</p>
+
+      <p>The analogy is missing some details, but I think does a good job at providing the gist of delays in packet-switched networks.</p>
+
+      <h2>references</h2>
+      <ul>
+      <li><a href="https://gaia.cs.umass.edu/kurose_ross/index.php">Computer Networking by Kurose & Ross</a></li>
+      </ul>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

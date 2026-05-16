@@ -1,0 +1,128 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>notices · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>notices</h1>
+              <p class="meta">2023-12-29</p>
+            </div>
+
+            <article class="prose">
+              <p>Takeaways from AMS's January edition of the <a href="https://www.ams.org/journals/notices/202401/202401FullIssue.pdf?cat=fullissue&trk=fullissue202401">Notices</a>.</p>
+
+
+      <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#review">review</a></li>
+      <li><a href="#research">research</a></li>
+      </ul>
+
+      <h2>new</h2>
+
+      <ul>
+      <li>The <a href="https://www.lmfdb.org/">LMFDB</a> (L-functions and Modular Forms Database) contains some interesting applets and calculators. The research is so left-field from what I know, so I don't know how useful this is for me.</li>
+      <li><a href="https://stacks.math.columbia.edu/">The Stacks Project</a> is something I will probably never touch for algebraic geometry - I found the site awkward to navigate.</li>
+      <li>Laplace-Beltrami Operator (where $g$ denotes the determinant of the metric $g$ written in local coordinates):</li>
+      </ul>
+
+      <p>$$ \mathrm{div } \nabla,\qquad \frac{1}{\sqrt{\det g}} \partial_{x_i}\left( \sqrt{\det g} g_{ij} \partial_{x_j} \right)$$</p>
+
+      <ul>
+      <li>The Levi-Civita connection - an operator that allows us to differentiate vector fields on a manifold (didn't get this far in calculus lol)</li>
+      <li>The Hodge Laplacian (I remember 1-forms faintly, but not this guy):</li>
+      </ul>
+
+      <p>$$ -(d d^* + d^*d)\alpha,\qquad \alpha= v^b $$</p>
+
+      <ul>
+      <li>What are musical isomorphisms that move between vector fields and 1-forms(!!)? </li>
+      <li>Deformation tensors:</li>
+      </ul>
+
+      <p>$$ (\mathrm{Def } v)_{ij} = \frac{1}{2}\left( \nabla_i v_j + \nabla_j v_i \right) $$</p>
+
+      <ul>
+      <li>Stochastic Action Principle and Lagrangian Paths (see Arnaudan and Cruzeiro for more info)</li>
+      <li>Iwasawa theory: "the backbone of number theory"</li>
+      <li>The fractional Laplacian:</li>
+      </ul>
+
+      <p>$$ (-\Delta)^s f(x) = C_{n,s}\int\limits_{\mathbb{R}^n} \frac{f(x) - f(\xi)}{|x-\xi|^{n+2s}}\;d\xi $$</p>
+
+      <ul>
+      <li>Hodge theory of matroids (cough June Huh cough)</li>
+      </ul>
+
+
+      <h2>review</h2>
+
+      <ul>
+      <li>Incompressible Navier-Stokes equation (I don't even remember the motivation for this equation):</li>
+      </ul>
+
+      <p>$$ \partial_t u - \Delta u + u\cdot \nabla u + \nabla p = 0,\qquad \mathrm{div } u = 0 $$</p>
+
+      <ul>
+      <li>Utility of the Laplacian operator:</li>
+      </ul>
+
+      <p>$$ \Delta f(x_1,\dots,x_n) = \sum\limits_{i=1}^n \left(\frac{\partial f}{\partial x_i}\right)^2$$</p>
+
+      <ul>
+      <li>Ricci operators</li>
+      <li>Hyperbolic planes: $\mathbb{H}_2$</li>
+      </ul>
+
+      <h2>research</h2>
+
+      <ul>
+      <li>Computer proof verification wired up in math undergraduate proof courses akin to OK software used at Berkeley in CS61A</li>
+      </ul>
+      <p>  - Software has taken off because the feedback loop is much shorter than in mathematics (math requires an "expert" to verify your proof - this is bs and not scalable)   - The issue is that this formal logic is in its early stages of development and there are startup costs to learning verbose and ugly languages like TLA+ or Lean   - There are human-readable proofs and are machine-readable proofs; in CS, these already exist - the human-readable proofs are algorithms and the machine-readable proofs is the code attached to the paper</p>
+      <ul>
+      <li>MRC 2024 Week 2 (interpretable ML) or 3 (climate science); sign up before February 15th, 2024</li>
+      </ul>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

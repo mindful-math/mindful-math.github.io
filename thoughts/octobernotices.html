@@ -1,0 +1,96 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>notices · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>notices</h1>
+              <p class="meta">2024-10-19</p>
+            </div>
+
+            <article class="prose">
+              <p>Takeaways from AMS's October edition of the <a href="https://www.ams.org/journals/notices/202410/202410FullIssue.pdf?cat=fullissue&trk=fullissue202410">Notices</a>.</p>
+
+
+
+      <ul>
+      <li><a href="#new">new</a></li>
+      <li><a href="#review">review</a></li>
+      <li><a href="#research">research</a></li>
+      </ul>
+
+      <h2>new</h2>
+
+      <ul>
+      <li>The quintic threefold (what does the term threefold mean)</li>
+      </ul>
+      <p>$$ z_1^5 + z_2^5 + \cdots + z_5^5 = 0$$</p>
+      <ul>
+      <li>The moduli space of stable maps $M_{g,n}(X,\beta)$ is a set consisting of (isomorphic classes of) tuples of nodal curves of arithmetic genus $g$, $n$ distinct, non-nodal points on the curve, a morphism $f: C\rightarrow X$ where $f_*[C]=\beta$, and the tuples have finitely many automorphisms.</li>
+      <li>Intersection theory - I think some subset of algebraic geometry that studies intersections within some ambient variety</li>
+      <li>$\mathbb{R}\mathbb{P}^2$ (a compact ambient variety - is this just tongue in cheek for something isomorphic to $\mathbb{C}^n$)</li>
+      <li>Smooth projective varieties, homology classes, Deligne Mumford stacks, stable maps, ... got lost early :)</li>
+      <li>R-nets: subsets of vertices on a graph such that for all vertices in the R-net, there exists another vertex at most $R$ distance away (distance could change if we consider weighted graphs)</li>
+      <li>Dowling Wilson Conjecture (bounds on number of lines that can be drawn through $n$ points more or less if we ignore linear algebra)</li>
+      </ul>
+
+      <h2>review</h2>
+      <ul>
+      <li>Equiangular lines - i.e. take $n$ lines and pick any two - if these are isomorphic angle-wise. Yufei Zhao considers the scaling limit of the max number of such lines divided by the dimension $d$. I love problems that don't hinge on lots of definition depth (cough first article cough)</li>
+      <li>Gram matrices, Cholesky decomposition, Ramsey's theorem (something about a bound on colorings of a graph)</li>
+      <li>Coq/Lean; any reason not to try making a simpler interface in Python/Java - the language is funky which is a huge lim fac...</li>
+      </ul>
+
+      <h2>research</h2>
+      <ul>
+      <li>I wonder if curve counting and deformation invariant studies has been connected with geometric deep learning and ML generally speaking. It reminds me a lot of robust structural optimization like</li>
+      </ul>
+
+      <p>$$ \min\limits_{\beta}\lVert y-X((1+\delta)I)\beta\rVert_2^2,\qquad |\delta|\leq \epsilon$$</p>
+
+      <ul>
+      <li>Pair proving w/ Terrance Tao; sign me up to fix a bug in his proofs :)</li>
+      </ul>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

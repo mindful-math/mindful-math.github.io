@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>books · notebook</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid var(--rule);
+      background: transparent;
+      color: var(--ink-light);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.12s;
+    }
+    .filter-btn:hover, .filter-btn.on {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .books-table { max-width: 100%; }
+    .books-table td:first-child { min-width: 180px; }
+    .books-table td:first-child a {
+      color: var(--ink);
+      text-underline-offset: 2px;
+    }
+    .books-table td:first-child a:hover { color: var(--ink-light); }
+    .score { color: var(--ink-light); white-space: nowrap; }
+    .thoughts-cell { font-size: 0.87rem; color: var(--ink-light); line-height: 1.55; }
+    .cat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      padding: 2px 5px;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+    }
+    tr.hidden { display: none; }
+    .to-read { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+    .to-read h2 { font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem; font-weight: 400; font-style: normal; border: none; padding: 0; margin-top: 0; }
+    .to-read ul { list-style: none; columns: 2; column-gap: 2rem; }
+    @media (max-width: 520px) { .to-read ul { columns: 1; } }
+    .to-read li { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 0.35rem; padding-left: 0.9rem; position: relative; }
+    .to-read li::before { content: '—'; position: absolute; left: 0; color: var(--ink-faint); }
+    .footnotes { margin-top: 1.75rem; font-size: 0.85rem; color: var(--ink-light); }
+    .footnotes p { margin-bottom: 0.4rem; }
+    .footnotes p::before { content: '* '; }
+  </style>
+</head>
+<body>
+<div class="site-wrap">
+
+  <header>
+    <nav>
+      <a href="../index.html" class="site-title">notebook</a>
+      <a href="../notebooks/index.html">experiments</a>
+      <a href="../thoughts/index.html">thoughts</a>
+      <a href="../quotes/index.html">quotes</a>
+      <a href="../books/index.html">books</a>
+      <a href="../papers/index.html">papers</a>
+      <a href="../photos/index.html">photos</a>
+</nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Books</h1>
+      <p class="meta">Logged reads with scores and notes</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn on" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="nonfiction">Nonfiction</button>
+      <button class="filter-btn" data-cat="fiction">Fiction</button>
+      <button class="filter-btn" data-cat="manga">Manga</button>
+    </div>
+
+    <table class="books-table" id="books-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Score</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- NONFICTION -->
+        <tr data-cat="nonfiction">
+          <td><a href="https://convex-optimization.github.io/" target="_blank">Algorithms for Convex Optimization</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Great for a semester-long second course in optimization. Requires calculus, proofs, linear algebra, and ideally a first course on the subject. Good exercises but confusing analysis on accelerated gradient descent — Nesterov's book fills the gap.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://link.springer.com/book/10.1007/978-3-319-91578-4" target="_blank">Lectures on Convex Optimization</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Can't claim to have read end-to-end. Great reference — first chapter, Newton's method, interior-point, and subgradient sections are excellent. Desperately needs more exercises. Nesterov is a GOAT but this could be so much more approachable.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.wiley.com/en-us/Probability+and+Measure%2C+Anniversary+Edition-p-9781118122372" target="_blank">Probability and Measure</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Read too early — sophomore year — and couldn't appreciate it fully. Billingsley does a phenomenal job with exercises and narrative. Later sections on stochastic processes are rough but a great professor filled the gaps.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Introduction-Probability-Theory-Applications-Vol/dp/0471257087" target="_blank">An Introduction to Probability Theory and Its Applications, Vol. I</a></td>
+          <td class="score">10/10</td>
+          <td class="thoughts-cell">My favorite book. Feller's exposition flows unbelievably well and the exercises are rich. Majorly underappreciated — no book comes close. Became quite adept at combinatorics working through all the exercises here.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Linear-Statistical-Inference-its-Applications/dp/0471218758" target="_blank">Linear Statistical Inference and Its Applications</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Rao does a phenomenal job making it self-contained. The sections on probability distributions shine. Never made it through the actual statistics sections — read for the probability and math, skim the statistics as interest dictates.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/All-Statistics-Statistical-Inference-Springer/dp/0387402721" target="_blank">All of Statistics</a></td>
+          <td class="score">5/10</td>
+          <td class="thoughts-cell">Parametric inference and hypothesis testing sections are not bad. Otherwise a boring read with exercises disconnected from applications, and exposition that reads like disjoint Wikipedia pages.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Statistical-Models-Practice-David-Freedman/dp/0521743850" target="_blank">Statistical Models: Theory and Practice</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Great for econometrics and sociology. Good intuition, talks through i.i.d. assumptions and alternatives, right balance of theory and practice. That said, most practitioners rely on hard-won experience over this theory now.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://openlibrary.org/works/OL42268724W/Calcul_diff%C3%A9rentiel" target="_blank">Calcul Différentiel</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Great read, organized like Rudin's series on Analysis. The book cover makes it difficult to hold without damaging the spine.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850" target="_blank">Art of Computer Programming: Sorting and Searching</a></td>
+          <td class="score">5.5/10</td>
+          <td class="thoughts-cell">Love the rated exercises and solutions. Loathe the exposition — boring, unclear, and too reliant on citations that derail the flow. Didn't finish but read and did enough to have a view.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Principles-Operations-Research-Applications-Managerial/dp/0137095929" target="_blank">Principles of Operations Research</a></td>
+          <td class="score">6.5/10</td>
+          <td class="thoughts-cell">Techniques are outdated but surprisingly readable and grounded in real applications — sales forecasting, sensitivity testing. Interesting and rich with examples.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Advanced-Calculus-Revised-Harold-Loomis/dp/9814583936" target="_blank">Advanced Calculus</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Complete, rigorous, well-organized. Harder than Rudin or Bartle but more comprehensive — nice extensions into manifolds, exterior calculus, and differential equations. Too dense for a semester; fine for a full year.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Network-Flows-Theory-Algorithms-Applications/dp/013617549X" target="_blank">Network Flows</a></td>
+          <td class="score">?/10</td>
+          <td class="thoughts-cell">Recommended by a friend who's a rockstar in the space. Abstract and hard to approach for self-study. Still unsure if it'll just accumulate dust.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Time-Analysis-James-Douglas-Hamilton/dp/0691042896" target="_blank">Time Series Analysis</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Dense and encyclopedic — the ARIMA sections are challenging but not very insightful. Equation-heavy in the worst way: read an equation, derive the next, find a disjointed reference, repeat. Feels clunky (so does time series).</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Scheduling-Algorithms-Michael-L-Pinedo/dp/1461419867" target="_blank">Scheduling: Theory, Algorithms, and Systems</a></td>
+          <td class="score">5/10</td>
+          <td class="thoughts-cell">Love the topic, dislike the book. Purely academic with little applications for a subject entirely dependent on applications. Poisson and Exponential flow assumptions feel useless in practice.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Probabilistic-Method-Noga-Alon/dp/0470170204" target="_blank">Probabilistic Method</a></td>
+          <td class="score">6.5/10</td>
+          <td class="thoughts-cell">Alon is a GOAT and the perfect person to explain this. Love the examples but the exercises feel sparse and some proofs are terse — not always from the book, as Paul would say.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://en.wikipedia.org/wiki/Naive_Set_Theory_(book)" target="_blank">Naive Set Theory</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Halmos is a master expositor. Mathematicians born in the early 1900s had a gift for clarity — simple, elegant, approachable. The kind of writing that demands proper attention spans.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Theoretical-Statistics-Topics-Course-Springer/dp/0387938389" target="_blank">Theoretical Statistics</a></td>
+          <td class="score">5/10</td>
+          <td class="thoughts-cell">Like Rudin for statistics. The dryness is crushing and the motivation hard to find. Statistics is meaningless without another discipline and this text doesn't instill that mindset at all.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Principles-Combinatorics-C-Berge/dp/0124109780" target="_blank">Principles of Combinatorics</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Derives counting tactics methodically and playfully. Big gap: no exercises. Could be a fantastic student text with them.</td>
+        </tr>
+        <tr data-cat="nonfiction">
+          <td><a href="https://www.amazon.com/Your-Stone-Age-Brain-Screen/dp/0262049007/" target="_blank">Your Stone Age Brain in the Screen Age</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">Explains why spending a working life staring at screens isn't great for mental health or productivity. A bit long for the idea (as most books in the genre are) but the message lands.</td>
+        </tr>
+
+        <!-- FICTION -->
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/1984_(novel)" target="_blank">1984</a></td>
+          <td class="score">8.5/10</td>
+          <td class="thoughts-cell">Incredibly powerful and prescient. The ending destroyed me — the most devastating of any book I've read. We're in eerie proximity to this world now.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/The_Great_Gatsby" target="_blank">The Great Gatsby</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">My all-time favorite school read. Fitzgerald's prose is extraordinary and his commentary on the American dream stuck with me. The film's ending is the right one.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird" target="_blank">To Kill a Mockingbird</a></td>
+          <td class="score">7.5/10</td>
+          <td class="thoughts-cell">A beautiful book with a powerful message. Atticus Finch is one of the great characters in American fiction.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Lord_of_the_Flies" target="_blank">Lord of the Flies</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Strong main plot. The violence toward the end — even as commentary on the duality of mankind — was a bit much.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Of_Mice_and_Men" target="_blank">Of Mice and Men</a></td>
+          <td class="score">7.5/10</td>
+          <td class="thoughts-cell">Lennie and the plot are wonderful. The ending drew a tear — reminds me of having to put down an old dog before a more painful end takes them anyway.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Crime_and_Punishment" target="_blank">Crime and Punishment</a></td>
+          <td class="score">4/10</td>
+          <td class="thoughts-cell">A more sophisticated language than I was ready for. Read via audiobook, which I don't recommend. Can barely recall the plot.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/The_Stranger_(Camus_novel)" target="_blank">The Stranger</a></td>
+          <td class="score">4/10</td>
+          <td class="thoughts-cell">Wrote several essays on it but the only thing I remember is a deeply indifferent narrator.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Brave_New_World" target="_blank">Brave New World</a></td>
+          <td class="score">5/10</td>
+          <td class="thoughts-cell">Similar commentary to 1984 on censorship and world-states. Less memorable for me.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Fahrenheit_451" target="_blank">Fahrenheit 451</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Book burning and the eerie proximity to current events (2026) make this one hit differently than when I first read it.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo%27s_Nest_(novel)" target="_blank">One Flew Over the Cuckoo's Nest</a></td>
+          <td class="score">7.5/10</td>
+          <td class="thoughts-cell">Read completely and thoroughly enjoyed it. Nurse Ratched is one of the great literary characters. Kesey's critique of institutional control over the mentally ill lands hard.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/The_Giver" target="_blank">The Giver</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">A blur — I mix memories of this and 1984. The role reminds me of an academic growing isolated in their own bubble of expertise. Schools prescribe too many depressing reads.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Atlas_Shrugged" target="_blank">Atlas Shrugged</a></td>
+          <td class="score">5/10</td>
+          <td class="thoughts-cell">Read it before judging. I love Dagny's devotion to craft. But the book praises a kind of survival-of-the-fittest genocide and conflates capitalist self-interest with merit. Far too long as well.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Meditations" target="_blank">Meditations</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Overhyped — a few gems buried in confusing, hard-to-decipher writing. Wishes these observations were grounded in more of his actual experience.</td>
+        </tr>
+        <tr data-cat="fiction">
+          <td><a href="https://en.wikipedia.org/wiki/Moby-Dick" target="_blank">Moby Dick</a></td>
+          <td class="score">6/10</td>
+          <td class="thoughts-cell">Never finished. Beautiful sea descriptions. The perplexity is high and ADHD made it hard to sustain beyond five pages at a time.</td>
+        </tr>
+
+        <!-- MANGA (placeholder for future entries) -->
+         <tr data-cat="manga">
+          <td><a href="https://en.wikipedia.org/wiki/Hunter_%C3%97_Hunter" target="_blank">Hunter x Hunter</a></td>
+          <td class="score">9/10</td>
+          <td class="thoughts-cell">One of my favorite shōnen - Togashi created such a fun universe of characters and I hope the Dark Continent gets written before he's done forever.</td>
+        </tr>
+
+        <tr data-cat="manga">
+          <td><a href="https://en.wikipedia.org/wiki/Demon_Slayer:_Kimetsu_no_Yaiba" target="_blank">Demon Slayer</a></td>
+          <td class="score">7/10</td>
+          <td class="thoughts-cell">The story is surprisingly much less exciting than the anime - wow are the graphics plus story much more fleshed out and interesting.</td>
+        </tr>
+
+        <tr data-cat="manga">
+          <td><a href="https://en.wikipedia.org/wiki/Monster_(manga)" target="_blank">Monster</a></td>
+          <td class="score">7.5/10</td>
+          <td class="thoughts-cell">The story was unbelievably addicting. Hook after hook - Urasawa wrote an epic thriller here and it was so fun to follow but it got a bit drawn out at the end and the conclusion was unsatisfying.</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="to-read">
+      <h2>To read</h2>
+      <ul>
+        <li>Jonathan Strange \& Mr Norrell</li>
+        <li>The Three Body Problem</li>
+        <li>The Glass Bead Game — Hesse</li>
+        <li>Phoenix — Tezuka</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>built with plain html &amp; css · no framework</span>
+    <a href="#">↑ top</a>
+  </footer>
+
+</div>
+<script src="../assets/js/main.js"></script>
+<script>
+  // Category filter
+  const btns = document.querySelectorAll('.filter-btn');
+  const rows = document.querySelectorAll('#books-table tbody tr');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const cat = btn.dataset.cat;
+      rows.forEach(row => {
+        if (cat === 'all' || row.dataset.cat === cat) {
+          row.classList.remove('hidden');
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

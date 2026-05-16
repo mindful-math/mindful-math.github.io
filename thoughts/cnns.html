@@ -1,0 +1,80 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>cnns · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>cnns</h1>
+              <p class="meta">2026-02-07</p>
+            </div>
+
+            <article class="prose">
+              <p>Decrypting bad vocab in CNNs. </p>
+
+
+      <ul>
+      <li><a href="#definitions">definitions</a></li>
+      </ul>
+
+      <h2>definitions</h2>
+
+      <blockquote><p><strong>Kernel</strong>: A locally-weighted moving average.</p></blockquote>
+
+      <p>This is ridiculous terminology by the DL community. We convolve two functions and the "kernel" is a function we apply to each image/time-series/data to smooth it, sharpen it, etc. (a transformation) that weights values nearby each other. To be fair, statisticians use "correlation" and "cross-correlation" as instances of a normalized dot product. I can't believe that yet another name for this pops up from time to time - "filter"...</p>
+
+      <blockquote><p><strong>Stride</strong>: A downsampling of the convolution integral/sum</p></blockquote>
+
+      <p>Stride has a nice physical meaning and is used in computer science but I really just think it's likened more to widening the aperture in a camera (at f/11 or higher, we see the large brush strokes of the image but miss out on the fine, rich local detail). Generally a stride of size $P$ means that in each dimension means that we convolve the kernel with our data with the initial position at $0,P,\dots,\lfloor n/P\rfloor$ for each dimension. You can specify this differently for each dimension if you want to feel special for once.</p>
+
+      <blockquote><p><strong>Zero padding</strong>: We extend the domain of a function and set the range to zero.</p></blockquote>
+
+      <p> "Zero padding of size xyz" - shut up with your pseudoscience / blabbering... We are just extending the original domain and setting values of zero because we don't have signal here but would like to define our convolution over wider ranges of the input without needing to shrink the "kernel". A zero padding size of $P$ for a K-d tensor adds $KP$ to each dimension of zeros - really dumb terminology IMO...  </p>
+
+      <h2>references</h2>
+
+      <ul>
+      <li><a href="https://d2l.ai/chapter_convolutional-neural-networks/">d2l</a></li>
+      </ul>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

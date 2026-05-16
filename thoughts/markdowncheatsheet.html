@@ -1,0 +1,143 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>markdown · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>markdown</h1>
+              <p class="meta">2023-08-25</p>
+            </div>
+
+            <article class="prose">
+              <p>A overview of Markdown inspired by the <a href="https://daringfireball.net/projects/markdown/basics">creator's post</a>.</p>
+
+
+      <ul>
+      <li><a href="#heading-unnumbered">heading {.unnumbered}</a></li>
+      </ul>
+      <p>  - <a href="#sub-heading-1">sub-heading 1</a>   - <a href="#sub-heading-2">sub-heading 2</a></p>
+
+
+
+      <h1>heading {.unnumbered}</h1>
+
+      <ul>
+      <li><em>Italics</em> are created with asteriks: \<em>phrase here\</em> </li>
+      <li>Headings are created with hashes: # phrase here</li>
+      <li>To preview .md files in VSCode, Command + Shift + V</li>
+      <li><strong>Bold</strong> text is created with double asteriks: \<em>\</em>phrase here\<em>\</em></li>
+      <li>Lists, like this, are created by either a dash, -, or asterik, *</li>
+      </ul>
+      <p>  * Nested lists are formed by indenting on the next line</p>
+      <ul>
+      <li>Sub-headings are created with double hashes: ## phrase here</li>
+      <li>Checklists are created with brackets (and) an x: \[x\] phrase here \</li>
+      </ul>
+      <p> [ ] 100 Situps, 100 push-ups, 100 squats, and a 10-kilometer run \  [ ] Finish the experiment and subsequent writeup on quantum stats \  [x] Write a mediocre markdown cheatsheet with internet information </p>
+      <ul>
+      <li>Sub-sub-headings are created with triple hashes: ### phrase here</li>
+      <li>Strikethrough text are created with double tildes: \~\~ phrase here \~\~</li>
+      <li>Quotes can be added with the character, ">", before a sentence:</li>
+      </ul>
+      <blockquote><p>“L'harmonie la plus douce est le son de la voix de celle que l'on aime.”<br><br>-- Jean de La Bruyère, Les Caractères</p></blockquote>
+      <ul>
+      <li>Unnumbered headings are created with a <code>{-}</code> or <code>{.unnumbered}</code> after the header</li>
+      <li>$L_a T e^X$ is supported with single dollar signs (inline) and double dollar signs (centered): </li>
+      </ul>
+      <p>$$f_X(x)=\frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha -1}e^{-\beta x},\qquad x\in (0,\infty)$$</p>
+      <ul>
+      <li>Footnotes as here, $E=MC^2$ [^1], are created with brackets and a hyperlink at the bottom of the page: \[^1\] </li>
+      <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Hyperlinks</a> are created with brackets (name) and parentheses (link): \<a href="https://cats101.com">Cat-Tutorial\</a></li>
+      <li>![Images]() are created with an exclamation point followed by the hyperlink/file path: \!\<a href="path/to/cat/image">Cat-Image\</a>.</li>
+      <li>Create table of contents with Yu Zhang's "Markdown All in One" extension: Command + Shift + P + Create Table of Contents</li>
+      </ul>
+
+      <h2>sub-heading 1</h2>
+      <p>Lists and multi-line code blocks - add language near the first three backticks.</p>
+      <ol>
+      <li>Mermaid Diagrams</li>
+      </ol>
+      <pre><code class="language-mermaid">sequenceDiagram 
+          me --&gt;&gt; Github: Take this commit
+          Github --&gt;&gt; me: WTF is that commit
+          me -&gt;&gt; Github: Just do it
+      </code></pre>
+
+      <ol>
+      <li>Python Code Blocks</li>
+      </ol>
+      <pre><code class="language-python">for i in range(1, n):
+          print(i**2)
+      </code></pre>
+
+      <ol>
+      <li>R Code Blocks</li>
+      </ol>
+      <pre><code class="language-r">for (i in 1:n) {
+          print(i^2)
+      }
+      </code></pre>
+
+      <ol>
+      <li>There's a long list of other supported languages: Bash, Pearl, C++, Java, SQL, etc.</li>
+      </ol>
+
+      <h2>sub-heading 2</h2>
+
+      <p>Tables have quite limited support in  Markdown, but here's an example:</p>
+
+      <pre><code>| Model | RMSE |
+      | ----- | ----- |
+      | Iterative Forest | 0.345 |
+      | Shallow RNN | 0.145 |
+      | Kernel SVM | 0.432 |
+      </code></pre>
+
+      <p>| Model | RMSE | | ----- | ----- | | Iterative Forest | 0.345 | | Shallow RNN | 0.145 | | Kernel SVM | 0.432 |</p>
+
+
+
+      <p>[^1]: <a href="https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence">Einstein's Mass-Energy Equivalence</a></p>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>

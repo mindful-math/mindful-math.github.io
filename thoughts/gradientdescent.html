@@ -1,0 +1,146 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>descent · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">notebook</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>descent</h1>
+              <p class="meta">2024-12-08</p>
+            </div>
+
+            <article class="prose">
+              <p>Yet another metaphor (this time it's gradient descent).</p>
+
+
+
+      <h2>intuition</h2>
+
+      <blockquote><p>Imagine a hiker trying to descend a mountain on an overcast day. Because of the haziness, the hiker cannot rely on knowing the full landscape of the mountain. Instead, they have to look around and explore promising areas with "downward" slope.</p></blockquote>
+
+      <p><img src="/hiker.jpg" alt="Hiker"></p>
+
+      <h2>some caveats</h2>
+
+      <ul>
+      <li>We need the mountain to not have too many undulations and changes in slope otherwise the hiker may get stuck in bowls around the mountain that are not in fact the base.</li>
+      <li>If a hiker steps towards the face of a cliff, they would fall off and die. But if they have an inkling of climbing ability, they can repel down.</li>
+      </ul>
+      <p><img src="/honnold.jpg" alt="Honnold"></p>
+      <ul>
+      <li>At some point in time, a hiker will reach a flat(ish) region and call it a day. They will not measure the slope at their feet until they find the exact bottom.</li>
+      <li>The hiker has to decide how many steps he takes before rescanning the area for the steepest path down the mountain (it's tricky to get this right)</li>
+      </ul>
+
+      <h2>formalization</h2>
+
+      <p>I will not bother formalizing what zillions have already done better. Instead, I will simply link references.</p>
+
+      <p><strong>Book References</strong></p>
+      <ul>
+      <li><a href="https://link.springer.com/book/10.1007/978-3-319-91578-4">Yurii Nesterov's "Lectures on Convex Optimization"</a></li>
+      <li><a href="https://www2.isye.gatech.edu/~nemirovs/LMCOLN2023Spring.pdf">Arkadi Nemirovski and Aharon Ben-Tal's "Lectures on Modern Convex Optimization"</a></li>
+      </ul>
+
+      <p><strong>Lecture References</strong></p>
+      <ul>
+      <li><a href="https://theory.stanford.edu/~tim/s16/l/l5.pdf">Stanford's CS168 Notes</a></li>
+      <li><a href="https://arxiv.org/pdf/1609.04747">Ruder's Literative Review</a></li>
+      </ul>
+
+      <h2>code</h2>
+
+      <p>Vanilla Gradient descent (constant step size, real-valued, convex $f$)</p>
+      <pre><code class="language-python">def f(x):
+          return x**2
+
+      def grad_f(x):
+          return 2*x
+
+      def step_size(t):
+          return 0.02
+
+      # If unknown f(x*), then compare f(x_t) and f(x_t-1) instead
+      opt_x = 0
+      acceptable_err = 0.001
+      guess = f(5)
+      i = 0
+      while abs(guess - opt_x) &gt; acceptable_err:
+          guess = guess - step_size(i) * grad_f(guess)
+          i += 1
+
+      print(guess)
+      </code></pre>
+
+      <p>or the PyTorch equivalent</p>
+
+      <pre><code class="language-python">import torch
+
+      def f(x):
+          return x**2
+
+      guess = torch.tensor([5.0], requires_grad=True)
+      optimizer = torch.optim.SGD([guess], lr=0.02)
+      opt_x = 0
+      acceptable_err = 0.001
+      while abs(guess - opt_x) &gt; acceptable_err:
+          optimizer.zero_grad()
+          f(guess).backward()
+          optimizer.step()
+
+      print(guess.item())
+      </code></pre>
+
+      <h2>research</h2>
+
+      <p>Where is research these days?</p>
+
+      <ul>
+      <li>Still plenty of applications left to explore: game theory, time series, distributed systems, quantum computing, etc.</li>
+      <li>Step size regimes, algorithmic improvements (albeit far few in between)</li>
+      <li>RL-specific optimization problems get a lot of attention because of LLMs</li>
+      </ul>
+
+      <p>In my opinion, the theory of optimization is generally solved (and quite intuitive), but applications are still plenty abundant and worth pursuing.</p>
+
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>
