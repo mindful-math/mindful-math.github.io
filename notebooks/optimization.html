@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Optimization · experiments · notebook</title>
   <link rel="stylesheet" href="../assets/css/main.css">
-  <!-- MathJax for rendered LaTeX -->
   <script>
     window.MathJax = {
-      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['44628','44628'],['\\[','\\]']] },
       options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
     };
   </script>
@@ -25,57 +24,26 @@
       <a href="../quotes/index.html">quotes</a>
       <a href="../books/index.html">books</a>
       <a href="../photos/index.html">photos</a>
-</nav>
+    </nav>
   </header>
 
   <main>
     <div class="page-header">
       <h1>Optimization</h1>
-      <p class="meta">2026-03-08 · gradient descent · mirror descent · Newton's method · convex analysis</p>
-    </div>
-
-    <div class="notebook-meta">
-      <span>Jupyter notebook</span>
-      <span>~45 min read</span>
+      <p class="meta">2026-05-16</p>
     </div>
 
     <div class="notebook-actions">
-      <!--
-        Option A (recommended): embed the nbconvert HTML directly in an iframe.
-        Set the src to the converted file, e.g. optimization_raw.html
-        The raw file sits alongside this wrapper and the iframe displays it.
-
-        Option B: if you want the full notebook inline (no iframe),
-        paste the nbconvert output body here directly and remove the iframe.
-      -->
       <a class="btn" href="Optimization_raw.html" target="_blank">open full page ↗</a>
-      <!--
-        To add a Binder / Colab link for live execution:
-        <a class="btn" href="https://mybinder.org/v2/gh/YOURUSER/YOURREPO/HEAD?filepath=optimization.ipynb" target="_blank">run on binder ↗</a>
-      -->
     </div>
 
-    <!--
-      IFRAME APPROACH: drop optimization_raw.html (from nbconvert) next to this file.
-      The iframe scales to fit. For very long notebooks the iframe scroll may feel odd —
-      in that case use the inline approach described in SETUP.md.
-    -->
     <iframe
       src="Optimization_raw.html"
       class="notebook-embed"
-      title="Optimization notebook"
+      title="Optimization"
       onload="fitIframe(this)"
       style="height: 85vh;">
     </iframe>
-
-    <!--
-      INLINE APPROACH (alternative):
-      Run: jupyter nbconvert --to html --template lab optimization.ipynb
-      Open the output, copy everything inside <body>...</body>,
-      paste it here inside a <div class="notebook-inline"> block.
-      Then delete the <iframe> above.
-    -->
-
   </main>
 
   <footer>
