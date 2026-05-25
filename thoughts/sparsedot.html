@@ -1,0 +1,105 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>sparse · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">ikigai</a>
+              <a href="../notebooks/index.html">experiments</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>sparse</h1>
+              <p class="meta">2026-05-25</p>
+            </div>
+
+            <article class="prose">
+              <p>An interview question on sparse dot products.</p>
+
+
+
+      <h2>dot products</h2>
+
+      <blockquote><p>Given two vectors of integers, can you define a data structure to make the dot product between the two efficient (computationally) but with less memory as well?</p></blockquote>
+
+      <pre><code class="language-python">def store(vec: list[int]) -&gt; list[tuple[int, int]]:
+          sparse_vec = []
+          for i, elem in enumerate(vec):
+              if elem != 0:
+                  sparse_vec.append((i, elem))
+
+          return sparse_vec
+
+      def dot(vec1: list[tuple[int, int]], vec2: list[tuple[int, int]]) -&gt; int:
+          p1 = 0
+          p2 = 0
+          dot_prod = 0
+          while p1 &lt; len(vec1) and p2 &lt; len(vec2):
+              l = vec1[p1][0]
+              r = vec2[p2][0]
+              if l &lt; r:
+                  p1 += 1
+              elif l &gt; r:
+                  p2 += 1
+              else:
+                 dot_prod += vec1[p1][1] * vec2[p2][1]
+                 p1 += 1
+                 p2 += 1
+
+          return dot_prod
+
+      v1 = [1, 0, 0, 8, 1]
+      v2 = [0, 1, 2, 5, 2]
+      vec1 = store(v1)
+      vec2 = store(v2)
+      dot(vec1, vec2)
+      </code></pre>
+
+      <h2>complexity</h2>
+
+      <p>If our vectors have $n_i$ elements with $k_i$ non-zero elements for $i\in\{1,2\}$, then this runs in $k_1+k_2\ll n_1+n_2$ if the vectors are sparse. However... this store phase still requires $n_1+n_2$ passes, so I am not sure if this is really useful unless we always add elements in the new structure to begin with.</p>
+
+      <h2>issues</h2>
+
+      <ul>
+      <li>I stumbled in an interview on this as I assumed we needed compression, multi-threading, and/or something probabilistic</li>
+      <li>Furthermore, I used up all memory by keeping the original array for indexing... yuck whatever - can't win them all but I will win some more in the future hopefully</li>
+      <li>Review some pointer problems to not look like an idiot next time</li>
+      </ul>
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>
