@@ -78,7 +78,7 @@ wrapper_template() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${TITLE} · experiments · notebook</title>
+  <title>${TITLE} · notebooks · notebook</title>
   <link rel="stylesheet" href="../assets/css/main.css">
   <script>
     window.MathJax = {
@@ -94,7 +94,7 @@ wrapper_template() {
   <header>
     <nav>
       <a href="../index.html" class="site-title">ikigai</a>
-      <a href="../notebooks/index.html">experiments</a>
+      <a href="../notebooks/index.html">notebooks</a>
       <a href="../thoughts/index.html">thoughts</a>
       <a href="../quotes/index.html">quotes</a>
       <a href="../books/index.html">books</a>

@@ -255,7 +255,7 @@ def wrap_in_page(title: str, date: str, body_html: str, has_math: bool) -> str:
           <header>
             <nav>
               <a href="../index.html" class="site-title">ikigai</a>
-              <a href="../notebooks/index.html">experiments</a>
+              <a href="../notebooks/index.html">notebooks</a>
               <a href="../thoughts/index.html">thoughts</a>
               <a href="../quotes/index.html">quotes</a>
               <a href="../books/index.html">books</a>
