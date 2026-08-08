@@ -41,59 +41,59 @@
       <h2>Agent Setup</h2>
 
       <ul>
-      <li>Cline + openai-compact:gemma4:31b housed on our server (vscode plugin)</li>
-      <li>I added a <code>.clinerules</code> directory at the top for what a commit message looks like and overall developer styling (casing, organization, etc.)</li>
-      <li>Then I added a <code>memory-bank</code> by asking cline to "Initialize a memory bank" - this looks at directory and generates a few files. These are overly wordy and duplicative so I asked it to consolidate them down to two (one for stakeholders/overview, one for tech, and one for developers - architecture diagrams in mermaid, testing, etc.)</li>
-      <li>Then I fired away commands with subagents, native tool calling, autocompact, checkpoints, and hooks enabled with 256k tokens max for context</li>
+       <li>Cline + openai-compact:gemma4:31b housed on our server (VS Code plugin)</li>
+       <li>I added a <code>.clinerules</code> directory at the top to specify what a commit message should look like and overall developer styling (casing, organization, etc.)</li>
+       <li>Then I added a <code>memory-bank</code> by asking Cline to "Initialize a memory bank" — this looks at the directory and generates a few files. These were overly wordy and duplicative, so I asked it to consolidate them down to three (one for stakeholders/overview, one for tech, and one for developers — architecture diagrams in Mermaid, testing, etc.)</li>
+       <li>Then I fired away commands with subagents, native tool calling, autocompact, checkpoints, and hooks enabled, with a 256k token maximum for context.</li>
       </ul>
 
       <h2>What Failed</h2>
 
       <ul>
-      <li>Perhaps the model version or server setup, but I got many 400 errors and failed tool calls (especially as context neared 256k)</li>
-      <li>It seemed to ignore many .clinerules - e.g. not test-driven development (only when I explicitly prompted it), not updating the memory bank / docs, etc.</li>
-      <li>It waits forever without timeouts set in place for scripts (.e.g. <code>./test.sh</code> and the code has some infinite loop) - Cline then claims "it's thinking..." and never finishes</li>
-      <li>When it stalled, I sometimes had to close vscode and then resume - but resume didn't work OR <code>/newtask</code> was disabled / the button to execute was greyed out</li>
+       <li>Perhaps due to the model version or server setup, but I encountered many 400 errors and failed tool calls (especially as the context neared 256k).</li>
+       <li>It seemed to ignore many .clinerules — e.g., not following test-driven development (unless I explicitly prompted it), not updating the memory bank/docs, etc.</li>
+       <li>It waits indefinitely without timeouts for scripts (e.g., <code>./test.sh</code> when the code has an infinite loop) — Cline then claims "it's thinking..." and never finishes.</li>
+       <li>When it stalled, I sometimes had to close VS Code and then resume — but resume didn't work, or <code>/newtask</code> was disabled, or the button to execute was greyed out.</li>
       </ul>
 
       <h2>What Worked</h2>
 
       <ul>
-      <li>For the timeout errors, I simply exited the script (<code>ctrl+c</code>) and sometimess had to close my vscode and resume the task</li>
-      <li>Test-driven development - prompt it with a workflow in mind (e.g. report sent via SMTP) and make sure it adds a test; I find it does a great job with the right feedback/test suite</li>
-      <li>Then make sure it doesn't delete tests unless prompted; just like regular development, this helps prevent regression and Cline really works well with binary feedback from testing</li>
-      <li>Keep it simple and stupid / self-contained; it's a junior developer with limited context but you can ping it a zillion times without overworking them :)</li>
-      <li>Make sure versions are pinned; I don't care if it's a simple Python app, pin versions (or ask it to); its rate of hallucination drops significantly and your project is more likely to not be shelfware</li>
-      <li>Make sure you set line limits or make sure code organization is alright; if you have a massive HTML file that grows, that will not fit in context and grepping line by line will kill you (or your agent to be specific)</li>
+       <li>For the timeout errors, I simply exited the script (<code>Ctrl+C</code>) and sometimes had to close VS Code and resume the task.</li>
+       <li>Test-driven development: prompt it with a workflow in mind (e.g., a report sent via SMTP) and make sure it adds a test; I find it does a great job with the right feedback/test suite.</li>
+       <li>Then, make sure it doesn't delete tests unless prompted; just like regular development, this helps prevent regression, and Cline works really well with binary feedback from testing.</li>
+       <li>Keep it simple and stupid / self-contained; it's like a junior developer with limited context, but you can ping it a zillion times without overworking them :)</li>
+       <li>Make sure versions are pinned; even if it's a simple Python app, pin versions (or ask it to); its rate of hallucination drops significantly, and your project is more likely to not become shelfware.</li>
+       <li>Make sure you set line limits or ensure code organization is sound; if you have a massive HTML file that grows, it will not fit in context, and grepping line by line will kill you (or your agent, to be specific).</li>
       </ul>
 
       <h2>Cline Next Steps</h2>
 
       <ul>
-      <li>hooking this up with git worktrees (e.g. commits are tasks now)</li>
-      <li>adding a ci/cd pipeline to ground the agent</li>
-      <li>rethinking meta-level invariants / clinerules - I don't think text is enough for it to execute properly</li>
-      <li>Voice cloning w/ a free provider??</li>
+       <li>Hooking this up with git worktrees (e.g., commits are tasks now).</li>
+       <li>Adding a CI/CD pipeline to ground the agent.</li>
+       <li>Rethinking meta-level invariants / .clinerules — I don't think text is enough for it to execute properly.</li>
+       <li>Voice cloning with a free provider?</li>
       </ul>
 
       <h2>App Features</h2>
 
       <ul>
-      <li>This app will be great - it calls Google TTS for voice samples, groq for sample phrases for Cooper, and then uses MAB/epsilon-greedy policy to discern the phrase and pitch to fire off should a bark / sound above a certain frequency arise</li>
-      <li>I LOVE that caching works now so every run is not a pain in the butt to set up and that reporting works and sends me something interesting via email so I know if my dog is annoying my neighbors</li>
-      <li>I'm upset about ElevenLabs and their predatory API pricing... capitalists ruining everything (oh wait I'm American too...)</li>
+       <li>This app will be great — it calls Google TTS for voice samples, Groq for sample phrases for Cooper, and then uses an MAB/epsilon-greedy policy to discern the phrase and pitch to fire off should a bark/sound above a certain frequency arise.</li>
+       <li>I LOVE that caching works now, so every run is not a pain to set up, and that reporting works and sends me something interesting via email so I know if my dog is annoying my neighbors.</li>
+       <li>I'm upset about ElevenLabs and their predatory API pricing... capitalists ruining everything (oh wait, I'm American too...)</li>
       </ul>
 
       <h2>App Next Steps</h2>
 
       <ul>
-      <li>Dynamically add phrases; e.g. experiment with length of phrase (words), cadence/pitch throughout the response, and have a causal or correlation dashboard in the reports</li>
-      <li>Save off mp3s of XX seconds after each phrase fires to the email account (housed in drive for instance); up to some XX in megabytes or something</li>
-      <li>Some ability to discern a dog bark from a human walking by or a siren would be nice to prevent confusion</li>
-      <li>Continuing to use this and see if it's helpful or not (e.g. we need some more causal reasoning in the reports or proven measures of effectiveness)</li>
-      <li>Using OpenRouter instead of groq because of vendor lock in (as SPCX aims to establish a profitable service...)</li>
-      <li>Explore a non-browser based variation (e.g. just a shell script or executable) I could distribute around</li>
-      <li>See if software size could be housed on a rasberry pi or some other smaller controller to remove requirement that a user keep their laptop running in the background...</li>
+       <li>Dynamically add phrases; e.g., experiment with the length of phrases (words), cadence/pitch throughout the response, and have a causal or correlation dashboard in the reports.</li>
+       <li>Save off MP3s of XX seconds after each phrase fires to the email account (housed in Drive, for instance); up to some XX in megabytes or something.</li>
+       <li>Some ability to discern a dog bark from a human walking by or a siren would be nice to prevent confusion.</li>
+       <li>Continuing to use this and seeing if it's helpful or not (e.g., we need some more causal reasoning in the reports or proven measures of effectiveness).</li>
+       <li>Using OpenRouter instead of Groq because of vendor lock-in (as SPCX aims to establish a profitable service...)</li>
+       <li>Explore a non-browser-based variation (e.g., just a shell script or executable) that I could distribute.</li>
+       <li>See if the software could be housed on a Raspberry Pi or some other smaller controller to remove the requirement that a user keep their laptop running in the background...</li>
       </ul>
             </article>
 

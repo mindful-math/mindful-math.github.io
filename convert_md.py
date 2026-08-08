@@ -157,6 +157,45 @@ def md_to_html(text: str) -> str:
             i += 1
             continue
 
+        # Table
+        if line.strip().startswith('|'):
+            # Check if the next line is a separator line (| --- | --- |)
+            if i + 1 < len(lines) and re.match(r'^\s*\|?\s*[:\- ]+\|\s*[:\- ]+\s*\|?\s*$', lines[i+1]) or \
+               (i + 1 < len(lines) and re.match(r'^\s*\|?\s*[:\- ]+\s*\|', lines[i+1]) and '---' in lines[i+1]):
+                
+                close_lists()
+                table_lines = []
+                while i < len(lines) and lines[i].strip().startswith('|'):
+                    table_lines.append(lines[i].strip())
+                    i += 1
+                
+                if len(table_lines) >= 2:
+                    # Parse rows
+                    rows = []
+                    for tl in table_lines:
+                        # Split by | and remove empty first/last elements if they exist
+                        cells = [c.strip() for c in tl.split('|')]
+                        if cells[0] == '': cells.pop(0)
+                        if cells and cells[-1] == '': cells.pop()
+                        rows.append(cells)
+                    
+                    # Header
+                    header_cells = rows[0]
+                    # Separator is rows[1], we skip it
+                    
+                    res_table = '<table>\n<thead>\n<tr>'
+                    for cell in header_cells:
+                        res_table += f'<th>{inline_md(cell)}</th>'
+                    res_table += '</tr>\n</thead>\n<tbody>'
+                    for row in rows[2:]:
+                        res_table += '\n<tr>'
+                        for cell in row:
+                            res_table += f'<td>{inline_md(cell)}</td>'
+                        res_table += '</tr>'
+                    res_table += '\n</tbody>\n</table>'
+                    out.append(res_table)
+                    continue
+
         # Blank line
         if line.strip() == '':
             close_lists()

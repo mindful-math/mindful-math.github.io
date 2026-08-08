@@ -37,7 +37,9 @@
             <article class="prose">
               <h1>Site setup guide</h1>
 
-      <p>A minimal static site: plain HTML, one CSS file, zero build steps, zero npm. Runs anywhere that serves files — GitHub Pages, Netlify, a VPS, even <code>python -m http.server</code>.</p>
+      <table>
+<thead>
+<tr><th>A minimal static site: plain HTML, one CSS file, zero build steps, zero npm. Runs anywhere that serves files — GitHub Pages, Netlify, a VPS, even <code>python -m http.server</code>.</p>
 
       <hr>
 
@@ -304,7 +306,14 @@
 
       <h2>8. Customisation reference</h2>
 
-      <p>| What | Where | |------|--------| | Fonts | <code>assets/css/main.css</code> — change <code>@import</code> URL and <code>--font-body</code> / <code>--font-mono</code> | | Colors | <code>main.css</code> <code>:root</code> block — edit <code>--ink</code>, <code>--paper</code>, <code>--accent</code> etc. | | Line width | <code>main.css</code> <code>--measure</code> (prose width) and <code>--wide</code> | | Site name | Every <code>&lt;a class="site-title"&gt;</code> and <code>&lt;title&gt;</code> tag | | Nav links | The <code>&lt;nav&gt;</code> block in every page's <code>&lt;header&gt;</code> | | Footer text | The <code>&lt;footer&gt;</code> block in every page | | Add a section | Copy any <code>index.html</code> pattern, create a new folder, add a nav link to all pages |</p>
+      <p></th><th>What</th><th>Where</th><th></th><th>------</th><th>--------</th><th></th><th>Fonts</th><th><code>assets/css/main.css</code> — change <code>@import</code> URL and <code>--font-body</code> / <code>--font-mono</code></th></tr>
+</thead>
+<tbody>
+<tr><td>Line width</td><td><code>main.css</code> <code>--measure</code> (prose width) and <code>--wide</code></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Site name</td><td>Every <code>&lt;a class="site-title"&gt;</code> and <code>&lt;title&gt;</code> tag</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Nav links</td><td>The <code>&lt;nav&gt;</code> block in every page's <code>&lt;header&gt;</code></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Footer text</td><td>The <code>&lt;footer&gt;</code> block in every page</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Add a section</td><td>Copy any <code>index.html</code> pattern, create a new folder, add a nav link to all pages</td><td></p>
 
       <hr>
 
@@ -340,7 +349,9 @@
       <li>No comments (Utterances via GitHub Issues is the cleanest zero-backend option)</li>
       <li>No dark mode toggle (the CSS variables are ready for it — add a <code>[data-theme="dark"]</code></li>
       </ul>
-      <p>  block and a <code>&lt;button&gt;</code> that toggles <code>document.documentElement.dataset.theme</code>)</p>
+      <p>  block and a <code>&lt;button&gt;</code> that toggles <code>document.documentElement.dataset.theme</code>)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
 
             </article>
 
