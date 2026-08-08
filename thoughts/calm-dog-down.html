@@ -1,0 +1,113 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>calm dog down · thoughts · notebook</title>
+          <link rel="stylesheet" href="../assets/css/main.css">
+          <script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+        </head>
+        <body>
+        <div class="site-wrap">
+
+          <header>
+            <nav>
+              <a href="../index.html" class="site-title">ikigai</a>
+              <a href="../notebooks/index.html">notebooks</a>
+              <a href="../thoughts/index.html">thoughts</a>
+              <a href="../quotes/index.html">quotes</a>
+              <a href="../books/index.html">books</a>
+              <a href="../photos/index.html">photos</a>
+            </nav>
+          </header>
+
+          <main>
+            <div class="page-header">
+              <h1>calm dog down</h1>
+              <p class="meta">2026-08-08</p>
+            </div>
+
+            <article class="prose">
+              <p>A fun, useful app built with Cline+Gemma4:31b for your dog.</p>
+
+
+      <h2>Agent Setup</h2>
+
+      <ul>
+      <li>Cline + openai-compact:gemma4:31b housed on our server (vscode plugin)</li>
+      <li>I added a <code>.clinerules</code> directory at the top for what a commit message looks like and overall developer styling (casing, organization, etc.)</li>
+      <li>Then I added a <code>memory-bank</code> by asking cline to "Initialize a memory bank" - this looks at directory and generates a few files. These are overly wordy and duplicative so I asked it to consolidate them down to two (one for stakeholders/overview, one for tech, and one for developers - architecture diagrams in mermaid, testing, etc.)</li>
+      <li>Then I fired away commands with subagents, native tool calling, autocompact, checkpoints, and hooks enabled with 256k tokens max for context</li>
+      </ul>
+
+      <h2>What Failed</h2>
+
+      <ul>
+      <li>Perhaps the model version or server setup, but I got many 400 errors and failed tool calls (especially as context neared 256k)</li>
+      <li>It seemed to ignore many .clinerules - e.g. not test-driven development (only when I explicitly prompted it), not updating the memory bank / docs, etc.</li>
+      <li>It waits forever without timeouts set in place for scripts (.e.g. <code>./test.sh</code> and the code has some infinite loop) - Cline then claims "it's thinking..." and never finishes</li>
+      <li>When it stalled, I sometimes had to close vscode and then resume - but resume didn't work OR <code>/newtask</code> was disabled / the button to execute was greyed out</li>
+      </ul>
+
+      <h2>What Worked</h2>
+
+      <ul>
+      <li>For the timeout errors, I simply exited the script (<code>ctrl+c</code>) and sometimess had to close my vscode and resume the task</li>
+      <li>Test-driven development - prompt it with a workflow in mind (e.g. report sent via SMTP) and make sure it adds a test; I find it does a great job with the right feedback/test suite</li>
+      <li>Then make sure it doesn't delete tests unless prompted; just like regular development, this helps prevent regression and Cline really works well with binary feedback from testing</li>
+      <li>Keep it simple and stupid / self-contained; it's a junior developer with limited context but you can ping it a zillion times without overworking them :)</li>
+      <li>Make sure versions are pinned; I don't care if it's a simple Python app, pin versions (or ask it to); its rate of hallucination drops significantly and your project is more likely to not be shelfware</li>
+      <li>Make sure you set line limits or make sure code organization is alright; if you have a massive HTML file that grows, that will not fit in context and grepping line by line will kill you (or your agent to be specific)</li>
+      </ul>
+
+      <h2>Next Steps</h2>
+
+      <ul>
+      <li>hooking this up with git worktrees (e.g. commits are tasks now)</li>
+      <li>adding a ci/cd pipeline to ground the agent</li>
+      <li>rethinking meta-level invariants / clinerules - I don't think text is enough for it to execute properly</li>
+      <li>Voice cloning w/ a free provider??</li>
+      </ul>
+
+      <h2>App Features</h2>
+
+      <ul>
+      <li>This app will be great - it calls Google TTS for voice samples, groq for sample phrases for Cooper, and then uses MAB/epsilon-greedy policy to discern the phrase and pitch to fire off should a bark / sound above a certain frequency arise</li>
+      <li>I LOVE that caching works now so every run is not a pain in the butt to set up and that reporting works and sends me something interesting via email so I know if my dog is annoying my neighbors</li>
+      <li>I'm upset about ElevenLabs and their predatory API pricing... capitalists ruining everything (oh wait I'm American too...)</li>
+      </ul>
+
+      <h2>Next Steps</h2>
+
+      <ul>
+      <li>Dynamically add phrases; e.g. experiment with length of phrase (words), cadence/pitch throughout the response, and have a causal or correlation dashboard in the reports</li>
+      <li>Save off mp3s of XX seconds after each phrase fires to the email account (housed in drive for instance); up to some XX in megabytes or something</li>
+      <li>Some ability to discern a dog bark from a human walking by or a siren would be nice to prevent confusion</li>
+      <li>Continuing to use this and see if it's helpful or not (e.g. we need some more causal reasoning in the reports or proven measures of effectiveness)</li>
+      <li>Using OpenRouter instead of groq because of vendor lock in (as SPCX aims to establish a profitable service...)</li>
+      <li>Explore a non-browser based variation (e.g. just a shell script or executable) I could distribute around</li>
+      <li>See if software size could be housed on a rasberry pi or some other smaller controller to remove requirement that a user keep their laptop running in the background...</li>
+      </ul>
+            </article>
+
+            <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">
+              <a href="index.html" style="font-size:0.85rem;color:var(--ink-light);text-decoration:none;">← all thoughts</a>
+            </div>
+          </main>
+
+          <footer>
+            <span>built with plain html &amp; css · no framework</span>
+            <a href="#">↑ top</a>
+          </footer>
+
+        </div>
+        <script src="../assets/js/main.js"></script>
+        </body>
+        </html>
