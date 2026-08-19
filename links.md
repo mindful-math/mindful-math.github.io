@@ -7,3 +7,18 @@
 * https://web.archive.org/web/20220630013541/https://www.koreangrammaticalforms.com/
 * https://en.wikipedia.org/wiki/Tom_Anderson (interesting guy)
 * 
+
+# Articles worth considering
+
+* automata, RL, control theory, agentic systems
+* coffee experiments: grind size, temperature, coffee/water ratio, coffee/water weight, pouring structure (speed, height, pauses, total finish time); relation to time since roast
+* Korean game: ipynb in progress, game later - continue script
+* agentic systems, MCP, all that lit review / stuff I haven't explored yet in detail
+
+# Research
+* https://icpmconference.org/2021/wp-content/uploads/sites/5/2021/09/Probabilistic-Trace-Alignment.pdf
+* https://arxiv.org/pdf/1904.12787
+* https://cmgm-new.stanford.edu/biochem/biochem218/Projects%202004/Chan.pdf
+* https://arxiv.org/pdf/1603.05629
+* https://ntrs.nasa.gov/api/citations/19970022203/downloads/19970022203.pdf
+* https://rtavenar.github.io/blog/dtw.html
