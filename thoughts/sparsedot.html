@@ -80,13 +80,7 @@
 
       <p>If our vectors have $n_i$ elements with $k_i$ non-zero elements for $i\in\{1,2\}$, then this runs in $k_1+k_2\ll n_1+n_2$ if the vectors are sparse. However... this store phase still requires $n_1+n_2$ passes, so I am not sure if this is really useful unless we always add elements in the new structure to begin with.</p>
 
-      <h2>issues</h2>
 
-      <ul>
-      <li>I stumbled in an interview on this as I assumed we needed compression, multi-threading, and/or something probabilistic</li>
-      <li>Furthermore, I used up all memory by keeping the original array for indexing... yuck whatever - can't win them all but I will win some more in the future hopefully</li>
-      <li>Review some pointer problems to not look like an idiot next time</li>
-      </ul>
             </article>
 
             <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);">

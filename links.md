@@ -6,7 +6,7 @@
 * https://users.iit.uni-miskolc.hu/~erdei3/koreai/king_elementary_korean_isbn_0804820791_cc.pdf
 * https://web.archive.org/web/20220630013541/https://www.koreangrammaticalforms.com/
 * https://en.wikipedia.org/wiki/Tom_Anderson (interesting guy)
-* 
+* https://en.wikipedia.org/wiki/Edsger_W._Dijkstra#Books (another interesting dutchman)
 
 # Articles worth considering
 
