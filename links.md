@@ -7,6 +7,9 @@
 * https://web.archive.org/web/20220630013541/https://www.koreangrammaticalforms.com/
 * https://en.wikipedia.org/wiki/Tom_Anderson (interesting guy)
 * https://en.wikipedia.org/wiki/Edsger_W._Dijkstra#Books (another interesting dutchman)
+* https://arxiv.org/pdf/1702.06259 (smt w/ finite sets)
+* http://dit.unitn.it/~rseba/papers/p02c33-smt.pdf (smt intro)
+* https://craftinginterpreters.com/introduction.html
 
 # Articles worth considering
 
