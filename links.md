@@ -10,12 +10,14 @@
 * https://arxiv.org/pdf/1702.06259 (smt w/ finite sets)
 * http://dit.unitn.it/~rseba/papers/p02c33-smt.pdf (smt intro)
 * https://craftinginterpreters.com/introduction.html
+* https://pmc.ncbi.nlm.nih.gov/articles/PMC8299556/pdf/rspa.2021.0099.pdf
+* https://matklad.github.io/2024/07/25/git-worktrees.html (git worktrees)
 
 # Articles worth considering
 
 * automata, RL, control theory, agentic systems
 * coffee experiments: grind size, temperature, coffee/water ratio, coffee/water weight, pouring structure (speed, height, pauses, total finish time); relation to time since roast
-* Korean game: ipynb in progress, game later - continue script
+* Korean game: ipynb in prog ress, game later - continue script
 * agentic systems, MCP, all that lit review / stuff I haven't explored yet in detail
 
 # Research
