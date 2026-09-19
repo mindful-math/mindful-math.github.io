@@ -12,6 +12,7 @@
 * https://craftinginterpreters.com/introduction.html
 * https://pmc.ncbi.nlm.nih.gov/articles/PMC8299556/pdf/rspa.2021.0099.pdf
 * https://matklad.github.io/2024/07/25/git-worktrees.html (git worktrees)
+* https://arxiv.org/pdf/2609.20804 (empirical studies on harnesses)
 
 # Articles worth considering
 
